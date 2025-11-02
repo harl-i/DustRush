@@ -11,6 +11,7 @@ namespace Inventory
         {
             _money.ChangeValue(valueChange);
         }
+
         public void ChangeMetal(int valueChange)
         {
             _metal.ChangeValue(valueChange);

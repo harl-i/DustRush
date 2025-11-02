@@ -18,7 +18,8 @@ namespace RoadTrane
         [SerializeField] private int _numberOrder;
         [SerializeField] private FabricTower _fabricTower;
 
-        private List<string> _savedTowers;
+        private List<Tower> _savedTowers;
+        private string _name;
 
         private void OnEnable()
         {
@@ -27,31 +28,34 @@ namespace RoadTrane
 
         private void SetTower()
         {
-            switch (_numberOrder)
+            if (_typeVagon != Type.Spesial)
             {
-                case 1:
-                    _savedTowers = YG2.saves.SavedTowersVagon1;
-                    break;
-                case 2:
-                    _savedTowers = YG2.saves.SavedTowersVagon2;
-                    break;
-                case 3:
-                    _savedTowers = YG2.saves.SavedTowersVagon3;
-                    break;
-                case 4:
-                    _savedTowers = YG2.saves.SavedTowersVagon4;
-                    break;
-                case 5:
-                    _savedTowers = YG2.saves.SavedTowersVagon5;
-                    break;
-                case 6:
-                    _savedTowers = YG2.saves.SavedTowersVagon6;
-                    break;
-            }
+                switch (_numberOrder)
+                {
+                    //case 1:
+                    //    _savedTowers = YG2.saves.SavedTowersVagon1;
+                    //    break;
+                    //case 2:
+                    //    _savedTowers = YG2.saves.SavedTowersVagon2;
+                    //    break;
+                    //case 3:
+                    //    _savedTowers = YG2.saves.SavedTowersVagon3;
+                    //    break;
+                    //case 4:
+                    //    _savedTowers = YG2.saves.SavedTowersVagon4;
+                    //    break;
+                    //case 5:
+                    //    _savedTowers = YG2.saves.SavedTowersVagon5;
+                    //    break;
+                    //case 6:
+                    //    _savedTowers = YG2.saves.SavedTowersVagon6;
+                    //    break;
+                }
 
-            for (int i = 0; i < _pointWeapons.Count; i++)
-            {
-                _fabricTower.Create(_savedTowers[i], _pointWeapons[i]);
+                for (int i = 0; i < _pointWeapons.Count; i++)
+                {
+                   // _fabricTower.Create(_savedTowers[i], _pointWeapons[i]);
+                }
             }
         }
     }
