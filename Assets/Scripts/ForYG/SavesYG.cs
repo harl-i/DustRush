@@ -1,3 +1,4 @@
+using RoadTrane;
 using System.Collections.Generic;
 
 namespace YG
@@ -7,12 +8,17 @@ namespace YG
         public int Money = 0;
         public int Metal = 0;
 
-        public List<string> SavedTowersVagon1;
-        public List<string> SavedTowersVagon2;
-        public List<string> SavedTowersVagon3;
-        public List<string> SavedTowersVagon4;
-        public List<string> SavedTowersVagon5;
-        public List<string> SavedTowersVagon6;
+        public List<int> SavedTowersVagon1;
+
+        public List<int> SavedTowersVagon2;
+
+        public List<int> SavedTowersVagon3;
+
+        public List<int> SavedTowersVagon4;
+
+        public List<int> SavedTowersVagon5;
+
+        public List<int> SavedTowersVagon6;
 
     }
 }

@@ -31,11 +31,6 @@ namespace Pool
             _pool.Enqueue(item);
         }
 
-        public void ChangePrefab(T item)
-        {
-            _prefab = item;
-        }
-
         private MonoBehaviour CreateObject()
         {
             MonoBehaviour item;

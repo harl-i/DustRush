@@ -1,28 +1,38 @@
-﻿using Pool;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace RoadTrane
 {
     public class FabricTower : MonoBehaviour
     {
-        private const string MashineGun1 = "MashineGun1";
+        [SerializeField] private TowersHashTable _towers;
 
-        [SerializeField] private Tower _mashineGunPrefabTower1;
+        private Dictionary<int, Tower> _hashTable;
 
-        private Pool<Tower> _mashineGunPoolTower1;
-
-        public void Create(string result, Transform parent)
+        private void OnEnable()
         {
-            Tower tower = null;
+            _hashTable = _towers.TowersTable;
+        }
 
-            if (result == MashineGun1)
-                tower = _mashineGunPoolTower1.GetItem().GetComponent<Tower>();
-            
-            if (tower == null)
-                return;
+        private void Start()
+        {
+            Load();
+        }
 
-            tower.transform.position = parent.position;
-            tower.transform.SetParent(parent);
+        public void Create(Transform parent)
+        {
+
+        }
+
+        public void Load()
+        {
+            ServerTower.ActivateServer();
+            List<int> loaded = ServerTower.LoadData();
+
+            foreach (var item in loaded)
+            {
+                Debug.Log(_hashTable.TryGetValue(item, out Tower tower));
+            }
         }
     }
 }
