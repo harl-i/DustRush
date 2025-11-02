@@ -2,10 +2,14 @@
 
 namespace Inventory
 {
-    public class GeneralCounter : MonoBehaviour
+    public class PlayerStorage : MonoBehaviour
     {
         [SerializeField] private Money _money;
         [SerializeField] private Metal _metal;
+
+        public int Money => _money.Value;
+
+        public int Metal => _metal.Value;
 
         public void ChangeMoney(int valueChange)
         {
