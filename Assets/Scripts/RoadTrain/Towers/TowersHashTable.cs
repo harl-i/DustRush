@@ -5,36 +5,21 @@ using UnityEngine;
 public class TowersHashTable : MonoBehaviour
 {
     private const int IdMashineGun_1 = 1;
-    private const int MashineGunDamage_1 = 10;
-    private const int MashineGunRange_1 = 15;
-    private const int MashineGunMaxHealth_1 = 50;
+    [SerializeField] private GameObject _mashineGunPrefab_1;
 
     private const int IdMashineGun_2 = 2;
-    private const int MashineGunDamage_2 = 12;
-    private const int MashineGunRange_2 = 17;
-    private const int MashineGunmaxHealth_2 = 55;
+    [SerializeField] private GameObject _mashineGunPrefab_2;
 
-    [SerializeField] private Sprite MashineGunSprite_1;
-    [SerializeField] private Sprite MashineGunSprite_2;
+    private Dictionary<int, GameObject> _towersTable = new Dictionary<int, GameObject>();
 
-    public Dictionary<int, Tower> TowersTable { get; private set; }
+    public Dictionary<int, GameObject>  TowersTable => _towersTable;
 
     private void OnEnable()
     {
-        TowersTable = new Dictionary<int, Tower>();
+        _towersTable.Add(IdMashineGun_1,
+            _mashineGunPrefab_1);
 
-        TowersTable.Add(IdMashineGun_1,
-            new Tower("MashineGun1",
-            MashineGunDamage_1,
-            MashineGunRange_1,
-            MashineGunMaxHealth_1,
-            MashineGunSprite_1));
-
-        TowersTable.Add(IdMashineGun_2,
-            new Tower("MashineGun1",
-            MashineGunDamage_2,
-            MashineGunRange_2,
-            MashineGunmaxHealth_2,
-            MashineGunSprite_1));
+        _towersTable.Add(IdMashineGun_2,
+             _mashineGunPrefab_2);
     }
 }
