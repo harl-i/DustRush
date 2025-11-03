@@ -22,4 +22,14 @@ public class TowersHashTable : MonoBehaviour
         _towersTable.Add(IdMashineGun_2,
              _mashineGunPrefab_2);
     }
+
+    private void InitId()
+    {
+        foreach (var item in _towersTable)
+        {
+            var towers = item.Value.GetComponent<Tower>();
+
+            towers.SetID(item.Key);
+        }
+    }
 }

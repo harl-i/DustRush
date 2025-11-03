@@ -5,11 +5,11 @@ namespace RoadTrane
 {
     public class WagonsHashTable : MonoBehaviour
     {
-        private const int IdWagonEmpty_1 = 1;
+        private const int IdWagonEmpty_1 = 11;
         private const string IdWagonEmptyName_1 = "Empty_1";
         [SerializeField] private GameObject _wagonEmpty_1;
 
-        private const int IdWagonEmpty_2 = 2;
+        private const int IdWagonEmpty_2 = 15;
         private const string IdWagonEmptyName_2 = "Empty_2";
         [SerializeField] private GameObject _wagonEmpty_2;
 
@@ -19,12 +19,23 @@ namespace RoadTrane
 
         private void OnEnable()
         {
-
             _wagonsTable.Add(IdWagonEmpty_1,
                 _wagonEmpty_1);
 
             _wagonsTable.Add(IdWagonEmpty_2,
                 _wagonEmpty_2);
+
+            InitId();
+        }
+
+        private void InitId()
+        {
+            foreach (var item in _wagonsTable)
+            {
+                var wagon = item.Value.GetComponent<Wagon>();
+
+                wagon.SetID(item.Key);
+            }
         }
     }
 

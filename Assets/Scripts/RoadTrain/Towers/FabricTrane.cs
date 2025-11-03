@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using YG;
 
 namespace RoadTrane
@@ -26,9 +28,19 @@ namespace RoadTrane
             Load();
         }
 
+        private void OnDisable()
+        {
+            Save();
+        }
+
         public void Create()
         {
-            int countWagons = _wagons.Count;
+            CreateWagon();
+            CreateTower();
+        }
+
+        private void CreateWagon()
+        {
             Vector2 _defaultPosition = Vector2.zero;
 
             Wagon wagon = null;
@@ -43,21 +55,25 @@ namespace RoadTrane
                 {
                     wagon = Instantiate(_wagons[i]).GetComponent<Wagon>();
                     wagon.transform.position = _wagons[i - 1].GetComponent<Wagon>().BackCouplingPosition.position;
-
-                        //_wagons[i-1].GetComponent<Wagon>().FrontCouplingPosition.position,
-                        //Quaternion.identity);
                 }
+            }
+        }
+
+        private void CreateTower()
+        {
+            for (int i = 0; i < _towers.Count; i++)
+            {
+
             }
         }
 
         public void Load()
         {
-            List<int> loadedTower = new List<int>();
             List<int> loadedWagons = new List<int>();
+            List<int> loadedTower = new List<int>();
 
-
-            loadedTower = YG2.saves.SavedTowers;
             loadedWagons = YG2.saves.SavedWagons;
+            loadedTower = YG2.saves.SavedTowers;
 
             foreach (var item in loadedTower)
             {
@@ -72,6 +88,18 @@ namespace RoadTrane
             }
 
             Create();
+        }
+
+        public void Save()
+        {
+            List<int> saved = new List<int>();
+
+            for (int i = 0; i < _wagons.Count; i++)
+            {
+                saved.Add(_wagons[i].GetComponent<Wagon>().IdWagon);
+            }
+
+            YG2.saves.SavedWagons = saved;
         }
     }
 
