@@ -7,28 +7,24 @@ namespace RoadTrane
     {
         private const int IdWagonEmpty_1 = 1;
         private const string IdWagonEmptyName_1 = "Empty_1";
+        [SerializeField] private GameObject _wagonEmpty_1;
 
         private const int IdWagonEmpty_2 = 2;
         private const string IdWagonEmptyName_2 = "Empty_2";
+        [SerializeField] private GameObject _wagonEmpty_2;
 
-        [SerializeField] private Sprite WagonEmptySprite_1;
-        [SerializeField] private Sprite WagonEmptySprite_2;
+        public Dictionary<int, GameObject> _wagonsTable = new Dictionary<int, GameObject>();
 
-        public Dictionary<int, Wagon> WagonsTable { get; private set; }
+        public Dictionary<int, GameObject> WagonsTable => _wagonsTable;
 
         private void OnEnable()
         {
-            WagonsTable = new Dictionary<int, Wagon>();
 
-            WagonsTable.Add(IdWagonEmpty_1,
-                new Wagon(IdWagonEmptyName_1,
-                Wagon.Type.Regular,
-                WagonEmptySprite_1));
+            _wagonsTable.Add(IdWagonEmpty_1,
+                _wagonEmpty_1);
 
-            WagonsTable.Add(IdWagonEmpty_2,
-                new Wagon(IdWagonEmptyName_2,
-                Wagon.Type.Regular,
-                WagonEmptySprite_2));
+            _wagonsTable.Add(IdWagonEmpty_2,
+                _wagonEmpty_2);
         }
     }
 

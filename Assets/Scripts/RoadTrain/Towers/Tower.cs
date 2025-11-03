@@ -4,36 +4,25 @@ namespace RoadTrane
 {
     public class Tower : MonoBehaviour
     {
-    //    [SerializeField] private Health _thisHealth;
 
-        public Tower(string name, int damge, float range, float maxHealth, Sprite sprite)
-        {
-            Name = name;
-            Damge = damge;
-            Range = range;
-            MaxHealth = maxHealth;
-            Sprite = sprite;
-        }
+        [SerializeField] private string _name;
 
-        public string Name { get; private set; }
+        [SerializeField] private int _damge;
 
-        public int Damge { get; private set; }
+        [SerializeField] private float _range;
 
-        public float Range { get; private set; }
+        [SerializeField] private float _maxHealth;
 
-        public float MaxHealth { get; private set; }
-
-        public Sprite Sprite { get; private set; }
-
+        [SerializeField] private Sprite _sprite;
 
         public void Awake()
         {
-     //       _thisHealth.SetMaxHealth(MaxHealth);
+            //       _thisHealth.SetMaxHealth(MaxHealth);
         }
 
         public void TakeDamage(float damage)
         {
-     //       _thisHealth.Damaged(damage);
+            //       _thisHealth.Damaged(damage);
         }
     }
 }

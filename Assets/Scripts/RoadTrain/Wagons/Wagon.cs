@@ -12,28 +12,42 @@ namespace RoadTrane
             Spesial
         }
 
-        [SerializeField] private List<Transform> _pointWeapons;
+        [SerializeField] private List<UnityEngine.Transform> _pointWeapons;
+
+        [SerializeField] private Transform _front—ouplingPosition;
+        [SerializeField] private Transform _backCouplingPosition;
+
         private List<Tower> _savedTowers;
+        private Dictionary<int, Transform> _pointNamed = new();
 
-        public Wagon(string name, Type typeVagon, Sprite sprite)
-        {
-            Name = name;
-            TypeVagon = typeVagon;
-            Sprite = sprite;
-        }
+        //public Wagon(string name, Type typeVagon, Sprite sprite)
+        //{
+        //    Name = name;
+        //    TypeVagon = typeVagon;
+        //    Sprite = sprite;
+        //}
 
-        public string Name { get; private set; }
-        public Type TypeVagon { get; private set; }
-        public int NumberOrder { get; private set; }
-        public Sprite Sprite { get; private set; }
-        public List<Transform> PointWeapons => _pointWeapons;
+        [SerializeField] private string Name;
+        [SerializeField] private Type TypeVagon;
+
+        public Transform BackCouplingPosition => _backCouplingPosition;
+        public Transform FrontCouplingPosition => _front—ouplingPosition;
+        public Dictionary<int, Transform> PointNamed => _pointNamed;
 
         private void OnEnable()
         {
+            if (TypeVagon != Type.Spesial)
+            {
+                for (int i = 0; i < _pointWeapons.Count; i++)
+                {
+                    _pointNamed.Add(i, _pointWeapons[i]);
+                }
+            }
         }
 
-        private void SetTower()
+        public void MoveAround(Vector2 target)
         {
+            _front—ouplingPosition.transform.position = target;
         }
     }
 }
