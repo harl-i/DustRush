@@ -12,51 +12,28 @@ namespace RoadTrane
             Spesial
         }
 
-        [SerializeField] private Type _typeVagon;
         [SerializeField] private List<Transform> _pointWeapons;
-
-        [SerializeField] private int _numberOrder;
-        [SerializeField] private FabricTower _fabricTower;
-
         private List<Tower> _savedTowers;
-        private string _name;
+
+        public Wagon(string name, Type typeVagon, Sprite sprite)
+        {
+            Name = name;
+            TypeVagon = typeVagon;
+            Sprite = sprite;
+        }
+
+        public string Name { get; private set; }
+        public Type TypeVagon { get; private set; }
+        public int NumberOrder { get; private set; }
+        public Sprite Sprite { get; private set; }
+        public List<Transform> PointWeapons => _pointWeapons;
 
         private void OnEnable()
         {
-            SetTower();
         }
 
         private void SetTower()
         {
-            if (_typeVagon != Type.Spesial)
-            {
-                switch (_numberOrder)
-                {
-                    //case 1:
-                    //    _savedTowers = YG2.saves.SavedTowersVagon1;
-                    //    break;
-                    //case 2:
-                    //    _savedTowers = YG2.saves.SavedTowersVagon2;
-                    //    break;
-                    //case 3:
-                    //    _savedTowers = YG2.saves.SavedTowersVagon3;
-                    //    break;
-                    //case 4:
-                    //    _savedTowers = YG2.saves.SavedTowersVagon4;
-                    //    break;
-                    //case 5:
-                    //    _savedTowers = YG2.saves.SavedTowersVagon5;
-                    //    break;
-                    //case 6:
-                    //    _savedTowers = YG2.saves.SavedTowersVagon6;
-                    //    break;
-                }
-
-                for (int i = 0; i < _pointWeapons.Count; i++)
-                {
-                   // _fabricTower.Create(_savedTowers[i], _pointWeapons[i]);
-                }
-            }
         }
     }
 }

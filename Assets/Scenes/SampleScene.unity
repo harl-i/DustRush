@@ -566,6 +566,95 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _effector: {fileID: 707814540}
+--- !u!1 &603485454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603485458}
+  - component: {fileID: 603485457}
+  - component: {fileID: 603485456}
+  - component: {fileID: 603485455}
+  - component: {fileID: 603485459}
+  m_Layer: 0
+  m_Name: Train
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &603485455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603485454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1b171f4b52b264292c35ed7c9ffe46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MashineGunSprite_1: {fileID: 21300000, guid: feff93c1978bc224c93e4d892462632f, type: 3}
+  MashineGunSprite_2: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!114 &603485456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603485454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809ee5316bdce1489004d5b0a824370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towers: {fileID: 603485455}
+  _wagons: {fileID: 603485459}
+--- !u!114 &603485457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603485454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc1d7dca77a6ac42b7c916a905f6a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &603485458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603485454}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &603485459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603485454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b78d49268e3234b8932af64d2adc29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WagonEmptySprite_1: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  WagonEmptySprite_2: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &704313240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,4 +1674,5 @@ SceneRoots:
   - {fileID: 930468118}
   - {fileID: 499551136}
   - {fileID: 2032267057}
+  - {fileID: 603485458}
   - {fileID: 2045630047}
