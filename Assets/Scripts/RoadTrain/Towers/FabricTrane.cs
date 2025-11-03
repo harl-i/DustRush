@@ -31,6 +31,8 @@ namespace RoadTrane
             int countWagons = _wagons.Count;
             Vector2 _defaultPosition = Vector2.zero;
 
+            Wagon wagon = null;
+
             for (int i = 0; i < _wagons.Count; i++)
             {
                 if (i == 0)
@@ -39,9 +41,11 @@ namespace RoadTrane
                 }
                 else
                 {
-                    Instantiate(_wagons[i],
-                        _wagons[i-1].GetComponent<Wagon>().FrontCouplingPosition.position,
-                        Quaternion.identity);
+                    wagon = Instantiate(_wagons[i]).GetComponent<Wagon>();
+                    wagon.transform.position = _wagons[i - 1].GetComponent<Wagon>().BackCouplingPosition.position;
+
+                        //_wagons[i-1].GetComponent<Wagon>().FrontCouplingPosition.position,
+                        //Quaternion.identity);
                 }
             }
         }
