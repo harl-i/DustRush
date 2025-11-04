@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
@@ -12,41 +13,29 @@ namespace RoadTrane
             Spesial
         }
 
-        [SerializeField] private List<UnityEngine.Transform> _pointsTower;
+        [SerializeField] private List<Transform> _pointsTower = new List<Transform>();
         [SerializeField] private Transform _front—ouplingPosition;
         [SerializeField] private Transform _backCouplingPosition;
 
-        private List<Tower> _savedTowers;
-        private Dictionary<int, Transform> _pointNamed = new Dictionary<int, Transform>();
+        private List<Tower> _savedTowers = new List<Tower>();
 
         [SerializeField] private string Name;
-        [SerializeField] private Type TypeVagon;
+        [SerializeField] private Type TypeWagon;
 
         public Transform BackCouplingPosition => _backCouplingPosition;
         public Transform FrontCouplingPosition => _front—ouplingPosition;
-        public Dictionary<int, Transform> PointNamed => _pointNamed;
 
-        public int IdWagon { get; private set; }    
+        public int IdWagon { get; private set; }
 
-        private void OnEnable()
+        public Transform GetPointTower(int key)
         {
-            if (TypeVagon != Type.Spesial)
-            {
-                for (int i = 0; i < _pointsTower.Count; i++)
-                {
-                    _pointNamed.Add(i, _pointsTower[i]);
-                }
-            }
-        }
-
-        public Vector2 GetPointTower(int key)
-        {
-            return _pointNamed[key].position;
+            return _pointsTower[key];
         }
 
         public void SetID(int key)
         {
             IdWagon = key;
+
         }
     }
 }

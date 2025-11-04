@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TowersHashTable : MonoBehaviour
 {
-    private const int IdMashineGun_1 = 1;
+    private const int IdMashineGun_1 = 11;
     [SerializeField] private GameObject _mashineGunPrefab_1;
 
-    private const int IdMashineGun_2 = 2;
+    private const int IdMashineGun_2 = 12;
     [SerializeField] private GameObject _mashineGunPrefab_2;
 
     private Dictionary<int, GameObject> _towersTable = new Dictionary<int, GameObject>();

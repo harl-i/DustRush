@@ -9,7 +9,6 @@ namespace RoadTrane
         [SerializeField] private int _damge;
         [SerializeField] private float _range;
         [SerializeField] private float _maxHealth;
-        [SerializeField] private Sprite _sprite;
 
         public int IdTower { get; private set; }
 

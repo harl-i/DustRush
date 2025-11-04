@@ -5,7 +5,7 @@ namespace RoadTrane
 {
     public class WagonsHashTable : MonoBehaviour
     {
-        private const int IdWagonEmpty_1 = 11;
+        private const int IdWagonEmpty_1 = 10;
         private const string IdWagonEmptyName_1 = "Empty_1";
         [SerializeField] private GameObject _wagonEmpty_1;
 

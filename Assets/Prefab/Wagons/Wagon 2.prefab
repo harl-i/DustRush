@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af070dc706bbc74daea5089be75ad3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointWeapons:
+  _pointsTower:
   - {fileID: 4008244953727476265}
   - {fileID: 2915252722227432746}
   - {fileID: 4684047703159841670}
