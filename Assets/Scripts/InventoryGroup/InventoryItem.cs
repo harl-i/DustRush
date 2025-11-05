@@ -4,9 +4,9 @@ namespace Inventory
 {
     public abstract class InventoryItem : MonoBehaviour
     {
-        public int Value { get; private set; }
-
         [SerializeField] private CounterEffector _effector;
+
+        public int Value { get; private set; }
 
         public void ChangeValue(int value)
         {

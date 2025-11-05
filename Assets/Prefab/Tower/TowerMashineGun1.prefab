@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 858232704300484676}
   - component: {fileID: 5646450722544494893}
+  - component: {fileID: 6578382306846967256}
   m_Layer: 0
   m_Name: TowerMashineGun1
   m_TagString: Untagged
@@ -49,6 +50,19 @@ MonoBehaviour:
   _damge: 1
   _range: 1
   _maxHealth: 1
+  _health: {fileID: 6578382306846967256}
+--- !u!114 &6578382306846967256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804457351511402349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f3c5f10078468408b1fa9452bded33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6114054424651196652
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +135,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: feff93c1978bc224c93e4d892462632f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
