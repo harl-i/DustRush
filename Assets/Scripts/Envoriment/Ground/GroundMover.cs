@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -14,7 +13,7 @@ namespace Environment
         [Header("Speed")]
         [SerializeField] private float _startSpeed;
         [SerializeField] private float _fullSpeed;
-        [SerializeField] private float _eachSecondFullSpeed;
+        [SerializeField] private float _eachSecondAcceleration;
 
         [Header("SpritesBackgounds")]
         [SerializeField] private Transform _backgroundImage;
@@ -22,26 +21,44 @@ namespace Environment
         private float _currentSpeed;
         private WaitForSeconds _waitFullSpeed;
 
+        private WaitForSeconds _waitPlayBoost;
+        private float _boostDelayValue = 5f;
+        private Coroutine _boostingSpeed = null;
+
         private void OnEnable()
         {
-            _waitFullSpeed = new WaitForSeconds(_eachSecondFullSpeed);
-            StartMovie();
+            _waitFullSpeed = new WaitForSeconds(_eachSecondAcceleration);
+            _waitPlayBoost = new WaitForSeconds(_boostDelayValue);
+            StartMoving();
         }
 
-        private void StartMovie()
+        public void BoostSpeed(float speedBoost)
         {
-            StartCoroutine(SetSpeed());
+            if (_boostingSpeed == null)
+                _boostingSpeed = StartCoroutine(Boost(speedBoost));
+        }
+
+        private void StartMoving()
+        {
+            StartCoroutine(Acceleration());
             StartCoroutine(Moving());
         }
 
-        private IEnumerator SetSpeed()
+        private IEnumerator Acceleration()
         {
             _currentSpeed = _startSpeed;
 
             yield return _waitFullSpeed;
 
             _currentSpeed = _fullSpeed;
+        }
 
+        private void MovingUp()
+        {
+            Vector2 targetUp = new Vector2(_backgroundImage.position.x, (_startPositionY - _currentSpeed));
+
+            _backgroundImage.transform.position = targetUp;
+            StartCoroutine(Moving());
         }
 
         private IEnumerator Moving()
@@ -58,12 +75,14 @@ namespace Environment
             MovingUp();
         }
 
-        private void MovingUp()
+        private IEnumerator Boost(float speedBoost)
         {
-            Vector2 targetUp = new Vector2(_backgroundImage.position.x, (_startPositionY - _currentSpeed));
+            float currentSpeed = _fullSpeed + speedBoost;
+            _currentSpeed = currentSpeed;
+            yield return _waitPlayBoost;
 
-            _backgroundImage.transform.position = targetUp;
-            StartCoroutine(Moving());
+            _currentSpeed = _fullSpeed;
+            _boostingSpeed = null;
         }
     }
 }

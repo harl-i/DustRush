@@ -8,23 +8,41 @@ namespace RoadTrane
         [SerializeField] private string _name;
         [SerializeField] private int _damge;
         [SerializeField] private float _range;
-        [SerializeField] private float _maxHealth;
+        [SerializeField] private int _maxHealth;
+        [SerializeField] private Common.Health _health;
 
-        public int IdTower { get; private set; }
+        public event Action<int> TowerDead;
 
-        public void Awake()
+        private int _positionOnTrane;
+        private int _idTower;
+        private int _fullId;
+
+        public void OnEnable()
         {
-            //       _thisHealth.SetMaxHealth(MaxHealth);
+            _health.ChangeMaxHealth(_maxHealth);
+            _health.HealthChanged += OnHealChange;
         }
 
-        public void TakeDamage(float damage)
+        public void OnDisable()
         {
-            //       _thisHealth.Damaged(damage);
+            _health.HealthChanged -= OnHealChange;
+        }
+
+        private void OnHealChange(int value)
+        {
+            if (value == 0)
+                TowerDead?.Invoke(_fullId);
         }
 
         public void SetID(int key)
         {
-            IdTower = key;
+            _idTower = key;
+        }
+
+        public void SetPositionOnTrane(int value)
+        {
+            _positionOnTrane = value;
+            _fullId = (_positionOnTrane * 100) + _idTower;
         }
     }
 }

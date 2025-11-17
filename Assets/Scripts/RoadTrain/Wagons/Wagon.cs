@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using YG;
 
 namespace RoadTrane
 {
@@ -16,8 +14,6 @@ namespace RoadTrane
         [SerializeField] private List<Transform> _pointsTower = new List<Transform>();
         [SerializeField] private Transform _front—ouplingPosition;
         [SerializeField] private Transform _backCouplingPosition;
-
-        private List<Tower> _savedTowers = new List<Tower>();
 
         [SerializeField] private string Name;
         [SerializeField] private Type TypeWagon;
@@ -35,7 +31,6 @@ namespace RoadTrane
         public void SetID(int key)
         {
             IdWagon = key;
-
         }
     }
 }
