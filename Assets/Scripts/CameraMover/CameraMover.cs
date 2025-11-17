@@ -8,6 +8,12 @@ namespace CameraMover
         private const float ChangeZoomValue = 1f;
         private const float ChangeYPositionValue = 2f;
 
+        private const float MaxYValue = 6f;
+        private const float MinYValue = -12f;
+
+        private const float MaxZoom = 8f;
+        private const float MinZoom = 4f;
+
         [SerializeField] private Camera _camera;
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -17,13 +23,20 @@ namespace CameraMover
 
                 if (eventData.delta.x > 0)
                 {
-                    Debug.Log("Right");
+                    if (_camera.orthographicSize >= MaxZoom)
+                    {
+                        return;
+                    }
+
                     _camera.orthographicSize += ChangeZoomValue;
                 }
 
                 else
                 {
-                    Debug.Log("Left");
+                    if (_camera.orthographicSize <= MinZoom)
+                    {
+                        return;
+                    }
 
                     _camera.orthographicSize -= ChangeZoomValue;
                 }
@@ -33,14 +46,22 @@ namespace CameraMover
             {
                 if (eventData.delta.y > 0)
                 {
-                    Debug.Log("Up");
+                    if (_camera.transform.position.y <= MinYValue)
+                    {
+                        return;
+                    }
+
                     _camera.transform.position = new Vector3(_camera.transform.position.x,
                         _camera.transform.position.y - ChangeYPositionValue,
                         _camera.transform.position.z);
                 }
                 else
                 {
-                    Debug.Log("Down");
+                    if (_camera.transform.position.y >= MaxYValue)
+                    {
+                        return;
+                    }
+
                     _camera.transform.position = new Vector3(_camera.transform.position.x,
                         _camera.transform.position.y + ChangeYPositionValue,
                         _camera.transform.position.z);
