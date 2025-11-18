@@ -1,5 +1,5 @@
 using System;
-using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace Common
@@ -7,11 +7,6 @@ namespace Common
     public class Health : MonoBehaviour
     {
         private int _maxHealth;
-        private int _partOfMaximum = 2;
-
-        private bool _isUntouchable = false;
-        private float _waitOffinValue = 5f;
-        private WaitForSeconds _wait;
 
         public event Action<int> HealthChanged;
 
@@ -21,20 +16,11 @@ namespace Common
 
         private void OnEnable()
         {
-            _wait = new WaitForSeconds(_waitOffinValue);
             IsDead = false;
-        }
-
-        public void SetUntouchable()
-        {
-            _isUntouchable = true;
-            StartCoroutine(OffingUnouchable());
         }
 
         public void Healing()
         {
-            Value += Max / _partOfMaximum;
-
             if (Value > Max)
                 Value = Max;
 
@@ -50,13 +36,11 @@ namespace Common
         public void ChangeMaxHealth(int newMax)
         {
             _maxHealth = newMax;
+            Value = _maxHealth;
         }
 
         public void Damaged(int damage)
         {
-            if (_isUntouchable)
-                return;
-
             if (Value > 0)
                 Value -= damage;
 
@@ -67,12 +51,6 @@ namespace Common
             }
 
             HealthChanged?.Invoke(Value);
-        }
-
-        private IEnumerator OffingUnouchable()
-        {
-            yield return _wait;
-            _isUntouchable = false;
         }
     }
 }

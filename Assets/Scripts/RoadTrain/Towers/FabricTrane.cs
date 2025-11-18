@@ -9,8 +9,9 @@ namespace RoadTrane
         [SerializeField] private TowersHashTable _towersHash;
         [SerializeField] private WagonsHashTable _wagonsHash;
 
-        [SerializeField] private Truck _truck; 
-        [SerializeField] private TruckInstaller _truckInstaller; 
+        [SerializeField] private Truck _truck;
+        [SerializeField] private TruckInstaller _truckInstaller;
+        [SerializeField] private Coupling _couplingPrefab;
 
         private Dictionary<int, GameObject> _hashTableTower = new Dictionary<int, GameObject>();
         private Dictionary<int, GameObject> _hashTableWagon = new Dictionary<int, GameObject>();
@@ -40,12 +41,12 @@ namespace RoadTrane
 
         private void OnDisable()
         {
-            Save();
-
             foreach (Tower tower in _createdTowers)
             {
                 tower.TowerDead -= OnTowerDead;
             }
+
+            Save();
         }
 
         public void Create()
@@ -68,22 +69,30 @@ namespace RoadTrane
 
         private void CreateWagon()
         {
-            Vector2 defaultPosition = Vector2.zero;
+            Vector2 currentPosition = Vector2.zero;
             Wagon wagon = null;
 
             for (int i = 0; i < _wagons.Count; i++)
             {
-                if (i == 0)
-                {
-                    wagon = Instantiate(_wagons[i], defaultPosition, Quaternion.identity).GetComponent<Wagon>();
-                }
-                else
-                {
-                    wagon = Instantiate(_wagons[i]).GetComponent<Wagon>();
-                    wagon.transform.position = _wagons[i - 1].GetComponent<Wagon>().BackCouplingPosition.position;
-                }
+                wagon = Instantiate(_wagons[i], currentPosition, Quaternion.identity).GetComponent<Wagon>();
+                currentPosition = wagon.BackCouplingPosition.position;
 
                 _createdWagons.Add(wagon);
+            }
+
+            CreateCoupling();
+        }
+
+        private void CreateCoupling()
+        {
+            Coupling coupling;
+
+            for (int i = 0; i < _createdWagons.Count; i++)
+            {
+                coupling = Instantiate(_couplingPrefab);
+                coupling.transform.position = _createdWagons[i].FrontCouplingPosition.position;
+                coupling.transform.parent = _createdWagons[i].FrontCouplingPosition;
+                coupling.Init(i, this);
             }
         }
 
@@ -140,21 +149,36 @@ namespace RoadTrane
 
         public void Save()
         {
-            List<int> savedWagans = new List<int>();
+            List<int> savedWagons = new List<int>();
             List<int> savedTower = new List<int>();
 
-            for (int i = 0; i < _wagons.Count; i++)
+            for (int i = 0; i < _createdWagons.Count; i++)
             {
-                savedWagans.Add(_wagons[i].GetComponent<Wagon>().IdWagon);
+                if (_createdWagons[i].IsSepareted == false)
+                {
+                    savedWagons.Add(_createdWagons[i].IdWagon);
+                }
             }
+
+            YG2.saves.SavedWagons = savedWagons;
 
             for (int i = 0; i < _loadedTowers.Count; i++)
             {
                 savedTower.Add(_loadedTowers[i]);
             }
 
-            YG2.saves.SavedWagons = savedWagans;
             YG2.saves.SavedTowers = savedTower;
+        }
+
+        public void SeparateWagon(int place)
+        {
+            for (int i = 0; i < _createdWagons.Count; i++)
+            {
+                if (place <= i)
+                {
+                    _createdWagons[i].GetComponent<Wagon>().Separate();
+                }
+            }
         }
     }
 }

@@ -15,7 +15,11 @@ public class FirstTrain : MonoBehaviour
         _firstWeapon.Add(0412);
         _firstWeapon.Add(1212);
         _firstWeapon.Add(1311);
+        _firstWeapon.Add(2112);
+        _firstWeapon.Add(2211);
 
+        _firstWagon.Add(10);
+        _firstWagon.Add(15);
         _firstWagon.Add(10);
         _firstWagon.Add(15);
 

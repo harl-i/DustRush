@@ -52,7 +52,7 @@ namespace CameraMover
                     }
 
                     _camera.transform.position = new Vector3(_camera.transform.position.x,
-                        _camera.transform.position.y - ChangeYPositionValue,
+                        _camera.transform.position.y + ChangeYPositionValue,
                         _camera.transform.position.z);
                 }
                 else
@@ -63,7 +63,7 @@ namespace CameraMover
                     }
 
                     _camera.transform.position = new Vector3(_camera.transform.position.x,
-                        _camera.transform.position.y + ChangeYPositionValue,
+                        _camera.transform.position.y - ChangeYPositionValue,
                         _camera.transform.position.z);
                 }
             }
