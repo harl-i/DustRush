@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -18,12 +19,15 @@ namespace Environment
         [Header("SpritesBackgounds")]
         [SerializeField] private Transform _backgroundImage;
 
-        private float _currentSpeed;
         private WaitForSeconds _waitFullSpeed;
 
         private WaitForSeconds _waitPlayBoost;
         private float _boostDelayValue = 5f;
         private Coroutine _boostingSpeed = null;
+
+        public float CurrentSpeed { get; private set; }
+
+        public event Action<float> SpeedChanged;
 
         private void OnEnable()
         {
@@ -46,16 +50,16 @@ namespace Environment
 
         private IEnumerator Acceleration()
         {
-            _currentSpeed = _startSpeed;
+            CurrentSpeed = _startSpeed;
 
             yield return _waitFullSpeed;
 
-            _currentSpeed = _fullSpeed;
+            CurrentSpeed = _fullSpeed;
         }
 
         private void MovingUp()
         {
-            Vector2 targetUp = new Vector2(_backgroundImage.position.x, (_startPositionY - _currentSpeed));
+            Vector2 targetUp = new Vector2(_backgroundImage.position.x, (_startPositionY - CurrentSpeed));
 
             _backgroundImage.transform.position = targetUp;
             StartCoroutine(Moving());
@@ -67,7 +71,7 @@ namespace Environment
 
             while (_backgroundImage.position.y > target.y)
             {
-                _backgroundImage.transform.Translate(0, _currentSpeed, 0);
+                _backgroundImage.transform.Translate(0, CurrentSpeed, 0);
 
                 yield return null;
             }
@@ -78,10 +82,13 @@ namespace Environment
         private IEnumerator Boost(float speedBoost)
         {
             float currentSpeed = _fullSpeed + speedBoost;
-            _currentSpeed = currentSpeed;
+            CurrentSpeed = currentSpeed;
+
+            SpeedChanged?.Invoke(CurrentSpeed);
             yield return _waitPlayBoost;
 
-            _currentSpeed = _fullSpeed;
+            CurrentSpeed = _fullSpeed;
+            SpeedChanged?.Invoke(CurrentSpeed);
             _boostingSpeed = null;
         }
     }

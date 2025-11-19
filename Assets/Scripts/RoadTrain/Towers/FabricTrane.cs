@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Environment;
+using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
@@ -12,6 +13,7 @@ namespace RoadTrane
         [SerializeField] private Truck _truck;
         [SerializeField] private TruckInstaller _truckInstaller;
         [SerializeField] private Coupling _couplingPrefab;
+        [SerializeField] private GroundMover _groundMover;
 
         private Dictionary<int, GameObject> _hashTableTower = new Dictionary<int, GameObject>();
         private Dictionary<int, GameObject> _hashTableWagon = new Dictionary<int, GameObject>();
@@ -78,6 +80,7 @@ namespace RoadTrane
                 currentPosition = wagon.BackCouplingPosition.position;
 
                 _createdWagons.Add(wagon);
+                wagon.Init(_groundMover);
             }
 
             CreateCoupling();

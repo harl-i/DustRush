@@ -6,8 +6,6 @@ namespace RoadTrane
 {
     public class Wagon : TranePart
     {
-        private const float SeparateSpeed = -0.006f;
-
         public enum Type
         {
             Regular,
@@ -21,8 +19,11 @@ namespace RoadTrane
         [SerializeField] private string Name;
         [SerializeField] private Type TypeWagon;
 
+        private Environment.GroundMover _groundMover;
+
         private Vector3 SeparateFinalPosition = new Vector3(0, -30f, 0);
         private Coroutine _separating = null;
+        private float _separateSpeed;
 
         public Transform BackCouplingPosition => _backCouplingPosition;
 
@@ -32,23 +33,21 @@ namespace RoadTrane
 
         public int IdWagon { get; private set; }
 
-        public Transform GetPointTower(int key)
+        private void OnDisable()
         {
-            return _pointsTower[key];
-        }
-
-        public void SetID(int key)
-        {
-            IdWagon = key;
+            _separating = null;
+            _groundMover.SpeedChanged -= OnSpeedShange;
         }
 
         public override void OnEnabled()
         {
         }
 
-        private void OnDisable()
+        public void Init(Environment.GroundMover groundMover)
         {
-            _separating = null;
+            _groundMover = groundMover;
+            _separateSpeed = _groundMover.CurrentSpeed;
+            _groundMover.SpeedChanged += OnSpeedShange;
         }
 
         public void Separate()
@@ -61,11 +60,39 @@ namespace RoadTrane
             }
         }
 
+        public Transform GetPointTower(int key)
+        {
+            return _pointsTower[key];
+        }
+
+        public void SetID(int key)
+        {
+            IdWagon = key;
+        }
+
+        private void OnSpeedShange(float value)
+        {
+            _separateSpeed = value;
+
+            if (IsSepareted == false)
+                return;
+
+            _separating = null;
+            _separating = StartCoroutine(Separating());
+        }
+
+
         private IEnumerator Separating()
         {
+            if (transform.position.y <= SeparateFinalPosition.y)
+            {
+                _separating = null;
+                gameObject.SetActive(false);
+            }
+
             while (transform.position.y >= SeparateFinalPosition.y)
             {
-                transform.Translate(0, SeparateSpeed, 0);
+                transform.Translate(0, _separateSpeed, 0);
                 yield return null;
             }
 
