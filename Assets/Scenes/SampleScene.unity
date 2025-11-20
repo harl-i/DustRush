@@ -765,6 +765,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mashineGunPrefab_1: {fileID: 5804457351511402349, guid: 2eb990b3ec566d94dafad9b667cc3c8a, type: 3}
   _mashineGunPrefab_2: {fileID: 5804457351511402349, guid: 1504812595aafa74ca23bbfc3bf07763, type: 3}
+  _mashineGunPrefab_3: {fileID: 5804457351511402349, guid: c70cbb1540f68eb4ca96d567d86bfe39, type: 3}
+  _shotgunPrefab_1: {fileID: 5804457351511402349, guid: cbe4b2e2b7d2f1d4cbf62498176843d4, type: 3}
+  _shotgunPrefab_2: {fileID: 5804457351511402349, guid: 6add5914814914f4e8ade4ad9c4c90b2, type: 3}
+  _shotgunPrefab_3: {fileID: 5804457351511402349, guid: 834dc5781f599744ea21ad54b1104a77, type: 3}
+  _harpoonPrefab_1: {fileID: 5804457351511402349, guid: 6c5d0ea8f1c3f7340b333bf2bccb36a7, type: 3}
+  _harpoonPrefab_2: {fileID: 5804457351511402349, guid: c3b7fe2e2ae639b4da0f422a60d06a2f, type: 3}
+  _harpoonPrefab_3: {fileID: 5804457351511402349, guid: d07ed1a1eced1324694e462722048fe1, type: 3}
+  _mortarPrefab_1: {fileID: 5804457351511402349, guid: e06e83bf0219d704db33bd5f0c075b8e, type: 3}
+  _mortarPrefab_2: {fileID: 5804457351511402349, guid: 843791298da98ba499ae42db910a7be9, type: 3}
+  _mortarPrefab_3: {fileID: 5804457351511402349, guid: 6a6fed11b41fb084083eb8c3d2246940, type: 3}
+  _rocketLauncherPrefab_1: {fileID: 5804457351511402349, guid: d30ffcc6120ac6b45b33b162d528f0bc, type: 3}
+  _rocketLauncherPrefab_2: {fileID: 5804457351511402349, guid: b8a23d5f7f05b784a8a5d11a55a011d8, type: 3}
+  _rocketLauncherPrefab_3: {fileID: 5804457351511402349, guid: 7aa05e86f901465448d96c584aae5373, type: 3}
+  _flamethrowerPrefab_1: {fileID: 5804457351511402349, guid: 5564d8a0c7aeb54469822047e39b2b79, type: 3}
+  _flamethrowerPrefab_2: {fileID: 5804457351511402349, guid: 1eb8871442dee594a9f1fad7571faf84, type: 3}
+  _flamethrowerPrefab_3: {fileID: 5804457351511402349, guid: 32dcf6448ce87c24f8b42aa9af34f439, type: 3}
+  _gaussGunPrefab_1: {fileID: 5804457351511402349, guid: 2df1644138c44d541b262342c0ff96bf, type: 3}
+  _gaussGunPrefab_2: {fileID: 5804457351511402349, guid: 23c15904649ded24ebc5060c8ad525f4, type: 3}
+  _gaussGunPrefab_3: {fileID: 5804457351511402349, guid: b92302470650802418b27ea3af5ca82b, type: 3}
+  _EMPCannonPrefab_1: {fileID: 5804457351511402349, guid: ade4e8d9f77f6f74ca12060aa994e0a8, type: 3}
+  _EMPCannonPrefab_2: {fileID: 5804457351511402349, guid: b6b3c1296304e7b4ba7fc2809585371d, type: 3}
+  _EMPCannonPrefab_3: {fileID: 5804457351511402349, guid: 13ebf47bd9d38104a87a05f299977410, type: 3}
+  _fridgePrefab: {fileID: 5804457351511402349, guid: 2da995f206074cb41a46e277bc28fd49, type: 3}
+  _machineGunDepotPrefab: {fileID: 5804457351511402349, guid: eb9b570177934a845af0fb6ba5fbe743, type: 3}
 --- !u!114 &603485456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,7 +847,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wagonEmpty_1: {fileID: 8482766830722654487, guid: b6a62739e4e626349bc971f6fe35ef50, type: 3}
-  _wagonEmpty_2: {fileID: 8482766830722654487, guid: ddd25ee8037bfb24ba87e530525971c1, type: 3}
+  _wagonEmpty_2: {fileID: 8482766830722654487, guid: ffbebea9d1950b345a8d631ec411b7b7, type: 3}
+  _wagonEmpty_3: {fileID: 8482766830722654487, guid: ddd25ee8037bfb24ba87e530525971c1, type: 3}
 --- !u!114 &603485460
 MonoBehaviour:
   m_ObjectHideFlags: 0
