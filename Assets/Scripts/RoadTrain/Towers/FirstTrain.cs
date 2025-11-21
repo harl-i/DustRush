@@ -12,6 +12,7 @@ public class FirstTrain : MonoBehaviour
         //  if (YG2.isFirstGameSession)
         //   {
         _firstWeapon.Add(0111);
+        _firstWeapon.Add(0051);
         _firstWeapon.Add(0222);
         _firstWeapon.Add(0332);
         _firstWeapon.Add(0441);
