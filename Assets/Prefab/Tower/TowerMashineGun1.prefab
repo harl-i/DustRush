@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 2956302157445524330}
   - component: {fileID: 4099527168574592965}
   m_Layer: 0
-  m_Name: ButtonTextureYG
+  m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,8 +136,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: feff93c1978bc224c93e4d892462632f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 18300d16a1ec6054abd9b09ba8dab1bf, type: 3}
+  m_Color: {r: 0.6999999, g: 1, b: 0.77035934, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

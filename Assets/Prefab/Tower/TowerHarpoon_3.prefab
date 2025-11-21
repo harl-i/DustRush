@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5646450722544494893}
   - component: {fileID: 5852691287387310362}
   m_Layer: 0
-  m_Name: TowerMashineGun2
+  m_Name: TowerHarpoon_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0b0c345f7965b47964c980c1a1bb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: TowerMashineGun1
+  _name: TowerHarpoon3
   _damge: 1
   _range: 1
   _maxHealth: 1
@@ -136,8 +136,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 18300d16a1ec6054abd9b09ba8dab1bf, type: 3}
-  m_Color: {r: 0.57254905, g: 0.6509804, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ba1047ab0f32ce3419f4cf9437574aaa, type: 3}
+  m_Color: {r: 1, g: 0.7607843, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -1,5 +1,4 @@
 using UnityEngine;
-using YG;
 
 namespace CameraMover
 {
@@ -9,14 +8,13 @@ namespace CameraMover
         private const int MinPrtographicScale = 4;
         private const int ValueChangeZoomOnWheelMouse = 1;
 
-        private const float DividerOnMobile = 1.5f;
-        private const float ZCamera = -10f;
+        private const int MaxXValue = 5;
+        private const int MinXValue = -5;
 
-        private const float MaxYValue = 6f;
-        private const float MinYValue = -20f;
+        private const int MaxYValue = 6;
+        private const int MinYValue = -20;
 
-        private const float MaxXValue = 5f;
-        private const float MinXValue = -5;
+        private const int ZCamera = -10;
 
         [SerializeField] private Camera _camera;
 
