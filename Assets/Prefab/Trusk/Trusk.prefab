@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSprite: {fileID: 21300000, guid: 2f9cda057fcdcf846be07b5381de08ab, type: 3}
-  _attackerSprite: {fileID: 21300000, guid: 2f9cda057fcdcf846be07b5381de08ab, type: 3}
-  _stealtherSprite: {fileID: 21300000, guid: 2f9cda057fcdcf846be07b5381de08ab, type: 3}
+  _attackerSprite: {fileID: 21300000, guid: dccf0ee4ce0b03a4b92070dcbc6f22ef, type: 3}
+  _stealtherSprite: {fileID: 21300000, guid: a5ad63f11ec0c6f4dae9e97b033af481, type: 3}
 --- !u!212 &5861378246557519516
 SpriteRenderer:
   m_ObjectHideFlags: 0
