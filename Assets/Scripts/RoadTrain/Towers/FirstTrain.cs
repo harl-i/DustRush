@@ -12,6 +12,7 @@ public class FirstTrain : MonoBehaviour
         //  if (YG2.isFirstGameSession)
         //   {
         _firstWeapon.Add(0111);
+        _firstWeapon.Add(0051);
         _firstWeapon.Add(0222);
         _firstWeapon.Add(0332);
         _firstWeapon.Add(0441);
@@ -29,6 +30,11 @@ public class FirstTrain : MonoBehaviour
         _firstWagon.Add(11);
         _firstWagon.Add(10);
         _firstWagon.Add(10);
+
+        _firstWagon.Add(25);
+        _firstWagon.Add(31);
+        _firstWagon.Add(35);
+        _firstWagon.Add(41);
 
         YG2.saves.SavedWagons = _firstWagon;
         YG2.saves.SavedTowers = _firstWeapon;
