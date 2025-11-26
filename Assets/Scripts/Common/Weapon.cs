@@ -23,7 +23,6 @@ namespace Common
             _enemy = enemy;
         }
 
-
         public void Shoot()
         {
             Bullet bulet = _buletPool.GetItem().GetComponent<Bullet>();
@@ -35,7 +34,7 @@ namespace Common
             bulet.Init(_shootPoint.position, _damage, this, _isPlayerBullet);
         }
 
-        public void Retern(Bullet bullet)
+        public void ReturnToPool(Bullet bullet)
         {
             _buletPool.ReturnItem(bullet);
         }

@@ -5,7 +5,7 @@ namespace Common
 {
     public class Health : MonoBehaviour
     {
-        private int _maxHealth;
+        [SerializeField] private int _maxHealth;
 
         public event Action<int> HealthChanged;
 
@@ -16,6 +16,7 @@ namespace Common
         private void OnEnable()
         {
             IsDead = false;
+            Value = _maxHealth;
         }
 
         public void Healing()
@@ -47,6 +48,8 @@ namespace Common
             {
                 Value = 0;
                 IsDead = true;
+
+                gameObject.SetActive(false);
             }
 
             HealthChanged?.Invoke(Value);

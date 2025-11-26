@@ -8,11 +8,11 @@ namespace Common
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _lifeTime = 1;
-
+        
+        private int _damage; //дамаг получается регулирутся турелью
         private Weapon _bulletPool;
-        private int _damage;
         private bool _isPlayerBullet;
-        private Coroutine _shooting = null;
+        //private Coroutine _shooting = null;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -39,38 +39,45 @@ namespace Common
             _damage = damage;
             transform.position = pointShoot;
             _isPlayerBullet = isPlayerBullet;
-            Shoot();
+            //Shoot();
         }
 
-        public void Deativate()
+        public void Disable()
         {
             gameObject.SetActive(false);
-            _bulletPool.Retern(this);
+            _bulletPool.ReturnToPool(this);
         }
 
-        private void Shoot()
-        {
-            _shooting = StartCoroutine(Shooting());
-        }
+        // Очень странно что пуля имеет компоненты Shoot и Shooting.
+        // Получается что пуля почему то отвечает за выстрел и саму стрельбу в целом.
+        // Для проведеняи выстрела есть класс Weapon который очень логично 
+        // берет пулю и производит ей выстрел.
+        // А за саму стрельбу, когда и сколько стрелять уже отвечает 
+        // состояние стрельбы.
 
-        private IEnumerator Shooting()
-        {
-            float time = 0;
+        //private void Shoot()
+        //{
+        //    _shooting = StartCoroutine(Shooting());
+        //}
 
-            while (time < _lifeTime)
-            {
-                float step = _speed * Time.deltaTime;
+        //private IEnumerator Shooting()
+        //{
+        //    float time = 0;
 
-                transform.Translate(transform.right * step, Space.World);
-                time += Time.deltaTime;
+        //    while (time < _lifeTime)
+        //    {
+        //        float step = _speed * Time.deltaTime;
 
-                yield return null;
-            }
+        //        transform.Translate(transform.right * step, Space.World);
+        //        time += Time.deltaTime;
 
-            _shooting = null;
+        //        yield return null;
+        //    }
 
-            if (gameObject.activeSelf)
-                Deativate();
-        }
+        //    _shooting = null;
+
+        //    if (gameObject.activeSelf)
+        //        Disable();
+        //}
     }
 }
