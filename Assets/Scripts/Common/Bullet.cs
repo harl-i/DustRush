@@ -12,7 +12,7 @@ namespace Common
         private int _damage; //дамаг получается регулирутся турелью
         private Weapon _bulletPool;
         private bool _isPlayerBullet;
-        //private Coroutine _shooting = null;
+        private Coroutine _shooting = null;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -21,6 +21,9 @@ namespace Common
                 if (collision.TryGetComponent(out Enemy enemy))
                 {
                     enemy.GetComponent<Health>().Damaged(_damage);
+                    
+                    // добавил что бы пуля отключалась и возвращалась в пул
+                    Disable();
                 }
             }
             else
@@ -28,6 +31,7 @@ namespace Common
                 if (collision.TryGetComponent(out Tower tower))
                 {
                     tower.GetComponent<Health>().Damaged(_damage);
+                    Disable();
                 }
             }
         }
@@ -39,7 +43,7 @@ namespace Common
             _damage = damage;
             transform.position = pointShoot;
             _isPlayerBullet = isPlayerBullet;
-            //Shoot();
+            Shoot();
         }
 
         public void Disable()
@@ -55,29 +59,32 @@ namespace Common
         // А за саму стрельбу, когда и сколько стрелять уже отвечает 
         // состояние стрельбы.
 
-        //private void Shoot()
-        //{
-        //    _shooting = StartCoroutine(Shooting());
-        //}
+        // UPD: Разобрался, это не стрельба, а полет пули
+        // названия методов Shoot и Shooting сбили с толку
 
-        //private IEnumerator Shooting()
-        //{
-        //    float time = 0;
+        private void Shoot()
+        {
+            _shooting = StartCoroutine(Shooting());
+        }
 
-        //    while (time < _lifeTime)
-        //    {
-        //        float step = _speed * Time.deltaTime;
+        private IEnumerator Shooting()
+        {
+            float time = 0;
 
-        //        transform.Translate(transform.right * step, Space.World);
-        //        time += Time.deltaTime;
+            while (time < _lifeTime)
+            {
+                float step = _speed * Time.deltaTime;
 
-        //        yield return null;
-        //    }
+                transform.Translate(transform.right * step, Space.World);
+                time += Time.deltaTime;
 
-        //    _shooting = null;
+                yield return null;
+            }
 
-        //    if (gameObject.activeSelf)
-        //        Disable();
-        //}
+            _shooting = null;
+
+            if (gameObject.activeSelf)
+                Disable();
+        }
     }
 }

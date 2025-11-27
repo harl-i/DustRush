@@ -16,7 +16,10 @@ namespace Common
         private void OnEnable()
         {
             IsDead = false;
-            Value = _maxHealth;
+
+            // добавил тут инициализацию Value
+            // а то свойство было объявлено, а значение нигде не присвоено 
+            Value = _maxHealth; 
         }
 
         public void Healing()
