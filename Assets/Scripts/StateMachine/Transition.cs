@@ -15,6 +15,7 @@ namespace StateMachine
         public void SetTarget(Transform target)
         {
             Target = target;
+            TargetState.SetEnemyTransform(target);
         }
     }
 }

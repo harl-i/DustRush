@@ -18,6 +18,11 @@ namespace StateMachine
             _weapon = GetComponent<Weapon>();
         }
 
+        private void OnEnable()
+        {
+            _weapon.SetEnemyTransform(Enemy);
+        }
+
         private void Update()
         {
             Shoot();

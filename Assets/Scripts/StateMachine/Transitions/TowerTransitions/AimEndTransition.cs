@@ -14,7 +14,7 @@ namespace StateMachine
         private void Update()
         {
             _directionToTarget = (_turretBarrelTransform.position - Target.position).normalized;
-            float angle = Vector2.SignedAngle(-_turretBarrelTransform.up, _directionToTarget);
+            float angle = Mathf.Abs(Vector2.SignedAngle(-_turretBarrelTransform.up, _directionToTarget));
             Debug.Log(angle);
 
             if (angle < _minAngelToShoot)
