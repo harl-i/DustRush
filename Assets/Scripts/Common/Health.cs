@@ -52,10 +52,9 @@ namespace Common
                 Value = 0;
                 IsDead = true;
 
+                HealthChanged?.Invoke(Value);
                 gameObject.SetActive(false);
             }
-
-            HealthChanged?.Invoke(Value);
         }
     }
 }
