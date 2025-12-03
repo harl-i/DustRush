@@ -1,5 +1,4 @@
-﻿using RoadTrane;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace Common
@@ -28,11 +27,13 @@ namespace Common
             }
             else
             {
-                if (collision.TryGetComponent(out Tower tower))
-                {
-                    tower.GetComponent<Health>().Damaged(_damage);
-                    Disable();
-                }
+                // т.к. требуется связь с Tower - пока закоментил. Можно сразу искать компонент "здоровье" и его дамажить.
+                //
+                //if (collision.TryGetComponent(out Tower tower))
+                //{
+                //    tower.GetComponent<Health>().Damaged(_damage);
+                //    Disable();
+                //}
             }
         }
 
