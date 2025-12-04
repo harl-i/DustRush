@@ -658,6 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _effector: {fileID: 707814540}
+  _text: {fileID: 914193514}
 --- !u!1 &576857616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,6 +2369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _effector: {fileID: 704313242}
+  _text: {fileID: 1361031474}
 --- !u!1 &2032267056
 GameObject:
   m_ObjectHideFlags: 0

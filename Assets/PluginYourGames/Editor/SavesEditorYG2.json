@@ -1,0 +1,38 @@
+{
+    "intExample": 5,
+    "strExample": "Hello!",
+    "boolExample": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "idSave": 250,
+    "Money": 680,
+    "Metal": 450,
+    "TruskType": "Speeder",
+    "SavedWagons": [
+        37,
+        37,
+        37,
+        37,
+        37
+    ],
+    "SavedTowers": [
+        1015,
+        115
+    ],
+    "SavedCell": [
+        28,
+        15,
+        16,
+        16,
+        16,
+        15,
+        15,
+        15,
+        20,
+        16
+    ],
+    "OpenBlueprint": []
+}

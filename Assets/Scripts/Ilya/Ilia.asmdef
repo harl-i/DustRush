@@ -1,0 +1,17 @@
+{
+    "name": "Ilia",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8a1fb7ed8020f584aa866d04edd30cb2",
+        "GUID:6f99c471de1b9d94bb9c5940bdbbe1f6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Grih",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:8a1fb7ed8020f584aa866d04edd30cb2",
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:6f99c471de1b9d94bb9c5940bdbbe1f6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
