@@ -1,0 +1,19 @@
+{
+    "name": "Sity",
+    "rootNamespace": "",
+    "references": [
+        "GUID:55c30d0ca3122e9438b2e1c573419380",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:18b45e4f5e7d22d4fb42dede8fd59471",
+        "GUID:8a1fb7ed8020f584aa866d04edd30cb2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

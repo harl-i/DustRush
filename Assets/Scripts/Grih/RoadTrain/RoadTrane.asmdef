@@ -1,0 +1,19 @@
+{
+    "name": "RoadTrane",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8a1fb7ed8020f584aa866d04edd30cb2",
+        "GUID:6f99c471de1b9d94bb9c5940bdbbe1f6",
+        "GUID:18b45e4f5e7d22d4fb42dede8fd59471",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
