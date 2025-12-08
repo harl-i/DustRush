@@ -7,10 +7,12 @@
         false,
         false
     ],
-    "idSave": 508,
+
+    "idSave": 302,
     "CurrentScene": "Sity",
-    "Money": 286,
-    "Metal": 40,
+    "Money": 490,
+    "Metal": 185,
+  
     "TruskType": "Speeder",
     "SavedWagons": [
         39,
