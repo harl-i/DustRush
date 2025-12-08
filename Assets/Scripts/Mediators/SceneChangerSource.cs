@@ -3,12 +3,11 @@ using Modules.Grih.SceneChanger.Public.Interfaces;
 using Modules.Grih.SceneChanger;
 using YG;
 
-namespace General
+namespace Game
 {
     internal class SceneChangerSource : ISceneChanger
     {
         private Modules.Grih.SceneChanger.Public.Interfaces.ISceneChanger _source;
-        public event Action<string> NewScene;
 
         public void Init(ISceneChanger source, SceneChangerScript sceneChanger, string loadScene)
         {

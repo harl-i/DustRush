@@ -1,8 +1,9 @@
 ﻿using Modules.Grih.RoadTrane;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Sity
+namespace Modules.Grih.Sity
 {
     public class GarageInventoryPlayer : MonoBehaviour
     {
@@ -17,30 +18,34 @@ namespace Sity
         private List<ShopCell> _haveCell = new List<ShopCell>();
 
         public List<ShopCell> HaveCell => _haveCell;
-
         public int PlaceInventory => _placeInventory.Count;
 
-        private void Start()
-        {
-       //     _savedData = YG2.saves.SavedCell;
-            _fabricTrane.ContentRetern += ReterndTower;
-            _idContent = _inventoryHashTable.ContentTable;
-
-            SetSavedItem();
-        }
+        public event Action<List<int>> Saved;
 
         private void OnDestroy()
         {
-       //     YG2.saves.SavedCell = _savedData;
+            _savedData = new List<int>();
             _fabricTrane.ContentRetern -= ReterndTower;
 
             foreach (ShopCell item in _haveCell)
             {
                 if (item.gameObject.activeSelf)
                 {
+                    _savedData.Add(item.IdContent);
                     item.Saled -= OnSaled;
                 }
             }
+
+            Saved?.Invoke(_savedData);
+        }
+
+        public void Init(List<int> savedData)
+        {
+            _savedData = savedData;
+            _fabricTrane.ContentRetern += ReterndTower;
+            _idContent = _inventoryHashTable.ContentTable;
+
+            SetSavedItem();
         }
 
         private void OnSaled(int arg1, int arg2, int arg3)
@@ -134,22 +139,22 @@ namespace Sity
             foreach (ShopCell cell in _haveCell)
                 saved.Add(cell.IdContent);
 
-         //   YG2.saves.SavedCell = saved;
+            //   YG2.saves.SavedCell = saved;
         }
 
         public void ShowEffect(string value)
         {
             if (value == "OnClickedEnd")
             {
-                foreach(ShopCell cell in _haveCell)
+                foreach (ShopCell cell in _haveCell)
                 {
-                    if(cell.IdContent > 36)
+                    if (cell.IdContent > 36)
                     {
                         cell.ActivateShowing();
                     }
                 }
             }
-            else if(value == "OnClickTrusk")
+            else if (value == "OnClickTrusk")
             {
                 foreach (ShopCell cell in _haveCell)
                 {

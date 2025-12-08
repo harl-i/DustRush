@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Sity
+namespace Modules.Grih.Sity
 {
     public class InventoryHashTable : MonoBehaviour
     {

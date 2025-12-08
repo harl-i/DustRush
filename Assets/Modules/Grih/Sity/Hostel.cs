@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Sity
+namespace Modules.Grih.Sity
 {
     public class Hostel : MonoBehaviour
     {

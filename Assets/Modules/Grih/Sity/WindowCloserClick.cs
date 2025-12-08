@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Sity
+namespace Modules.Grih.Sity
 {
     public class WindowCloserClick : MonoBehaviour
     {

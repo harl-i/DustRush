@@ -1,30 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-//using YG;
 
-namespace Sity
+namespace Modules.Grih.Sity
 {
     public class BlueprintObserver : MonoBehaviour
     {
+        private const int DeafultOpenCount = 9;
+
         private List<int> _openBluePrints = new List<int>();
 
         public List<int> OpenBluePrints => _openBluePrints;
-        private Dictionary<int, bool> _isOpenBlueprint = new Dictionary<int, bool>();
 
-        private void OnEnable()
+        public event Action<List<int>> Saved;
+
+        public void Init(List<int> openBluePrints)
         {
-            Load();
+            _openBluePrints = openBluePrints;
 
-            if (OpenBluePrints.Count == 0)
+            if (_openBluePrints.Count < DeafultOpenCount)
             {
                 _openBluePrints.Add(1);
+                _openBluePrints.Add(2);
                 _openBluePrints.Add(11);
                 _openBluePrints.Add(12);
                 _openBluePrints.Add(14);
+
                 _openBluePrints.Add(17);
                 _openBluePrints.Add(20);
-
                 _openBluePrints.Add(37);
                 _openBluePrints.Add(38);
                 _openBluePrints.Add(43);
@@ -38,21 +41,18 @@ namespace Sity
 
         public void Save()
         {
-      //      YG2.saves.OpenBlueprint = _openBluePrints;
+            Saved?.Invoke(_openBluePrints);
         }
 
         public bool IsHaveOnBlueprints(int id)
         {
+            Debug.Log(id + "///" + _openBluePrints.Count);
+
             foreach (int i in _openBluePrints)
                 if (i == id)
                     return true;
 
             return false;
-        }
-
-        private void Load()
-        {
-     //       _openBluePrints = YG2.saves.OpenBlueprint;
         }
     }
 }

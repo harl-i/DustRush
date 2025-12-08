@@ -38,7 +38,7 @@ namespace Modules.Grih.RoadTrane
         public Truck CreatedTruck { get; private set; }
 
         public event Action<int> ContentRetern;
-        public event Action<List <int>, List <int>> Saved;
+        public event Action<List <int>, List <int>, string> Saved;
 
         private void OnDisable()
         {
@@ -79,7 +79,7 @@ namespace Modules.Grih.RoadTrane
                 savedTower.Add(_loadedTowers[i]);
             }
 
-            Saved?.Invoke(savedWagons, savedTower);
+            Saved?.Invoke(savedWagons, savedTower, CreatedTruck.TypeTrusk);
         }
 
         public void AddWagon(int id)
@@ -225,9 +225,9 @@ namespace Modules.Grih.RoadTrane
             CreatedTruck = Instantiate(_truck,
                 transform.position = _createdWagons[0].GetComponent<Wagon>().FrontCouplingPosition.position,
                 Quaternion.identity);
-            CreatedTruck.Init(_savedTrusk);
 
-            _truckInstaller.SetType(CreatedTruck.TypeTrusk);
+            CreatedTruck.Init(_savedTrusk);
+            _truckInstaller.SetType(_savedTrusk);
         }
 
         private void CreateSavedWagons()

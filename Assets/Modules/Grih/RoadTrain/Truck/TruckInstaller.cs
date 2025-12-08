@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 namespace Modules.Grih.RoadTrane
 {
+    [RequireComponent (typeof(Truck))]
     public class TruckInstaller : MonoBehaviour
     {
         public const string SpeedTrusk = "Speeder";
@@ -15,11 +16,19 @@ namespace Modules.Grih.RoadTrane
         [SerializeField] private Environment.GroundMover _mover;
         [SerializeField] private Button _startBoost;
 
+        private Truck _truck;
         private string _type;
 
         private void OnEnable()
         {
+            _truck = GetComponent<Truck>();
+            _type = _truck.TypeTrusk;
             _startBoost.onClick.AddListener(ApplyBoost);
+        }
+
+        private void OnDisable()
+        {
+            _startBoost.onClick.RemoveListener(ApplyBoost);
         }
 
         public void SetType(string value)

@@ -3,14 +3,11 @@ using Modules.Grih.InventoryGroup.Public.Interfaces;
 using System;
 using YG;
 
-namespace General
+namespace Game
 {
     internal class CounerItemsSource : ICounterSource
     {
         private ICounterSource _source;
-
-        public event Action<int> NewScoreMoney;
-        public event Action<int> NewScoreMetal;
 
         public void Init(
             ICounterSource source,
@@ -26,11 +23,13 @@ namespace General
         public void OnMetalSave(int value)
         {
             YG2.saves.Metal = value;
+            YG2.SaveProgress();
         }
 
         public void OnMoneySave(int value)
         {
             YG2.saves.Money = value;
+            YG2.SaveProgress();
         }
     }
 }

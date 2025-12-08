@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Sity
+namespace Modules.Grih.Sity
 {
     public class Bank : MonoBehaviour
     {

@@ -21,29 +21,32 @@ namespace Modules.Grih.SceneChanger
             _loadScene = loadScene; 
             
             if (SceneManager.GetActiveScene().name != _loadScene)
+            {
+                Debug.Log(_loadScene);
                 SceneManager.LoadScene(_loadScene);
-
-            
+            }
         }
 
-        private void OnEnable()
+        private void Start()
         {
             _changeButton.onClick.AddListener(OnSceneChange);
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _changeButton.onClick.RemoveListener(OnSceneChange);
         }
 
         private void OnSceneChange()
         {
-            if (SceneManager.GetActiveScene().name == Sity)
+            string currentScene = SceneManager.GetActiveScene().name;
+
+            if (currentScene == Sity)
             {
                 NewScene?.Invoke(SampleScene);
                 SceneManager.LoadScene(SampleScene);
             }
-            else if (SceneManager.GetActiveScene().name == SampleScene)
+            else if (currentScene == SampleScene)
             {
                 NewScene?.Invoke(Sity);
                 SceneManager.LoadScene(Sity);

@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Sity
+namespace Modules.Grih.Sity
 {
     public class SityMeny : MonoBehaviour
     {

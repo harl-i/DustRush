@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Modules.Grih.RoadTrane
@@ -10,8 +11,11 @@ namespace Modules.Grih.RoadTrane
         public const string Attacker = "Attacker";
         public const string Stealther = "Stealther";
 
-        private SpriteRenderer _spriteRenderer;
+        private const int AttackerId = 2;
+        private const int SpeedId = 1;
+        private const int StealtherId = 3;
 
+        [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private Sprite _speedSprite;
         [SerializeField] private Sprite _attackerSprite;
         [SerializeField] private Sprite _stealtherSprite;
@@ -20,17 +24,10 @@ namespace Modules.Grih.RoadTrane
 
         public string TypeTrusk { get; private set; }
 
-        public override void OnEnabled()
-        {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-
-
-            SetLoadType();
-        }
-
         public void Init(string type)
         {
             _savedType = type;
+            SetLoadType();
         }
 
         private void SetLoadType()
@@ -56,18 +53,28 @@ namespace Modules.Grih.RoadTrane
 
         public void ChangeType(int id)
         {
-            string type;
-
-            if (id == 2)
-                type = Attacker;
-            else if (id == 3)
-                type = Stealther;
+            if (id == AttackerId)
+                _savedType = Attacker;
+            else if (id == SpeedId)
+                _savedType = Stealther;
             else
-                type = SpeedTrusk;
+                _savedType = SpeedTrusk;
 
-       //     YG2.saves.TruskType = type;
             SetLoadType();
-      //      YG2.SaveProgress();
+        }
+
+        public int TypeTruskToInt()
+        {
+            if (_savedType == Attacker)
+               return AttackerId;
+            else if (_savedType == Stealther)
+               return StealtherId;
+            else
+               return StealtherId;
+        }
+
+        public override void OnEnabled()
+        {
         }
     }
 }

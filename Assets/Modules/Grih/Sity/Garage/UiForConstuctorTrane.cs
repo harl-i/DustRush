@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Sity
+namespace Modules.Grih.Sity
 {
     [RequireComponent(typeof(Collider2D))]
     public class UiForConstuctorTrane : MonoBehaviour
