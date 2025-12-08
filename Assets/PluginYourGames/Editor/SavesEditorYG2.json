@@ -7,14 +7,14 @@
         false,
         false
     ],
-    "idSave": 457,
-    "CurrentScene": "SampleScene",
-    "Money": 1,
-    "Metal": 30,
-    "TruskType": "Attacker",
+    "idSave": 508,
+    "CurrentScene": "Sity",
+    "Money": 286,
+    "Metal": 40,
+    "TruskType": "Speeder",
     "SavedWagons": [
         39,
-        37,
+        43,
         38,
         39
     ],
@@ -29,14 +29,16 @@
         718,
         3223,
         3124,
-        1019,
-        1120,
-        1216
+        2211,
+        2120,
+        3720,
+        2317
     ],
     "SavedCell": [
-        1,
         21,
-        22
+        22,
+        19,
+        16
     ],
     "OpenBlueprint": [
         1,

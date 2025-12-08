@@ -29,8 +29,6 @@ namespace Modules.Grih.Sity
         private WaitForSeconds _waitChoise;
         private float _waitValue = 0.5f;
 
-        public event Action<int> TruskChanged;
-
         private void OnEnable()
         {
             _waitChoise = new WaitForSeconds(_waitValue);
@@ -88,8 +86,9 @@ namespace Modules.Grih.Sity
                 }
             }
 
-            if (_clickedEnd.gameObject.activeSelf == false && _clickedEnd != null)
-                _clickedEnd.gameObject.SetActive(active);
+            if (_clickedEnd != null)
+                if (_clickedEnd.gameObject.activeSelf == false)
+                    _clickedEnd.gameObject.SetActive(active);
 
             if (active == false)
             {

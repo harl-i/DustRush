@@ -1,5 +1,3 @@
-using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Modules.Grih.RoadTrane
@@ -11,8 +9,8 @@ namespace Modules.Grih.RoadTrane
         public const string Attacker = "Attacker";
         public const string Stealther = "Stealther";
 
-        private const int AttackerId = 2;
         private const int SpeedId = 1;
+        private const int AttackerId = 2;
         private const int StealtherId = 3;
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
@@ -56,9 +54,9 @@ namespace Modules.Grih.RoadTrane
             if (id == AttackerId)
                 _savedType = Attacker;
             else if (id == SpeedId)
-                _savedType = Stealther;
-            else
                 _savedType = SpeedTrusk;
+            else
+                _savedType = Stealther;
 
             SetLoadType();
         }
@@ -70,7 +68,7 @@ namespace Modules.Grih.RoadTrane
             else if (_savedType == Stealther)
                return StealtherId;
             else
-               return StealtherId;
+               return SpeedId;
         }
 
         public override void OnEnabled()
