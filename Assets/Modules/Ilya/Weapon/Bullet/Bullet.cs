@@ -1,15 +1,16 @@
 ﻿
 using System.Collections;
 using UnityEngine;
+using Common;
 
-namespace Common
+namespace WeaponGroup
 {
     public class Bullet : MonoBehaviour
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _lifeTime = 1;
         
-        private int _damage; //дамаг получается регулирутся турелью
+        private int _damage; //дамаг получается регулирутся турелью, ком2/да, удаляй шо не надо :)
         private Weapon _bulletPool;
         private bool _isPlayerBullet;
         private Coroutine _shooting = null;
@@ -28,13 +29,11 @@ namespace Common
             }
             else
             {
-                // т.к. требуется связь с Tower - пока закоментил. Можно сразу искать компонент "здоровье" и его дамажить.
-                //
-                //if (collision.TryGetComponent(out Tower tower))
-                //{
-                //    tower.GetComponent<Health>().Damaged(_damage);
-                //    Disable();
-                //}
+                if (collision.TryGetComponent(out Modules.Grih.RoadTrane.Tower tower))
+                {
+                    tower.GetComponent<Health>().Damaged(_damage);
+                    Disable();
+                }
             }
         }
 
@@ -63,6 +62,9 @@ namespace Common
 
         // UPD: Разобрался, это не стрельба, а полет пули
         // названия методов Shoot и Shooting сбили с толку
+
+        // UPD: Да, соглы, меняй названия как хош, тут умсетно Life думаю
+        //типо жизнь пули
 
         private void Shoot()
         {

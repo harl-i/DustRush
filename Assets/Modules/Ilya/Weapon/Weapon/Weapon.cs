@@ -1,7 +1,7 @@
 ﻿using Pool;
 using UnityEngine;
 
-namespace Common
+namespace WeaponGroup
 {
     public class Weapon : MonoBehaviour
     {
