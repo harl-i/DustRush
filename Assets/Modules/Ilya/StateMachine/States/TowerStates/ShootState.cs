@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using WeaponGroup;
 
-
-//Починить доступ к Weapon 
 namespace StateMachine
 {
     [RequireComponent(typeof(Weapon))]

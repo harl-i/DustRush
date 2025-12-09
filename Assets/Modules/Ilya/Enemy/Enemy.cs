@@ -1,6 +1,19 @@
+using System;
 using UnityEngine;
 
-[RequireComponent(typeof (Common.Health))]
-public class Enemy : MonoBehaviour
+namespace EnemyGroup
 {
+    [RequireComponent(typeof(Common.Health))]
+    public class Enemy : MonoBehaviour
+    {
+        public void SetPositionAndRotation(Vector3 position, Quaternion rotation)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnSpawned()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

@@ -2,7 +2,7 @@
     "name": "StateMachine",
     "rootNamespace": "",
     "references": [
-        "GUID:a863bbb4d86e2db4f95efec16e7f5f0a"
+        "Weapon"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
