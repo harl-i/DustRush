@@ -7,8 +7,8 @@
         false,
         false
     ],
-    "idSave": 333,
-    "CurrentScene": "SampleScene",
+    "idSave": 451,
+    "CurrentScene": "Sity",
     "Money": 470,
     "Metal": 155,
     "IsFirstTraneBuld": true,
@@ -56,11 +56,12 @@
         43
     ],
     "IsGoingToPath": false,
-    "SavedDeport": "",
-    "SavedPointToRoad": "FirstPathOnFirstSity",
+    "SavedDeport": "SecondPathOnFirstSity",
+    "SavedPointToRoad": "SecondSity",
     "OpenLocals": [
         "FirstSity",
         "FirstPathOnFirstSity",
-        "SecondPathOnFirstSity"
+        "SecondPathOnFirstSity",
+        "SecondSity"
     ]
 }

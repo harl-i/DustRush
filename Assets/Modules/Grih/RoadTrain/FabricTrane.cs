@@ -291,9 +291,6 @@ namespace Modules.Grih.RoadTrane
 
         private void Load()
         {
-            Debug.Log(_loadedTowers.Count);
-            Debug.Log(_loadedWagons.Count);
-
             foreach (int item in _loadedTowers)
             {
                 if (item < 100)
