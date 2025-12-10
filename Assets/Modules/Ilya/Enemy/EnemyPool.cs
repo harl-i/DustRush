@@ -6,29 +6,46 @@ using Pool;
 
 namespace EnemyGroup
 {
-    public class EnemyPool : MonoBehaviour
+    public class EnemyPool
     {
-        [SerializeField] private Enemy _enemyPrefab;
-        [SerializeField] private int _initialCount;
-
+        //private int _initialCount;
+        private Enemy _enemyPrefab;
         private Pool<Enemy> _enemyPool;
 
-        private void OnEnable()
+        private List<Enemy> _createdEnemies;
+
+        public EnemyPool(Enemy prefab)
         {
-            _enemyPool = new Pool<Enemy>(_enemyPrefab);
+            _enemyPrefab = prefab;
         }
 
-        private void Awake()
+        public List<Enemy> CreateEnemy(int count)
         {
-            for (int i = 0; i < _initialCount; i++)
-            {
-                _enemyPool.GetItem();
-            }
+            SetEnemy(_enemyPrefab);
+            FillEnemiesPool(count);
+            return _createdEnemies;
         }
 
         public void ReturnToPool(Enemy enemy)
         {
             _enemyPool.ReturnItem(enemy);
+        }
+
+        private void SetEnemy(Enemy enemyPrefab)
+        {
+            _enemyPool = new Pool<Enemy>(enemyPrefab);
+        }
+
+        private void FillEnemiesPool(int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                //_createdEnemies.Add(_enemyPool.GetItem() as Enemy);
+                Enemy enemy = _enemyPool.GetItem() as Enemy;
+                Debug.Log(enemy);
+                _createdEnemies.Add(enemy);
+                Debug.Log(_createdEnemies);
+            }
         }
     }
 }

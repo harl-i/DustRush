@@ -7,13 +7,11 @@
         false,
         false
     ],
-  
-    "idSave": 333,
+    "idSave": 356,
     "CurrentScene": "SampleScene",
     "Money": 470,
     "Metal": 155,
     "IsFirstTraneBuld": true,
-  
     "TruskType": "Speeder",
     "SavedWagons": [
         39,
