@@ -1,0 +1,16 @@
+{
+    "name": "GlobalMap",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b254edc1a0ca843449212c2d0d5a4ce7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

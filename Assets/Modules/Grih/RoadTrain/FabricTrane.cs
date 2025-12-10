@@ -93,6 +93,8 @@ namespace Modules.Grih.RoadTrane
             else
                 wagon.transform.position = Vector2.zero;
 
+            wagon.transform.SetParent(this.transform);
+
             _createdWagons.Add(wagon);
         }
 
@@ -102,6 +104,7 @@ namespace Modules.Grih.RoadTrane
 
             Wagon wagon = Instantiate(_hashTableWagon[idContent].GetComponent<Wagon>());
             wagon.SetID(idContent);
+            wagon.transform.SetParent(this.transform);
 
             if (_createdWagons[changedWagon].GetComponent<Wagon>().TypeWagon == Wagon.Type.Regular)
             {
@@ -240,6 +243,7 @@ namespace Modules.Grih.RoadTrane
                 wagon = Instantiate(_wagons[i], currentPosition, Quaternion.identity).GetComponent<Wagon>();
                 wagon.SetID(_wagons[i].IdWagon);
                 currentPosition = wagon.BackCouplingPosition.position;
+                wagon.transform.SetParent(this.transform);
 
                 _createdWagons.Add(wagon);
                 wagon.Init(_groundMover);

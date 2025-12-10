@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Modules.Grih.Sity
@@ -9,11 +10,13 @@ namespace Modules.Grih.Sity
         [SerializeField] private Button _hostelOpen;
         [SerializeField] private Button _bankOpen;
         [SerializeField] private Button _shopOpen;
+        [SerializeField] private Button _globalOpen;
 
         [SerializeField] private Garage _garage;
         [SerializeField] private Hostel _hostel;
         [SerializeField] private Bank _bank;
         [SerializeField] private Shop _shop;
+        [SerializeField] private GameObject _globalMap;
 
         private void OnEnable()
         {
@@ -21,6 +24,7 @@ namespace Modules.Grih.Sity
             _hostelOpen.onClick.AddListener(OpenHostel);
             _bankOpen.onClick.AddListener(OpenBank);
             _shopOpen.onClick.AddListener(OpenShop);
+            _globalOpen.onClick.AddListener(OpenGlobalMap);
         }
 
 
@@ -30,6 +34,15 @@ namespace Modules.Grih.Sity
             _hostelOpen.onClick.RemoveListener(OpenHostel);
             _bankOpen.onClick.RemoveListener(OpenBank);
             _shopOpen.onClick.RemoveListener(OpenShop);
+            _globalOpen.onClick.RemoveListener(OpenGlobalMap);
+        }
+
+        private void OpenGlobalMap()
+        {
+            _globalMap.gameObject.SetActive(!_globalMap.gameObject.activeSelf);
+            _bank.gameObject.SetActive(false);
+            _hostel.gameObject.SetActive(false);
+            _garage.gameObject.SetActive(false);
         }
 
         private void OpenShop()

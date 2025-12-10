@@ -9,6 +9,7 @@ namespace Game
         [SerializeField] private Modules.Grih.InventoryGroup.InventoryItem _metal;
         [SerializeField] private Modules.Grih.RoadTrane.FabricTrane _fabricTrane;
         [SerializeField] private Modules.Grih.SceneChanger.SceneChangerScript _sceneChangerScript;
+        [SerializeField] private Modules.Grih.GlobalMap.GlobalMap _globalMap;
 
         private void Start()
         {
@@ -20,6 +21,9 @@ namespace Game
 
             CounerItemsSource counerItemsSource = new CounerItemsSource();
             counerItemsSource.Init(counerItemsSource, _money, _metal, YG2.saves.Money, YG2.saves.Metal);
+
+            GlobalMapSource globalMapSource = new GlobalMapSource();
+            globalMapSource.Init(globalMapSource, _globalMap, YG2.saves.IsGoingToPath, YG2.saves.SavedDeport, YG2.saves.SavedPointToRoad, YG2.saves.OpenLocals);
         }
     }
 }
