@@ -25,10 +25,9 @@ namespace Modules.Grih.GlobalMap
             SavedPointToRoad = savedPointToRoad;
             _openLocals = openLocals;
 
-            if (_openLocals.Count== 0 )
+            if (_openLocals.Count == 0)
             {
-                _openLocals.Add("Lesson");
-                _openLocals.Add("FirstSity");
+                _openLocals.Add(SavedPointToRoad);
             }
 
             _view.Init();
@@ -42,6 +41,7 @@ namespace Modules.Grih.GlobalMap
         public void SetNewCource(string cellName)
         {
             SavedPointToRoad = cellName;
+            Saved?.Invoke(IsGoingToPath, SavedDeport, SavedPointToRoad, _openLocals);
         }
 
         public void OpenLocation(string cellName)

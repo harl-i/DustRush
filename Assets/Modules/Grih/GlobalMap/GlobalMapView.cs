@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Modules.Grih.SceneChanger;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 namespace Modules.Grih.GlobalMap
 {
@@ -38,6 +40,7 @@ namespace Modules.Grih.GlobalMap
         {
             _changeButton.onClick.AddListener(OnClickNewLocal);
             _changeButton.gameObject.SetActive(false);
+            _openLocalsNames = _global.OpenLocals;
 
             foreach (GlobalMapCell cell in _allCells)
             {
@@ -46,25 +49,35 @@ namespace Modules.Grih.GlobalMap
                 cell.ChangeActivatedEffect(false);
             }
 
-            _openLocalsNames = _global.OpenLocals;
-
             for (int i = 0; i < _allCells.Count; i++)
             {
                 for (int j = 0; j < _openLocalsNames.Count; j++)
                 {
                     if (_allCells[i].NamePoint == _openLocalsNames[j])
                     {
-                        if (_cellsDictionary.TryGetValue(_allCells[i].NamePoint, out GlobalMapCell cell))
-                        {
-                            cell.ChangeActivatedEffect(true);
-                            _openCell.Add(cell);
-                            cell.OnStartClick += CellClick;
-                        }
+                        _allCells[i].ChangeActivatedEffect(true);
+                        _allCells[i].OnStartClick += CellClick;
+                        _openCell.Add(_allCells[i]);
+                    }
+
+                    if (_allCells[i].NamePoint == _global.SavedDeport || _allCells[i].NamePoint == _global.SavedPointToRoad)
+                    {
+                        _allCells[i].ChangeActivatedEffect(false);
+                        _allCells[i].OnStartClick -= CellClick;
+                        _openCell.Remove(_allCells[i]);
                     }
                 }
             }
 
+
             _timer.Init();
+
+            if (SceneManager.GetActiveScene().name == "Sity")
+            {
+                _cellsDictionary[_global.SavedPointToRoad].SetYouOnHere();
+
+            }
+
         }
 
         public float GetCurrentMapCellTimet()
@@ -91,6 +104,9 @@ namespace Modules.Grih.GlobalMap
             if (nextLocation != null)
             {
                 _global.OpenLocation(nextLocation.NamePoint);
+                nextLocation.ChangeActivatedEffect(true);
+                nextLocation.OnStartClick += CellClick;
+                _openCell.Add(nextLocation);
             }
 
             if (isLocalIsSity)
@@ -100,11 +116,17 @@ namespace Modules.Grih.GlobalMap
             else
             {
                 _imageBack.gameObject.SetActive(true);
+                _cellsDictionary[_global.SavedPointToRoad].SetYouOnHere();
             }
         }
 
         private void CellClick(string cellName)
         {
+            foreach (var cell in _allCells)
+                cell.ChangeSetViewEffect(false);
+
+            _cellsDictionary[cellName].ChangeSetViewEffect(true);
+
             _global.SetNewCource(cellName);
             _changeButton.gameObject.SetActive(true);
         }

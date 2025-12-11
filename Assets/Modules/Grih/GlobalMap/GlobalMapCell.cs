@@ -10,6 +10,10 @@ namespace Modules.Grih.GlobalMap
         [SerializeField] private Button _start;
         [SerializeField] private bool _isSity;
         [SerializeField] private float _longTimerRound;
+
+        [SerializeField] private GameObject _viewYouOnHere;
+        [SerializeField] private GameObject _pointToChange;
+
         public string NamePoint => _namePoint;
         public bool IsSity => _isSity;
         public float LongTimerRound => _longTimerRound;
@@ -26,6 +30,16 @@ namespace Modules.Grih.GlobalMap
             _start.onClick.RemoveListener(OnClick);
         }
 
+        public void SetYouOnHere()
+        {
+            _viewYouOnHere.gameObject.SetActive(true);
+        }
+
+        public void ChangeSetViewEffect(bool isActive)
+        {
+            _pointToChange.gameObject.SetActive(isActive);
+        }
+
         public void ChangeActivatedEffect(bool isActive)
         {
             _start.enabled = isActive;
@@ -33,6 +47,7 @@ namespace Modules.Grih.GlobalMap
 
         private void OnClick()
         {
+            _pointToChange.gameObject.SetActive(true);
             OnStartClick?.Invoke(_namePoint);
         }
     }

@@ -18,14 +18,6 @@ namespace Game
             List<string> openLoads)
         {
             _source = source;
-
-            if (openLoads.Count == 0)
-            {
-                openLoads.Add("FirstSity");
-                openLoads.Add("FirstPathOnFirstSity");
-                openLoads.Add("SecondPathOnFirstSity");
-            }
-
             _source.Init(
                 globalMap,
                 isOnPath,
@@ -41,6 +33,7 @@ namespace Game
             YG2.saves.SavedDeport = savedDeport;
             YG2.saves.SavedPointToRoad = savedPointToRoad;
             YG2.saves.OpenLocals = openLocals;
+            YG2.SaveProgress();
         }
     }
 }
