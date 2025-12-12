@@ -207,13 +207,31 @@ namespace Modules.Grih.RoadTrane
 
         public void SeparateWagon(int place)
         {
+            List<Wagon> cashWagon = new List<Wagon>();
+
             for (int i = 0; i < _createdWagons.Count; i++)
             {
                 if (place <= i)
                 {
                     _createdWagons[i].GetComponent<Wagon>().Separate();
                 }
+                else
+                {
+                    cashWagon.Add(_createdWagons[i]);
+                }
             }
+
+            _createdWagons = cashWagon;
+
+            List<int> cashTower = new List<int>();
+
+            foreach(int item in _loadedTowers)
+            {
+                if (item < place * 1000)
+                    cashTower.Add(item);
+            }
+
+            _loadedTowers = cashTower;
         }
 
         private void Create()

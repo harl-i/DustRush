@@ -12,7 +12,7 @@ namespace EnemyGroup
         private Enemy _enemyPrefab;
         private Pool<Enemy> _enemyPool;
 
-        private List<Enemy> _createdEnemies;
+        private List<Enemy> _createdEnemies = new();
 
         public EnemyPool(Enemy prefab)
         {

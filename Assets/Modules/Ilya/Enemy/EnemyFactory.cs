@@ -10,7 +10,7 @@ namespace EnemyGroup
         [SerializeField] private Enemy _enemyPrefab;
 
         private EnemyPool _enemyPool;
-        private List<List<Enemy>> _createdEnemies;
+        private List<List<Enemy>> _createdEnemies = new();
 
         private void OnEnable()
         {

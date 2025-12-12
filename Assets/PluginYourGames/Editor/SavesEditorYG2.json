@@ -7,8 +7,8 @@
         false,
         false
     ],
-    "idSave": 357,
-    "CurrentScene": "SampleScene",
+    "idSave": 599,
+    "CurrentScene": "Sity",
     "Money": 470,
     "Metal": 155,
     "IsFirstTraneBuld": true,
@@ -16,8 +16,7 @@
     "SavedWagons": [
         39,
         38,
-        37,
-        39
+        37
     ],
     "SavedTowers": [
         111,
@@ -31,9 +30,7 @@
         1519,
         1120,
         2221,
-        2322,
-        3223,
-        3124
+        2322
     ],
     "SavedCell": [
         22,
@@ -57,7 +54,7 @@
     ],
     "IsGoingToPath": false,
     "SavedDeport": "SecondPathOnFirstSity",
-    "SavedPointToRoad": "SecondSity",
+    "SavedPointToRoad": "FirstSity",
     "OpenLocals": [
         "FirstSity",
         "FirstPathOnFirstSity",
