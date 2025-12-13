@@ -25,18 +25,28 @@ namespace WeaponGroup
 
         public void Shoot()
         {
+            OnShoot(_enemy.position);
+        }
+
+        public void Shoot(Vector2 target)
+        {
+            Vector3 targetVector3 = new Vector3(target.x, target.y, 0);
+            OnShoot(targetVector3);
+        }
+        public void ReturnToPool(Bullet bullet)
+        {
+            _buletPool.ReturnItem(bullet);
+        }
+
+        private void OnShoot(Vector3 target)
+        {
             Bullet bulet = _buletPool.GetItem().GetComponent<Bullet>();
 
-            Vector3 direction = _enemy.position - _shootPoint.position;
+            Vector3 direction = target - _shootPoint.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             bulet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
             bulet.Init(_shootPoint.position, _damage, this, _isPlayerBullet);
-        }
-
-        public void ReturnToPool(Bullet bullet)
-        {
-            _buletPool.ReturnItem(bullet);
         }
     }
 }
