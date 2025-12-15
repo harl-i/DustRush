@@ -7,10 +7,10 @@
         false,
         false
     ],
-    "idSave": 647,
+    "idSave": 678,
     "CurrentScene": "SampleScene",
-    "Money": 470,
-    "Metal": 155,
+    "Money": 523,
+    "Metal": 249,
     "IsFirstTraneBuld": true,
     "TruskType": "Speeder",
     "SavedWagons": [
@@ -50,15 +50,16 @@
         20,
         37,
         38,
-        43
+        43,
+        45,
+        28,
+        3,
+        54
     ],
     "IsGoingToPath": false,
-    "SavedDeport": "FirstSity",
+    "SavedDeport": "Lesson",
     "SavedPointToRoad": "FirstSity",
     "OpenLocals": [
-        "FirstSity",
-        "FirstPathOnFirstSity",
-        "SecondPathOnFirstSity",
-        "SecondSity"
+        "FirstSity"
     ]
 }
