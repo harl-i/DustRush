@@ -19,7 +19,7 @@ namespace Modules.Grih.GlobalMap
             _wait = new WaitForSeconds(1);
 
             if (SceneManager.GetActiveScene().name != "Sity")
-                SetNewTimer(_mapView.GetCurrentMapCellTimet());
+                SetNewTimer(_mapView.GetCurrentMapCellTime());
         }
 
         public void SetNewTimer(float longTime)

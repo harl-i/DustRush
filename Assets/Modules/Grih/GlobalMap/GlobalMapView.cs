@@ -80,7 +80,7 @@ namespace Modules.Grih.GlobalMap
 
         }
 
-        public float GetCurrentMapCellTimet()
+        public float GetCurrentMapCellTime()
         {
             return _cellsDictionary[_global.SavedPointToRoad].LongTimerRound;
         }

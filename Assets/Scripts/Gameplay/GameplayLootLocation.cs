@@ -1,31 +1,30 @@
-using Modules.Grih.GlobalMap;
-using Modules.Grih.RoadTrane;
-using UnityEngine;
+﻿using UnityEngine;
 using YG;
 
 namespace Game
 {
-    public class Gameplay : MonoBehaviour
+    public class GameplayLootLocation : MonoBehaviour
     {
+
         [SerializeField] private Modules.Grih.InventoryGroup.InventoryItem _money;
         [SerializeField] private Modules.Grih.InventoryGroup.InventoryItem _metal;
-        [SerializeField] private Modules.Grih.RoadTrane.FabricTrane _fabricTrane;
         [SerializeField] private Modules.Grih.SceneChanger.SceneChangerScript _sceneChangerScript;
-        [SerializeField] private Modules.Grih.GlobalMap.GlobalMap _globalMap;
+        
+        [SerializeField] private Modules.Grih.LootLocation.LootBoxFabric _lootBoxFabric;
+        [SerializeField] private Modules.Grih.LootLocation.InputForLootLocation _input;
+        [SerializeField] private Modules.Grih.Sity.BlueprintObserver _observer;
 
         private void Start()
         {
-            TraneSource traneSource = new TraneSource();
-            traneSource.Init(traneSource, _fabricTrane, YG2.saves.SavedWagons, YG2.saves.SavedTowers, YG2.saves.TruskType);
-
             SceneChangerSource changerSource = new SceneChangerSource();
             changerSource.Init(changerSource, _sceneChangerScript, YG2.saves.CurrentScene);
 
             CounerItemsSource counerItemsSource = new CounerItemsSource();
             counerItemsSource.Init(counerItemsSource, _money, _metal, YG2.saves.Money, YG2.saves.Metal);
 
-            GlobalMapSource globalMapSource = new GlobalMapSource();
-            globalMapSource.Init(globalMapSource, _globalMap, YG2.saves.IsGoingToPath, YG2.saves.SavedDeport, YG2.saves.SavedPointToRoad, YG2.saves.OpenLocals);
+            bool deviceIsMobile = YG2.envir.isMobile;
+            LootLocationSource lootLocationSource = new LootLocationSource();
+            lootLocationSource.Init(lootLocationSource, _lootBoxFabric, YG2.saves.SavedDeport, _input, deviceIsMobile, _observer, YG2.saves.OpenBlueprint);
         }
     }
 }

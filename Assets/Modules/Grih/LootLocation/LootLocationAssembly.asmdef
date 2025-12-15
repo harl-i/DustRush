@@ -2,7 +2,10 @@
     "name": "LootLocationAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:a863bbb4d86e2db4f95efec16e7f5f0a"
+        "GUID:a863bbb4d86e2db4f95efec16e7f5f0a",
+        "GUID:18b45e4f5e7d22d4fb42dede8fd59471",
+        "GUID:ba377057063eb1a49aa1efa89aa9bd71",
+        "GUID:6f99c471de1b9d94bb9c5940bdbbe1f6"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
