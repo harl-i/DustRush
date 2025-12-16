@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Modules.Grih.SceneChanger;
-using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 
 namespace Modules.Grih.GlobalMap
@@ -60,7 +58,7 @@ namespace Modules.Grih.GlobalMap
                         _openCell.Add(_allCells[i]);
                     }
 
-                    if (_allCells[i].NamePoint == _global.SavedDeport || _allCells[i].NamePoint == _global.SavedPointToRoad)
+                    if (_allCells[i].NamePoint == _global.SavedDeport)
                     {
                         _allCells[i].ChangeActivatedEffect(false);
                         _allCells[i].OnStartClick -= CellClick;
@@ -69,15 +67,12 @@ namespace Modules.Grih.GlobalMap
                 }
             }
 
-
             _timer.Init();
 
             if (SceneManager.GetActiveScene().name == "Sity")
             {
-                _cellsDictionary[_global.SavedPointToRoad].SetYouOnHere();
-
+                _cellsDictionary[_global.SavedDeport].SetYouOnHere();
             }
-
         }
 
         public float GetCurrentMapCellTime()
@@ -89,6 +84,9 @@ namespace Modules.Grih.GlobalMap
         {
             bool isLocalIsSity = _cellsIsSity[_global.SavedPointToRoad];
 
+            if (isLocalIsSity)
+                _global.OnFinish();
+
             _global.Save();
             _sceneChanger.ChangeLocation(isLocalIsSity);
         }
@@ -99,8 +97,6 @@ namespace Modules.Grih.GlobalMap
 
             bool isLocalIsSity = _cellsIsSity[_global.SavedPointToRoad];
 
-            _global.OnFinish();
-
             if (nextLocation != null)
             {
                 _global.OpenLocation(nextLocation.NamePoint);
@@ -108,6 +104,8 @@ namespace Modules.Grih.GlobalMap
                 nextLocation.OnStartClick += CellClick;
                 _openCell.Add(nextLocation);
             }
+
+            _global.OnFinish();
 
             if (isLocalIsSity)
             {

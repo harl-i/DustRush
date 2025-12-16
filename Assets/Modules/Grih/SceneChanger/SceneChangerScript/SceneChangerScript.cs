@@ -8,6 +8,7 @@ namespace Modules.Grih.SceneChanger
     {
         private const string Sity = "Sity";
         private const string SampleScene = "SampleScene";
+        private const string LootLocation = "LootLocation";
 
         private string _loadScene;
 
@@ -37,6 +38,12 @@ namespace Modules.Grih.SceneChanger
                 NewScene?.Invoke(Sity);
                 SceneManager.LoadScene(Sity);
             }
+        }
+
+        public void ChangeOnLootLocation()
+        {
+            NewScene?.Invoke(LootLocation);
+            SceneManager.LoadScene(LootLocation);
         }
     }
 }

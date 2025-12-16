@@ -17,8 +17,10 @@ namespace Common
         private const int Level3 = 3;
 
         private Dictionary<string, int> _levelsForNames = new Dictionary<string, int>();
+        private Dictionary<string, bool> _locationIsSity = new Dictionary<string, bool>();
 
         public Dictionary<string, int> LevelsForNames => _levelsForNames;
+        public Dictionary<string, bool> LocationIsSity => _locationIsSity;
 
         private void OnEnable()
         {
@@ -27,6 +29,12 @@ namespace Common
             _levelsForNames.Add(FirstPathOnFirstSity, Level1);
             _levelsForNames.Add(SecondPathOnFirstSity, Level2);
             _levelsForNames.Add(SecondSity, Level2);
+
+            _locationIsSity.Add(Lesson, false);
+            _locationIsSity.Add(FirstSity, true);
+            _locationIsSity.Add(FirstPathOnFirstSity, false);
+            _locationIsSity.Add(SecondPathOnFirstSity, false);
+            _locationIsSity.Add(SecondSity, true);
         }
 
         private void OnDisable()

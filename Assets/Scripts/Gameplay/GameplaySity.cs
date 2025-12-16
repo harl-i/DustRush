@@ -7,6 +7,7 @@ namespace Game
     {
         [SerializeField] private Modules.Grih.Sity.GarageInventoryPlayer _garageInventoryPlayer;
         [SerializeField] private Modules.Grih.Sity.BlueprintObserver _blueprintObserver;
+        [SerializeField] private Modules.Grih.Sity.BackSity _backSity;
 
         private void Start()
         {
@@ -17,6 +18,8 @@ namespace Game
                 YG2.saves.SavedCell,
                 _blueprintObserver,
                 YG2.saves.OpenBlueprint);
+
+            _backSity.Init(YG2.saves.SavedDeport);
         }
     }
 }

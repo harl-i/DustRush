@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 using YG;
 
 namespace Game
@@ -13,6 +14,9 @@ namespace Game
         [SerializeField] private Modules.Grih.LootLocation.LootBoxFabric _lootBoxFabric;
         [SerializeField] private Modules.Grih.LootLocation.InputForLootLocation _input;
         [SerializeField] private Modules.Grih.Sity.BlueprintObserver _observer;
+        [SerializeField] private Joystick _joystick;
+
+        [SerializeField] private bool _deviceIsMobile;
 
         private void Start()
         {
@@ -22,9 +26,25 @@ namespace Game
             CounerItemsSource counerItemsSource = new CounerItemsSource();
             counerItemsSource.Init(counerItemsSource, _money, _metal, YG2.saves.Money, YG2.saves.Metal);
 
-            bool deviceIsMobile = YG2.envir.isMobile;
+            Debug.Log("Менять для прода");
+           // _deviceIsMobile = YG2.envir.isMobile;
             LootLocationSource lootLocationSource = new LootLocationSource();
-            lootLocationSource.Init(lootLocationSource, _lootBoxFabric, YG2.saves.SavedDeport, _input, deviceIsMobile, _observer, YG2.saves.OpenBlueprint);
+            lootLocationSource.Init(lootLocationSource, _lootBoxFabric, YG2.saves.SavedDeport, _input, _deviceIsMobile, _observer, YG2.saves.OpenBlueprint);
+        }
+
+        private void Update()
+        {
+            if (_deviceIsMobile)
+            {
+                if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+                {
+                    _input.JoustikUse(_joystick.Horizontal, _joystick.Vertical);
+                }
+            }
+            else
+            {
+                _joystick.gameObject.SetActive(false);
+            }
         }
     }
 }

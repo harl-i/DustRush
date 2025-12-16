@@ -391,6 +391,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465020fb107574246bd6f7f6902a0f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxXValue: 5
+  MinXValue: -5
+  MaxYValue: 6
+  MinYValue: -20
   _camera: {fileID: 930468117}
 --- !u!114 &62163009
 MonoBehaviour:
@@ -3453,6 +3457,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465020fb107574246bd6f7f6902a0f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxXValue: 5
+  MinXValue: -5
+  MaxYValue: 6
+  MinYValue: -20
   _camera: {fileID: 930468117}
 --- !u!114 &930468121
 MonoBehaviour:
@@ -3783,7 +3791,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sity
+  m_text: Road
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
@@ -5731,6 +5739,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465020fb107574246bd6f7f6902a0f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxXValue: 5
+  MinXValue: -5
+  MaxYValue: 6
+  MinYValue: -20
   _camera: {fileID: 930468117}
 --- !u!114 &1871708807
 MonoBehaviour:

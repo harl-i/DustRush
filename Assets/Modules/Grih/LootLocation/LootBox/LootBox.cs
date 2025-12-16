@@ -6,7 +6,7 @@ namespace Modules.Grih.LootLocation
 {
     public class LootBox : MonoBehaviour
     {
-        private const float RangeForOpen = 5f;
+        private const float RangeForOpen = 3f;
 
         private const int MinRandomRange = 1;
         private const int MaxRandomRange = 4;
@@ -26,8 +26,13 @@ namespace Modules.Grih.LootLocation
 
         private void OnMouseDown()
         {
+            ChoisedOmMobile();
+        }
+
+        public void ChoisedOmMobile()
+        {
             if (Vector2.Distance(_player.transform.position, transform.position) < RangeForOpen
-                || _player.transform.position == transform.position)
+                 || _player.transform.position == transform.position)
             {
                 Open();
             }

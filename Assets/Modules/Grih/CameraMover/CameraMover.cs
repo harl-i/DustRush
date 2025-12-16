@@ -7,14 +7,13 @@ namespace CameraMover
         private const int MaxPrtographicScale = 8;
         private const int MinPrtographicScale = 4;
         private const int ValueChangeZoomOnWheelMouse = 1;
-
-        private const int MaxXValue = 5;
-        private const int MinXValue = -5;
-
-        private const int MaxYValue = 6;
-        private const int MinYValue = -20;
-
         private const int ZCamera = -10;
+
+        [SerializeField] private int MaxXValue = 5;
+        [SerializeField] private int MinXValue = -5;
+
+        [SerializeField] private int MaxYValue = 6;
+        [SerializeField] private int MinYValue = -20;
 
         [SerializeField] private Camera _camera;
 
