@@ -801,8 +801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca81dc9f45210bf4b86d89686f4df19c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _joystick: {fileID: 710772027}
-  _isMobleField: 0
 --- !u!4 &355332603
 Transform:
   m_ObjectHideFlags: 0
@@ -3848,6 +3846,8 @@ MonoBehaviour:
   _lootBoxFabric: {fileID: 252176102}
   _input: {fileID: 355332602}
   _observer: {fileID: 2073739902}
+  _joystick: {fileID: 710772027}
+  _deviceIsMobile: 0
 --- !u!4 &2139793771
 Transform:
   m_ObjectHideFlags: 0

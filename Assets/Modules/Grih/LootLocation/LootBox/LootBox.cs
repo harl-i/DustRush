@@ -26,8 +26,13 @@ namespace Modules.Grih.LootLocation
 
         private void OnMouseDown()
         {
+            ChoisedOmMobile();
+        }
+
+        public void ChoisedOmMobile()
+        {
             if (Vector2.Distance(_player.transform.position, transform.position) < RangeForOpen
-                || _player.transform.position == transform.position)
+                 || _player.transform.position == transform.position)
             {
                 Open();
             }
