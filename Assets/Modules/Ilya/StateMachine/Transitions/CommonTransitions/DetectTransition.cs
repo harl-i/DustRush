@@ -11,41 +11,44 @@ namespace StateMachine
     {
         [SerializeField] private float _detectionRadius = 5f;
         [SerializeField, Range(0f, 360f)] private float _viewAngle = 180f;
-        [SerializeField] private float _detectReactionDelay;
+        [SerializeField] private float _detectReactionDelay = 0.1f;
         [SerializeField] private LayerMask _targetLayer;
-        [SerializeField] private bool _isCooldownActive;
-        [SerializeField] private float _cooldown;
-        [SerializeField] private float _offsetY;
-        [SerializeField] private float _offsetX;
 
+        private Coroutine _detectCoroutine;
         private Transform _enemyTransform;
 
         private void Update()
         {
-            DetectUsingCircle();
+            Detect();
         }
 
-        private void DetectUsingCircle()
+        private void Detect()
         {
-            Collider2D[] hits;
+            Collider2D[] hits =
+                Physics2D.OverlapCircleAll(transform.position, _detectionRadius, _targetLayer);
 
-            hits = Physics2D.OverlapCircleAll(transform.position, _detectionRadius, _targetLayer);
+            if (hits.Length == 0) return;
 
-            if (hits != null)
+            Vector2 forward = transform.right;
+            float halfViewAngle = _viewAngle * 0.5f;
+
+            foreach (var hit in hits)
             {
-                Vector2 forward = transform.right;
+                Vector2 toTarget =
+                    (hit.transform.position - transform.position).normalized;
 
-                foreach (var hit in hits)
+                float angle = Vector2.Angle(forward, toTarget);
+
+                if (angle <= halfViewAngle)
                 {
-                    Vector2 toTarget = (hit.transform.position - transform.position).normalized;
+                    SendEnemyTransform(hit.transform);
 
-                    float angle = Vector2.Angle(forward, toTarget);
-
-                    if (angle <= _viewAngle)
+                    if (_detectCoroutine == null)
                     {
-                        SendEnemyTransform(hit.transform);
-                        StartCoroutine(TransitAfterDelay(_detectReactionDelay));
+                        _detectCoroutine = StartCoroutine(TransitAfterDelay(1f));
                     }
+
+                    return;
                 }
             }
         }
