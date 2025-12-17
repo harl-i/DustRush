@@ -6,15 +6,35 @@ namespace StateMachine
     {
         [SerializeField] private Transform _barrel;
         [SerializeField] private float _rotationSpeed;
-        [SerializeField] private bool _isLeft;
-
-        private float _startAngle = 270f;
+        
+        private bool _isLeft;
+        private float _startAngle;
+        private float _rightStartAngle = 270f;
+        private float _leftStartAngle = -270f;
 
         private void OnEnable()
         {
+            SetSide();
+        }
+
+        private void SetSide()
+        {
+            if (transform.position.x < 0)
+            {
+                _isLeft = true;
+            }
+            else
+            {
+                _isLeft = false;
+            }
+
             if (_isLeft)
             {
-                _startAngle *= -1;
+                _startAngle = _leftStartAngle;
+            }
+            else
+            {
+                _startAngle = _rightStartAngle;
             }
         }
 

@@ -11,12 +11,19 @@ namespace StateMachine
     {
         [SerializeField] private float _detectionRadius = 5f;
         [SerializeField, Range(0f, 360f)] private float _viewAngle = 180f;
-        [SerializeField] private float _detectReactionDelay = 0.1f;
+        //[SerializeField] private float _detectReactionDelay = 0.1f;
         [SerializeField] private LayerMask _targetLayer;
-        [SerializeField] private bool _isLeft;
-
+        
+        private bool _isLeft;
+        private Vector2 _forward;
         private Coroutine _detectCoroutine;
         private Transform _enemyTransform;
+
+        private void OnDisable()
+        {
+            NeedTransit = false;
+            _detectCoroutine = null;
+        }
 
         private void Update()
         {
@@ -30,7 +37,7 @@ namespace StateMachine
 
             if (hits.Length == 0) return;
 
-            Vector2 forward = _isLeft ? -transform.right : transform.right;
+            SetSide();
 
             float halfViewAngle = _viewAngle * 0.5f;
 
@@ -39,7 +46,7 @@ namespace StateMachine
                 Vector2 toTarget =
                     (hit.transform.position - transform.position).normalized;
 
-                float angle = Vector2.Angle(forward, toTarget);
+                float angle = Vector2.Angle(_forward, toTarget);
 
                 if (angle <= halfViewAngle)
                 {
@@ -53,6 +60,20 @@ namespace StateMachine
                     return;
                 }
             }
+        }
+
+        private void SetSide()
+        {
+            if (transform.position.x < 0)
+            {
+                _isLeft = true;
+            }
+            else
+            {
+                _isLeft = false;
+            }
+
+            _forward = _isLeft ? -transform.right : transform.right;
         }
 
         private void SendEnemyTransform(Transform playerTransform)
