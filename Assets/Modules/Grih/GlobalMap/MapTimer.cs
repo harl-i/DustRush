@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,27 +9,39 @@ namespace Modules.Grih.GlobalMap
 {
     public class MapTimer : MonoBehaviour
     {
+        private const int DividerUnFinishMap = 2;
+
         [SerializeField] private GlobalMapView _mapView;
         [SerializeField] private TextMeshProUGUI _counterText;
 
         private Coroutine _cooldowningRound = null;
         private WaitForSeconds _wait;
 
-        public void Init()
+        public void Init(bool isUnfinishedPath)
         {
             _wait = new WaitForSeconds(1);
 
             if (SceneManager.GetActiveScene().name != "Sity")
-                SetNewTimer(_mapView.GetCurrentMapCellTime());
+            {
+                if (isUnfinishedPath == false)
+                {
+
+                    SetNewTimer(_mapView.GetCurrentMapCellTime());
+                }
+                else
+                {
+                    SetNewTimer(_mapView.GetCurrentMapCellTime() / DividerUnFinishMap);
+                }
+            }
         }
 
-        public void SetNewTimer(float longTime)
+        public void SetNewTimer(int longTime)
         {
             if (_cooldowningRound == null)
                 _cooldowningRound = StartCoroutine(CooldowningRound(longTime));
         }
 
-        private IEnumerator CooldowningRound(float longTime)
+        private IEnumerator CooldowningRound(int longTime)
         {
             while (longTime > 0)
             {
