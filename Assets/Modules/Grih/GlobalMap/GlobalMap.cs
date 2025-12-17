@@ -30,7 +30,7 @@ namespace Modules.Grih.GlobalMap
                 _openLocals.Add(SavedPointToRoad);
             }
 
-            _view.Init();
+            _view.Init(isGoingToPath);
         }
 
         public void Save()
@@ -53,8 +53,15 @@ namespace Modules.Grih.GlobalMap
             _openLocals.Add(cellName);
         }
 
+        public void OnEnterOnLootInActionScene()
+        {
+            IsGoingToPath = true;
+            Saved?.Invoke(IsGoingToPath, SavedDeport, SavedPointToRoad, _openLocals);
+        }
+
         public void OnFinish()
         {
+            IsGoingToPath = false;
             SavedDeport = SavedPointToRoad;
             OpenLocation(SavedPointToRoad);
             Saved?.Invoke(IsGoingToPath, SavedDeport, SavedPointToRoad, _openLocals);

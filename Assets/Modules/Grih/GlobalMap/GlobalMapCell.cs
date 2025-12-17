@@ -9,14 +9,14 @@ namespace Modules.Grih.GlobalMap
         [SerializeField] private string _namePoint;
         [SerializeField] private Button _start;
         [SerializeField] private bool _isSity;
-        [SerializeField] private float _longTimerRound;
+        [SerializeField] private int _longTimerRound;
 
         [SerializeField] private GameObject _viewYouOnHere;
         [SerializeField] private GameObject _pointToChange;
 
         public string NamePoint => _namePoint;
         public bool IsSity => _isSity;
-        public float LongTimerRound => _longTimerRound;
+        public int LongTimerRound => _longTimerRound;
 
         public event Action<string> OnStartClick;
 

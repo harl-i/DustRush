@@ -33,7 +33,7 @@ namespace Modules.Grih.LootLocation
                     {
                         if (hit.collider.TryGetComponent(out LootBox box))
                         {
-                            box.ChoisedOmMobile();
+                            box.ChoisedOnMobile();
                             return;
                         }
                     }

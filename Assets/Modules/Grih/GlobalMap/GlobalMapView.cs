@@ -34,8 +34,10 @@ namespace Modules.Grih.GlobalMap
             _cellsIsSity = new Dictionary<string, bool>();
         }
 
-        public void Init()
+        public void Init(bool isFinishedPath)
         {
+            _imageBack.gameObject.SetActive(false);
+
             _changeButton.onClick.AddListener(OnClickNewLocal);
             _changeButton.gameObject.SetActive(false);
             _openLocalsNames = _global.OpenLocals;
@@ -67,15 +69,17 @@ namespace Modules.Grih.GlobalMap
                 }
             }
 
-            _timer.Init();
-
             if (SceneManager.GetActiveScene().name == "Sity")
             {
                 _cellsDictionary[_global.SavedDeport].SetYouOnHere();
+                _imageBack.gameObject.SetActive(true);
             }
+
+            _timer.Init(isFinishedPath);
+
         }
 
-        public float GetCurrentMapCellTime()
+        public int GetCurrentMapCellTime()
         {
             return _cellsDictionary[_global.SavedPointToRoad].LongTimerRound;
         }
