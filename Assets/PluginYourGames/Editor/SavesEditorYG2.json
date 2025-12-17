@@ -7,10 +7,10 @@
         false,
         false
     ],
-    "idSave": 908,
+    "idSave": 1075,
     "CurrentScene": "SampleScene",
-    "Money": 939,
-    "Metal": 778,
+    "Money": 894,
+    "Metal": 863,
     "IsFirstTraneBuld": true,
     "TruskType": "Speeder",
     "SavedWagons": [
@@ -29,9 +29,9 @@
         718,
         1519,
         1120,
-        2221,
-        2322,
-        1411
+        1411,
+        2022,
+        2325
     ],
     "SavedCell": [],
     "OpenBlueprint": [
@@ -60,7 +60,11 @@
         25,
         57,
         48,
-        34
+        34,
+        40,
+        32,
+        58,
+        55
     ],
     "IsGoingToPath": false,
     "SavedDeport": "Lesson",

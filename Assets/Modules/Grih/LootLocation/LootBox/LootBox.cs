@@ -15,6 +15,7 @@ namespace Modules.Grih.LootLocation
         [SerializeField] private int _maxMoney;
         [SerializeField] private int _minMetal;
         [SerializeField] private int _maxMetal;
+        [SerializeField] private LootBoxView _view;
 
         private Money _moneyCounter;
         private Metal _metalCounter;
@@ -24,16 +25,23 @@ namespace Modules.Grih.LootLocation
 
         private Collider2D _collider2D;
 
+        private bool _isOpen = false;
+
         private void OnMouseDown()
         {
-            ChoisedOmMobile();
+            ChoisedOnMobile();
         }
 
-        public void ChoisedOmMobile()
+        public void ChoisedOnMobile()
         {
             if (Vector2.Distance(_player.transform.position, transform.position) < RangeForOpen
                  || _player.transform.position == transform.position)
             {
+                if (_isOpen)
+                    return;
+
+                _isOpen = true;
+                
                 Open();
             }
         }
@@ -45,10 +53,16 @@ namespace Modules.Grih.LootLocation
             _blueprintObserver = blueprintObserver;
             _moneyCounter = moneyCounter;
             _metalCounter = metalCounter;
+            _isOpen = false;
 
             SetCurrenValues();
 
             _collider2D = GetComponent<Collider2D>();
+        }
+
+        public void Deactivate()
+        {
+            gameObject.SetActive(false);
         }
 
         private void SetCurrenValues()
@@ -75,38 +89,35 @@ namespace Modules.Grih.LootLocation
                     GetBlueprint();
                     break;
             }
-
-            gameObject.SetActive(false);
         }
 
         private void GetBlueprint()
         {
             if (_blueprintObserver.TryOpenRandomBlueprintOnLevel(_level))
             {
-                Debug.Log("Чертёж добаивили");
+                _view.ViewPrizeBlueprint();
                 return;
             }
             else
             {
                 GetMetal();
-                GetMoney();
-                Debug.Log("Чертёж есть, добавили денег метала");
             }
-
         }
 
         private void GetMetal()
         {
             int value = UnityEngine.Random.Range(_minMetal, _maxMetal);
             _metalCounter.ChangeValue(value);
-            Debug.Log("Метал " + value);
+
+            _view.ViewPrizeMetal(value);
         }
 
         private void GetMoney()
         {
             int value = UnityEngine.Random.Range(_minMoney, _maxMoney);
             _moneyCounter.ChangeValue(value);
-            Debug.Log("дЕнег " + value);
+
+            _view.ViewPrizeMoney(value);
         }
     }
 }

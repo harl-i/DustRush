@@ -111,13 +111,17 @@ namespace Modules.Grih.Sity
             {
                 randomId = _blueprintsTier1[UnityEngine.Random.Range(0, _blueprintsTier1.Count)];
             }
-            if (level == 2)
+            else if (level == 2)
             {
                 randomId = _blueprintsTier2[UnityEngine.Random.Range(0, _blueprintsTier2.Count)];
             }
-            else
+            else if (level > 2)
             {
                 randomId = _blueprintsTier3[UnityEngine.Random.Range(0, _blueprintsTier3.Count)];
+            }
+            else
+            {
+                randomId = _blueprintsTier1[UnityEngine.Random.Range(0, _blueprintsTier1.Count)];
             }
 
             if (IsHaveOnBlueprints(randomId))
