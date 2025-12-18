@@ -11,6 +11,9 @@ namespace Common
         private const string FirstPathOnFirstSity = "FirstPathOnFirstSity";
         private const string SecondPathOnFirstSity = "SecondPathOnFirstSity";
         private const string SecondSity = "SecondSity";
+        private const string SecondSityPath1 = "SecondSityPath1";
+        private const string SecondSityPath2 = "SecondSityPath2";
+        private const string ThirdSity = "ThirdSity";
 
         private const int Level1 = 1;
         private const int Level2 = 2;
@@ -29,12 +32,18 @@ namespace Common
             _levelsForNames.Add(FirstPathOnFirstSity, Level1);
             _levelsForNames.Add(SecondPathOnFirstSity, Level2);
             _levelsForNames.Add(SecondSity, Level2);
+            _levelsForNames.Add(SecondSityPath1, Level2);
+            _levelsForNames.Add(SecondSityPath2, Level3);
+            _levelsForNames.Add(ThirdSity, Level3);
 
             _locationIsSity.Add(Lesson, false);
             _locationIsSity.Add(FirstSity, true);
             _locationIsSity.Add(FirstPathOnFirstSity, false);
             _locationIsSity.Add(SecondPathOnFirstSity, false);
             _locationIsSity.Add(SecondSity, true);
+            _locationIsSity.Add(SecondSityPath1, false);
+            _locationIsSity.Add(SecondSityPath2, false);
+            _locationIsSity.Add(ThirdSity, true);
         }
 
         private void OnDisable()

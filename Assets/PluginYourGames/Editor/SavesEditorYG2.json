@@ -7,10 +7,10 @@
         false,
         false
     ],
-    "idSave": 1075,
+    "idSave": 1443,
     "CurrentScene": "SampleScene",
-    "Money": 894,
-    "Metal": 863,
+    "Money": 998,
+    "Metal": 1133,
     "IsFirstTraneBuld": true,
     "TruskType": "Speeder",
     "SavedWagons": [
@@ -64,7 +64,13 @@
         40,
         32,
         58,
-        55
+        55,
+        59,
+        36,
+        21,
+        41,
+        33,
+        16
     ],
     "IsGoingToPath": false,
     "SavedDeport": "Lesson",

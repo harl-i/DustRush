@@ -59,13 +59,6 @@ namespace Modules.Grih.GlobalMap
                         _allCells[i].OnStartClick += CellClick;
                         _openCell.Add(_allCells[i]);
                     }
-
-                    if (_allCells[i].NamePoint == _global.SavedDeport)
-                    {
-                        _allCells[i].ChangeActivatedEffect(false);
-                        _allCells[i].OnStartClick -= CellClick;
-                        _openCell.Remove(_allCells[i]);
-                    }
                 }
             }
 
@@ -89,7 +82,9 @@ namespace Modules.Grih.GlobalMap
             bool isLocalIsSity = _cellsIsSity[_global.SavedPointToRoad];
 
             if (isLocalIsSity)
-                _global.OnFinish();
+            {
+                OnFinishPont();
+            }
 
             _global.Save();
             _sceneChanger.ChangeLocation(isLocalIsSity);
@@ -119,6 +114,7 @@ namespace Modules.Grih.GlobalMap
             {
                 _imageBack.gameObject.SetActive(true);
                 _cellsDictionary[_global.SavedPointToRoad].SetYouOnHere();
+                _cellsDictionary[_global.SavedPointToRoad].ChangeActivatedEffect(false);
             }
         }
 
@@ -139,6 +135,11 @@ namespace Modules.Grih.GlobalMap
             {
                 if (_allCells[i].NamePoint == current)
                 {
+                    if (i + 1 == _allCells.Count)
+                    {
+                        return _cellsDictionary[_allCells[i].NamePoint];
+                    }
+
                     if (_cellsDictionary.TryGetValue(_allCells[i + 1].NamePoint, out GlobalMapCell cell))
                     {
                         return cell;
@@ -146,7 +147,7 @@ namespace Modules.Grih.GlobalMap
                 }
             }
 
-            return null;
+            return _cellsDictionary[_allCells[1].NamePoint];
         }
     }
 }
