@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Modules.Grih.Sity
@@ -51,7 +50,6 @@ namespace Modules.Grih.Sity
             _shop.gameObject.SetActive(!_shop.gameObject.activeSelf);
             _bank.gameObject.SetActive(false);
             _hostel.gameObject.SetActive(false);
-            _garage.gameObject.SetActive(false);
             _globalMap.gameObject.SetActive(false);
         }
 

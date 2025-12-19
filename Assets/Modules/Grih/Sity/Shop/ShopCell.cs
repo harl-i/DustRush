@@ -77,12 +77,12 @@ namespace Modules.Grih.Sity
                 return;
 
             _effector.gameObject.SetActive(true);
-            _buttonActivate.gameObject.SetActive(true);
+            _buttonActivate.interactable = true;
         }
 
         public void SetNonactiveState()
         {
-            _buttonActivate.gameObject.SetActive(false);
+            _buttonActivate.interactable = false;
 
             GameObject boxNeedBlueprintNew = Instantiate(_boxNeedBlueprint);
 
@@ -97,7 +97,7 @@ namespace Modules.Grih.Sity
             if (IsByed == false)
                 return;
 
-            _buttonActivate.gameObject.SetActive(false);
+            _buttonActivate.interactable = false;
         }
 
         private void OnClick()

@@ -1,6 +1,5 @@
 ﻿using Common;
 using System.Collections;
-using UnityEditor.iOS.Xcode;
 using UnityEngine;
 
 namespace Modules.Grih.GlobalMap
