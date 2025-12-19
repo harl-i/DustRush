@@ -25,7 +25,7 @@ namespace Game
             counerItemsSource.Init(counerItemsSource, _money, _metal, YG2.saves.Money, YG2.saves.Metal);
 
             GlobalMapSource globalMapSource = new GlobalMapSource();
-            globalMapSource.Init(globalMapSource, _globalMap, YG2.saves.IsGoingToPath, YG2.saves.SavedDeport, YG2.saves.SavedPointToRoad, YG2.saves.OpenLocals);
+            globalMapSource.Init(globalMapSource, _globalMap, YG2.saves.IsGoingToPath, YG2.saves.SavedDeport, YG2.saves.SavedPointToRoad, YG2.saves.OpenLocals, YG2.saves.SavedTowns);
         }
     }
 }

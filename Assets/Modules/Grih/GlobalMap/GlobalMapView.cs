@@ -20,6 +20,7 @@ namespace Modules.Grih.GlobalMap
         private Dictionary<string, GlobalMapCell> _cellsDictionary = new Dictionary<string, GlobalMapCell>();
         private Dictionary<string, bool> _cellsIsSity = new Dictionary<string, bool>();
 
+        public List<GlobalMapCell> AllCells => _allCells;
 
         private void OnDestroy()
         {
@@ -49,18 +50,20 @@ namespace Modules.Grih.GlobalMap
                 cell.ChangeActivatedEffect(false);
             }
 
-            for (int i = 0; i < _allCells.Count; i++)
-            {
-                for (int j = 0; j < _openLocalsNames.Count; j++)
-                {
-                    if (_allCells[i].NamePoint == _openLocalsNames[j])
-                    {
-                        _allCells[i].ChangeActivatedEffect(true);
-                        _allCells[i].OnStartClick += CellClick;
-                        _openCell.Add(_allCells[i]);
-                    }
-                }
-            }
+            //for (int i = 0; i < _allCells.Count; i++)
+            //{
+            //    for (int j = 0; j < _openLocalsNames.Count; j++)
+            //    {
+            //        if (_allCells[i].NamePoint == _openLocalsNames[j])
+            //        {
+            //            _allCells[i].ChangeActivatedEffect(true);
+            //            _allCells[i].OnStartClick += CellClick;
+            //            _openCell.Add(_allCells[i]);
+            //        }
+            //    }
+            //}
+
+            SetOpenCell();
 
             if (SceneManager.GetActiveScene().name == "Sity")
             {
@@ -75,6 +78,40 @@ namespace Modules.Grih.GlobalMap
         public int GetCurrentMapCellTime()
         {
             return _cellsDictionary[_global.SavedPointToRoad].LongTimerRound;
+        }
+
+        private void SetOpenCell()
+        {
+            foreach (GlobalMapCell item in _allCells)
+            {
+                item.ChangeActivatedEffect(false);
+            }
+
+            for (int i = 0; i < _allCells.Count; i++)
+            {
+                if (_allCells[i].NamePoint == _global.SavedDeport)
+                {
+                    if (i + 1 <= _allCells.Count)
+                    {
+                        _allCells[i + 1].ChangeActivatedEffect(true);
+                        _allCells[i + 1].OnStartClick += CellClick;
+                        _openCell.Add(_allCells[i]);
+                    }
+                    if (i - 1 >= 1)
+                    {
+                        _allCells[i - 1].ChangeActivatedEffect(true);
+                        _allCells[i - 1].OnStartClick += CellClick;
+                        _openCell.Add(_allCells[i]);
+                    }
+                }
+            }
+
+            foreach (string item in _global.SavedTowns)
+            {
+                _cellsDictionary[item].ChangeActivatedEffect(true);
+                _cellsDictionary[item].OnStartClick += CellClick;
+                _openCell.Add(_cellsDictionary[item]);
+            }
         }
 
         private void OnClickNewLocal()
@@ -105,6 +142,7 @@ namespace Modules.Grih.GlobalMap
             }
 
             _global.OnFinish();
+            SetOpenCell();
 
             if (isLocalIsSity)
             {

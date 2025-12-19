@@ -11,17 +11,19 @@ namespace Modules.Grih.GlobalMap.Public.Interfaces
             bool isGoingToPath,
             string savedDeport,
             string savedPointToRoad,
-            List<string> openLocals)
+            List<string> openLocals,
+            List<string> savedTowns)
         {
             globalMap.Init(
                 isGoingToPath,
                 savedDeport,
                 savedPointToRoad,
-                openLocals);
+                openLocals,
+                savedTowns);
 
             globalMap.Saved += OnSaveGlobalMap;
         }
 
-        void OnSaveGlobalMap(bool arg1, string arg2, string arg3, List<string> list);
+        void OnSaveGlobalMap(bool arg1, string arg2, string arg3, List<string> list, List<string> list2);
     }
 }
