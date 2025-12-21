@@ -293,6 +293,8 @@ MonoBehaviour:
   _minMetal: 10
   _maxMetal: 12
   _view: {fileID: 3603033127612326949}
+  _openedSprite: {fileID: 21300000, guid: 9ec77e843e2580f43abe4786517cff3b, type: 3}
+  _renderer: {fileID: 7832307325903391169}
 --- !u!61 &8292394348717175552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1111,7 +1113,6 @@ MonoBehaviour:
   _moneyPrize: {fileID: 1855049448370388045}
   _metalPrize: {fileID: 8320939142471362789}
   _blueprintPrize: {fileID: 6728397172020268326}
-  _box: {fileID: 4277446975613774978}
   _valueView: {fileID: 4297711150065365111}
   _viewLongValue: 1.9
 --- !u!1 &8763160599256746414

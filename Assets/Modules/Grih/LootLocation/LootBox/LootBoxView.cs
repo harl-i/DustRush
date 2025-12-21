@@ -6,14 +6,9 @@ namespace Modules.Grih.LootLocation
 {
     public class LootBoxView : MonoBehaviour
     {
-        private const string MetalPrizeName = "MetalPrize";
-        private const string MoneyPrizeName = "MoneyPrize";
-        private const string BlueprintPrizeName = "BlueprintyPrize";
-
         [SerializeField] private GameObject _moneyPrize;
         [SerializeField] private GameObject _metalPrize;
         [SerializeField] private GameObject _blueprintPrize;
-        [SerializeField] private LootBox _box;
         [SerializeField] private TextMeshProUGUI _valueView;
 
         [SerializeField] private float _viewLongValue;
@@ -47,6 +42,7 @@ namespace Modules.Grih.LootLocation
 
             StartCoroutine(OffViewing());
         }
+
         public void ViewPrizeBlueprint()
         {
             _blueprintPrize.gameObject.SetActive(true);
@@ -61,7 +57,6 @@ namespace Modules.Grih.LootLocation
             _moneyPrize.SetActive(false);
             _metalPrize.SetActive(false);
             _blueprintPrize.SetActive(false);
-            _box.Deactivate();
         }
     }
 }

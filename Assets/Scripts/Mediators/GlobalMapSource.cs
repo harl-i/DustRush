@@ -15,7 +15,8 @@ namespace Game
             bool isOnPath,
             string savedDeport,
             string savedPointToRoad,
-            List<string> openLoads)
+            List<string> openLoads,
+            List<string> savedTowns)
         {
             _source = source;
             _source.Init(
@@ -23,16 +24,19 @@ namespace Game
                 isOnPath,
                 savedDeport,
                 savedPointToRoad,
-                openLoads);
+                openLoads,
+                savedTowns);
 
         }
 
-        public void OnSaveGlobalMap(bool isGoingToPath, string savedDeport, string savedPointToRoad, List<string> openLocals)
+        public void OnSaveGlobalMap(bool isGoingToPath, string savedDeport, string savedPointToRoad, List<string> openLocals, List<string> savedTowns)
         {
             YG2.saves.IsGoingToPath = isGoingToPath;
             YG2.saves.SavedDeport = savedDeport;
             YG2.saves.SavedPointToRoad = savedPointToRoad;
             YG2.saves.OpenLocals = openLocals;
+            YG2.saves.SavedTowns = savedTowns;
+
             YG2.SaveProgress();
         }
     }

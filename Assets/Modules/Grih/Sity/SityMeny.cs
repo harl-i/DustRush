@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Modules.Grih.Sity
@@ -43,6 +42,7 @@ namespace Modules.Grih.Sity
             _bank.gameObject.SetActive(false);
             _hostel.gameObject.SetActive(false);
             _garage.gameObject.SetActive(false);
+            _shop.gameObject.SetActive(false);
         }
 
         private void OpenShop()
@@ -50,6 +50,7 @@ namespace Modules.Grih.Sity
             _shop.gameObject.SetActive(!_shop.gameObject.activeSelf);
             _bank.gameObject.SetActive(false);
             _hostel.gameObject.SetActive(false);
+            _globalMap.gameObject.SetActive(false);
         }
 
         private void OpenBank()
@@ -57,6 +58,8 @@ namespace Modules.Grih.Sity
             _bank.gameObject.SetActive(!_bank.gameObject.activeSelf);
             _shop.gameObject.SetActive(false);
             _garage.gameObject.SetActive(false);
+            _hostel.gameObject.SetActive(false);
+            _globalMap.gameObject.SetActive(false);
         }
 
         private void OpenHostel()
@@ -65,6 +68,7 @@ namespace Modules.Grih.Sity
             _shop.gameObject.SetActive(false);
             _garage.gameObject.SetActive(false);
             _bank.gameObject.SetActive(false);
+            _globalMap.gameObject.SetActive(false);
         }
 
         private void OpenGarage()
@@ -72,6 +76,7 @@ namespace Modules.Grih.Sity
             _garage.gameObject.SetActive(!_garage.gameObject.activeSelf);
             _bank.gameObject.SetActive(false);
             _hostel.gameObject.SetActive(false);
+            _globalMap.gameObject.SetActive(false);
         }
     }
 }

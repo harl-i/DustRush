@@ -16,6 +16,8 @@ namespace Modules.Grih.LootLocation
         [SerializeField] private int _minMetal;
         [SerializeField] private int _maxMetal;
         [SerializeField] private LootBoxView _view;
+        [SerializeField] private Sprite _openedSprite;
+        [SerializeField] private SpriteRenderer _renderer;
 
         private Money _moneyCounter;
         private Metal _metalCounter;
@@ -24,6 +26,7 @@ namespace Modules.Grih.LootLocation
         private int _level;
 
         private Collider2D _collider2D;
+    
 
         private bool _isOpen = false;
 
@@ -89,6 +92,8 @@ namespace Modules.Grih.LootLocation
                     GetBlueprint();
                     break;
             }
+
+            _renderer.sprite = _openedSprite;
         }
 
         private void GetBlueprint()

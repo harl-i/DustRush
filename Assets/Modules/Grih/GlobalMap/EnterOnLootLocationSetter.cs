@@ -12,6 +12,7 @@ namespace Modules.Grih.GlobalMap
         [SerializeField] private HashTableLocation _hashTableLocation;
         [SerializeField] private SceneChanger.ChangeOnLootLocation _enterOnLoot;
         [SerializeField] private int _randomValueProbabilityToOne = 5;
+        [SerializeField] private Common.HashTableLocation _hashLocalName;
 
         [SerializeField] private int _delayShowingValue;
         [SerializeField] private int _lifeValue;
@@ -19,7 +20,19 @@ namespace Modules.Grih.GlobalMap
         private WaitForSeconds _waitStartDelay;
         private WaitForSeconds _waitLifeView;
 
-        public void Start()
+        private bool _isStarted = false;
+
+        private void FixedUpdate()
+        {
+            if (_isStarted)
+                return;
+
+            _isStarted = true;
+            
+            Init();
+        }
+
+        private void Init()
         {
             _waitStartDelay = new WaitForSeconds(_delayShowingValue);
             _waitLifeView = new WaitForSeconds(_lifeValue);
@@ -30,8 +43,11 @@ namespace Modules.Grih.GlobalMap
                 _enterOnLoot.gameObject.SetActive(false);
                 return;
             }
+            Debug.Log(_global.SavedDeport.ToString());
 
-            if (_global.IsGoingToPath || _global.SavedDeport == "Lesson")
+            if (_global.IsGoingToPath 
+                || _global.SavedDeport == "Lesson" 
+                || _hashLocalName.LocationIsSity[_global.SavedDeport])
             {
                 _enterOnLoot.gameObject.SetActive(false);
                 return;
