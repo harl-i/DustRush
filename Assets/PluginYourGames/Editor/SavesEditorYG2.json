@@ -7,7 +7,7 @@
         false,
         false
     ],
-    "idSave": 2143,
+    "idSave": 2177,
     "CurrentScene": "SampleScene",
     "Money": 68,
     "Metal": 273,
@@ -81,9 +81,10 @@
     ],
     "IsGoingToPath": false,
     "SavedDeport": "FirstSity",
-    "SavedPointToRoad": "FirstSity",
+    "SavedPointToRoad": "FirstPathOnFirstSity",
     "OpenLocals": [
-        "FirstSity"
+        "FirstSity",
+        "FirstPathOnFirstSity"
     ],
     "SavedTowns": []
 }

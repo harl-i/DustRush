@@ -8,7 +8,6 @@ namespace EnemyGroup
     {
         [SerializeField] private List<GameObject> _spawnPoints;
         [SerializeField] private EnemyFactory _enemyFactory;
-        //[SerializeField] private FabricTrane _fabricTrane;
 
         private void OnEnable()
         {

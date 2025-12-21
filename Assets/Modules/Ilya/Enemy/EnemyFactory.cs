@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Modules.Grih.RoadTrane;
+using System;
 
 namespace EnemyGroup
 {
     public class EnemyFactory : MonoBehaviour
     {
         [SerializeField] private EnemyLevelConfig _levelConfig;
+        [SerializeField] private FabricTrane _fabricTrane;
 
         private EnemyPool _enemyPool;
         private List<EnemyPool> _readyMadeEnemiesPools = new List<EnemyPool>();
@@ -22,7 +25,7 @@ namespace EnemyGroup
         {
             foreach (var enemy in _levelConfig.EnemyPrefab)
             {
-                _enemyPool = new EnemyPool(enemy);
+                _enemyPool = new EnemyPool(enemy, _fabricTrane);
                 _enemyPool.CreateEnemy(_levelConfig.PoolSize);
                 _readyMadeEnemiesPools.Add(_enemyPool);
             }

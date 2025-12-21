@@ -1,7 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using Pool;
+using Modules.Grih.RoadTrane;
 
 namespace EnemyGroup
 {
@@ -10,11 +9,13 @@ namespace EnemyGroup
         private Enemy _enemyPrefab;
         private Pool<Enemy> _enemyPool;
 
+        private ITowerProvider _towerProvider;
         private List<Enemy> _createdEnemies = new List<Enemy>();
 
-        public EnemyPool(Enemy prefab)
+        public EnemyPool(Enemy prefab, ITowerProvider towerPrivider)
         {
             _enemyPrefab = prefab;
+            _towerProvider = towerPrivider;
         }
 
         public List<Enemy> CreateEnemy(int count)
@@ -26,11 +27,14 @@ namespace EnemyGroup
 
         public Enemy GetEnemy()
         {
-            return _enemyPool.GetItem() as Enemy;
+            Enemy enemy = _enemyPool.GetItem() as Enemy;
+            enemy.Init(_towerProvider);
+            return enemy;
         }
 
         public void ReturnToPool(Enemy enemy)
         {
+            enemy.ResetTowers();
             _enemyPool.ReturnItem(enemy);
         }
 

@@ -1,11 +1,12 @@
 ﻿using Environment;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Modules.Grih.RoadTrane
 {
-    public class FabricTrane : MonoBehaviour
+    public class FabricTrane : MonoBehaviour, ITowerProvider
     {
         [SerializeField] private TowersHashTable _towersHash;
         [SerializeField] private WagonsHashTable _wagonsHash;
@@ -48,6 +49,12 @@ namespace Modules.Grih.RoadTrane
             }
 
             Save();
+        }
+
+
+        public IReadOnlyList<Tower> GetAliveTowers()
+        {
+            return CreatedTowers;
         }
 
         public void Init(List<int> savedWagons, List<int> savedTower, string savedTrusk)
