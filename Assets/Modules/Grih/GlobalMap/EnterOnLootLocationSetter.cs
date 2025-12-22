@@ -7,6 +7,7 @@ namespace Modules.Grih.GlobalMap
     public class EnterOnLootLocationSetter : MonoBehaviour
     {
         private const int RandomValue = 1;
+        private const string LessonLevel = "Lesson";
 
         [SerializeField] private GlobalMap _global;
         [SerializeField] private HashTableLocation _hashTableLocation;
@@ -46,7 +47,7 @@ namespace Modules.Grih.GlobalMap
             Debug.Log(_global.SavedDeport.ToString());
 
             if (_global.IsGoingToPath 
-                || _global.SavedDeport == "Lesson" 
+                || _global.SavedDeport == LessonLevel
                 || _hashLocalName.LocationIsSity[_global.SavedDeport])
             {
                 _enterOnLoot.gameObject.SetActive(false);

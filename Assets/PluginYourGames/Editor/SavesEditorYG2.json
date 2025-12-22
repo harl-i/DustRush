@@ -7,10 +7,10 @@
         false,
         false
     ],
-    "idSave": 2143,
+    "idSave": 2232,
     "CurrentScene": "SampleScene",
-    "Money": 68,
-    "Metal": 273,
+    "Money": 30,
+    "Metal": 329,
     "IsFirstTraneBuld": true,
     "TruskType": "Speeder",
     "SavedWagons": [
@@ -33,7 +33,8 @@
         2022,
         2325,
         1011,
-        1311
+        1311,
+        2120
     ],
     "SavedCell": [
         37,
@@ -77,13 +78,15 @@
         21,
         41,
         33,
-        16
+        16,
+        29
     ],
     "IsGoingToPath": false,
-    "SavedDeport": "FirstSity",
+    "SavedDeport": "Lesson",
     "SavedPointToRoad": "FirstSity",
     "OpenLocals": [
         "FirstSity"
     ],
-    "SavedTowns": []
+    "SavedTowns": [
+    ]
 }
