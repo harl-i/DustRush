@@ -27,6 +27,9 @@ namespace YG
         public string SavedPointToRoad = "FirstSity";
 
         public List<string> OpenLocals = new List<string>(); 
-        public List<string> SavedTowns = new List<string>(); 
+        public List<string> SavedTowns = new List<string>();
+
+        public int CooldownDump = 0;
+
     }
 }

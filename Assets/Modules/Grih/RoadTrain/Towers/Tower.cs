@@ -14,13 +14,20 @@ namespace Modules.Grih.RoadTrane
         public event Action<int> TowerDead;
 
         private int _positionOnTrane;
-        private int _idTower;
+        private int _idTower; 
+        private int _wagonNumber; 
         private int _fullId;
         private bool _isLeft;
 
         public int FullId => _fullId;
         public int PositionOnTrane => _positionOnTrane;
         public bool IsLeft => _isLeft;
+        public int TypeId => _idTower;
+        public int WagonNumber => _wagonNumber;
+
+        public bool IsRefrigeratorNearby { get; private set; }
+        public bool IsStorageNearby { get; private set; }
+
 
         public void OnEnable()
         {
@@ -47,8 +54,23 @@ namespace Modules.Grih.RoadTrane
 
         public void SetPositionOnTrane(int value)
         {
+            if (value < 10)
+                _wagonNumber = 0;
+            else
+                _wagonNumber = value / 10;
+
             _positionOnTrane = value;
             _fullId = (_positionOnTrane * 100) + _idTower;
+        }
+
+        public void SetRefrigeratorNearby(bool isNearby)
+        {
+            IsRefrigeratorNearby = isNearby;
+        }
+
+        public void SetStorageNearby(bool isNearby)
+        {
+            IsStorageNearby = isNearby;
         }
 
         private void DefineSide()

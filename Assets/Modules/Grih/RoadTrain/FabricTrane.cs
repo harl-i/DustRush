@@ -1,13 +1,15 @@
 ﻿using Environment;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Modules.Grih.RoadTrane
 {
     public class FabricTrane : MonoBehaviour, ITowerProvider
     {
+        private const int IdFridge = 35;
+        private const int IdMachineGunDepot = 36;
+
         [SerializeField] private TowersHashTable _towersHash;
         [SerializeField] private WagonsHashTable _wagonsHash;
 
@@ -50,7 +52,6 @@ namespace Modules.Grih.RoadTrane
 
             Save();
         }
-
 
         public IReadOnlyList<Tower> GetAliveTowers()
         {
@@ -203,6 +204,53 @@ namespace Modules.Grih.RoadTrane
             DeactivateLowLayer(newTower);
         }
 
+        private void SetBuff()
+        {
+            List<Tower> fridges = new List<Tower>();
+            List<Tower> machineGunDepots = new List<Tower>();
+
+            foreach (Tower item in CreatedTowers)
+            {
+                if (item.TypeId == IdFridge)
+                {
+                    fridges.Add(item);
+                }
+
+                else if (item.TypeId == IdMachineGunDepot)
+                {
+                    machineGunDepots.Add(item);
+                }
+            }
+
+            if (fridges.Count > 0)
+            {
+                foreach (Tower fridge in fridges)
+                {
+                    foreach (Tower item in CreatedTowers)
+                    {
+                        if (fridge.WagonNumber == item.WagonNumber)
+                        {
+                            item.SetRefrigeratorNearby(true);
+                        }
+                    }
+                }
+            }
+
+            if (machineGunDepots.Count > 0)
+            {
+                foreach (Tower machineGunDepot in machineGunDepots)
+                {
+                    foreach (Tower item in CreatedTowers)
+                    {
+                        if (machineGunDepot.WagonNumber == item.WagonNumber)
+                        {
+                            item.SetStorageNearby(true);
+                        }
+                    }
+                }
+            }
+        }
+
         private void DeactivateLowLayer(Tower newTower)
         {
             foreach (Tower item in _createdTowers)
@@ -246,6 +294,8 @@ namespace Modules.Grih.RoadTrane
             CreateSavedWagons();
             CreateSavedTowers();
             CreateTruck();
+
+            SetBuff();
         }
 
         private void CreateTruck()
@@ -304,6 +354,7 @@ namespace Modules.Grih.RoadTrane
                 tower.transform.position = target.position;
                 tower.transform.parent = target.parent;
                 tower.SetPositionOnTrane((_loadedWagonTower[i] * 10) + _loadedPositionTower[i]);
+                tower.SetID(_towers[i].GetComponent<Tower>().TypeId);
                 tower.TowerDead += OnTowerDead;
                 _createdTowers.Add(tower);
             }

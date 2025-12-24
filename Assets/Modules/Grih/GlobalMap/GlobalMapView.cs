@@ -117,6 +117,7 @@ namespace Modules.Grih.GlobalMap
         private void OnClickNewLocal()
         {
             bool isLocalIsSity = _cellsIsSity[_global.SavedPointToRoad];
+            bool isDeportSity = _cellsIsSity[_global.SavedDeport];
 
             if (isLocalIsSity)
             {
@@ -124,7 +125,7 @@ namespace Modules.Grih.GlobalMap
             }
 
             _global.Save();
-            _sceneChanger.ChangeLocation(isLocalIsSity);
+            _sceneChanger.ChangeLocation(isDeportSity);
         }
 
         public void OnFinishPont()
@@ -132,6 +133,7 @@ namespace Modules.Grih.GlobalMap
             GlobalMapCell nextLocation = GetNextLocation(_global.SavedPointToRoad);
 
             bool isLocalIsSity = _cellsIsSity[_global.SavedPointToRoad];
+            bool isDeportSity = _cellsIsSity[_global.SavedDeport];
 
             if (nextLocation != null)
             {
@@ -146,7 +148,8 @@ namespace Modules.Grih.GlobalMap
 
             if (isLocalIsSity)
             {
-                _sceneChanger.ChangeLocation(isLocalIsSity);
+                _sceneChanger.ChangeLocation(isDeportSity);
+
             }
             else
             {

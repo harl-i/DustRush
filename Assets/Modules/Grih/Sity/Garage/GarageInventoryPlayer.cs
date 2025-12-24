@@ -144,7 +144,7 @@ namespace Modules.Grih.Sity
 
         public void ShowEffect(string value)
         {
-            if (value == "OnClickedEnd")
+            if (value == "OnClickedEnd" || value == "OnWagonClicked")
             {
                 foreach (ShopCell cell in _haveCell)
                 {
@@ -164,22 +164,11 @@ namespace Modules.Grih.Sity
                     }
                 }
             }
-            else if (value == "OnWagonClicked")
-            {
-                foreach (ShopCell cell in _haveCell)
-                {
-                    if (cell.IdContent > 36)
-                    {
-                        cell.ActivateShowing();
-                    }
-                }
-
-            }
             else if (value == "OnTowerClicked")
             {
                 foreach (ShopCell cell in _haveCell)
                 {
-                    if (cell.IdContent > 5 && cell.IdContent < 36)
+                    if (cell.IdContent > 5 && cell.IdContent < 37)
                     {
                         cell.ActivateShowing();
                     }
