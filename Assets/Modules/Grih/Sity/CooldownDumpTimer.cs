@@ -13,6 +13,7 @@ namespace Modules.Grih.Sity
         [SerializeField] private int _cooldownLife;
         [SerializeField] private TextMeshProUGUI _counterText;
         [SerializeField] private Button _dumbEnter;
+        [SerializeField] private GlobalMap.GlobalMap _globalMap;
 
         public event Action<int> CooldownSave;
 
@@ -23,6 +24,7 @@ namespace Modules.Grih.Sity
         void OnDisable()
         {
             _dumbEnter.onClick.RemoveListener(OnTryEnter);
+            _globalMap.Finished -= OnFinished;
             Save();
         }
 
@@ -32,6 +34,7 @@ namespace Modules.Grih.Sity
             _dumbEnter.onClick.AddListener(OnTryEnter);
             _curentTime = savedPredios;
             _wait = new WaitForSeconds(OneSecond);
+            _globalMap.Finished += OnFinished;
 
             if (_curentTime > 0)
             {
@@ -46,6 +49,12 @@ namespace Modules.Grih.Sity
                 _dumbEnter.interactable = true;
                 _counterText.gameObject.SetActive(false);
             }
+        }
+
+        private void OnFinished()
+        {
+            _curentTime = 0;
+            Save();
         }
 
         private void OnTryEnter()

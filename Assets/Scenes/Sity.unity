@@ -20113,9 +20113,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb24b6f76bcc624e87d8db4f23475ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldownLife: 20
+  _cooldownLife: 80
   _counterText: {fileID: 21092365}
   _dumbEnter: {fileID: 1667200083}
+  _globalMap: {fileID: 908516494}
 --- !u!4 &1995930095
 Transform:
   m_ObjectHideFlags: 0

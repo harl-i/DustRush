@@ -119,13 +119,19 @@ namespace Modules.Grih.GlobalMap
             bool isLocalIsSity = _cellsIsSity[_global.SavedPointToRoad];
             bool isDeportSity = _cellsIsSity[_global.SavedDeport];
 
-            if (isLocalIsSity)
-            {
-                OnFinishPont();
-            }
+            //if (isLocalIsSity)
+            //{
+            //    OnFinishPont();
+            //}
 
+            OnFinishPont();
             _global.Save();
-            _sceneChanger.ChangeLocation(isDeportSity);
+
+
+            if (SceneManager.GetActiveScene().name == "SampleScene")
+                _sceneChanger.ChangeLocation(isDeportSity);
+            else
+                _sceneChanger.ChangeLocation(false);
         }
 
         public void OnFinishPont()

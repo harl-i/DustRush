@@ -7,7 +7,7 @@
         false,
         false
     ],
-    "idSave": 254,
+    "idSave": 415,
     "CurrentScene": "SampleScene",
     "Money": 145,
     "Metal": 95,
@@ -58,11 +58,17 @@
         36
     ],
     "IsGoingToPath": false,
-    "SavedDeport": "FirstSity",
-    "SavedPointToRoad": "FirstSity",
+    "SavedDeport": "FirstPathOnFirstSity",
+    "SavedPointToRoad": "FirstPathOnFirstSity",
     "OpenLocals": [
+        "FirstSity",
+        "FirstPathOnFirstSity",
+        "SecondPathOnFirstSity",
+        "SecondSity",
+        "SecondSityPath1"
+    ],
+    "SavedTowns": [
         "FirstSity"
     ],
-    "SavedTowns": [],
-    "CooldownDump": 3
+    "CooldownDump": 0
 }

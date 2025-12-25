@@ -20,6 +20,7 @@ namespace Modules.Grih.GlobalMap
         public List<string> SavedTowns => _savedTowns;
 
         public event Action<bool, string, string, List<string>, List<string>> Saved;
+        public event Action Finished;
 
         public void Init(bool isGoingToPath, string savedDeport, string savedPointToRoad, List<string> openLocals, List<string> savedTowns)
         {
@@ -65,6 +66,7 @@ namespace Modules.Grih.GlobalMap
 
         public void OnFinish()
         {
+            Finished?.Invoke();
             IsGoingToPath = false;
             SavedDeport = SavedPointToRoad;
             OpenLocation(SavedPointToRoad);

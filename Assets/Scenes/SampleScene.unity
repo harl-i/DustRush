@@ -627,7 +627,7 @@ MonoBehaviour:
   _namePoint: FirstSity
   _start: {fileID: 854883674}
   _isSity: 1
-  _longTimerRound: 40
+  _longTimerRound: 5
   _viewYouOnHere: {fileID: 1086214595}
   _pointToChange: {fileID: 1549305788}
 --- !u!1 &187871273
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   _namePoint: FirstPathOnFirstSity
   _start: {fileID: 417603726}
   _isSity: 0
-  _longTimerRound: 40
+  _longTimerRound: 5
   _viewYouOnHere: {fileID: 1591231564}
   _pointToChange: {fileID: 686267649}
 --- !u!1 &478590088
@@ -1843,7 +1843,7 @@ MonoBehaviour:
   _namePoint: Lesson
   _start: {fileID: 267343221}
   _isSity: 0
-  _longTimerRound: 40
+  _longTimerRound: 5
   _viewYouOnHere: {fileID: 891654008}
   _pointToChange: {fileID: 187871273}
 --- !u!1 &513737426
@@ -2741,7 +2741,7 @@ MonoBehaviour:
   _namePoint: SecondPathOnFirstSity
   _start: {fileID: 1615602081}
   _isSity: 0
-  _longTimerRound: 40
+  _longTimerRound: 5
   _viewYouOnHere: {fileID: 2102485789}
   _pointToChange: {fileID: 1640667077}
 --- !u!1 &686267649
@@ -4256,7 +4256,7 @@ MonoBehaviour:
   _namePoint: SecondSityPath2
   _start: {fileID: 1912128102}
   _isSity: 0
-  _longTimerRound: 40
+  _longTimerRound: 5
   _viewYouOnHere: {fileID: 114593545}
   _pointToChange: {fileID: 348525222}
 --- !u!1 &930468115
@@ -5641,7 +5641,7 @@ MonoBehaviour:
   _namePoint: SecondSityPath1
   _start: {fileID: 249426702}
   _isSity: 0
-  _longTimerRound: 40
+  _longTimerRound: 5
   _viewYouOnHere: {fileID: 478590088}
   _pointToChange: {fileID: 1663043402}
 --- !u!1 &1269512151
@@ -7497,7 +7497,7 @@ MonoBehaviour:
   _namePoint: SecondSity
   _start: {fileID: 795675372}
   _isSity: 1
-  _longTimerRound: 40
+  _longTimerRound: 5
   _viewYouOnHere: {fileID: 81992862}
   _pointToChange: {fileID: 38058329}
 --- !u!1 &1912128100
@@ -7884,7 +7884,7 @@ MonoBehaviour:
   _namePoint: ThirdSity
   _start: {fileID: 499559031}
   _isSity: 1
-  _longTimerRound: 40
+  _longTimerRound: 5
   _viewYouOnHere: {fileID: 182121417}
   _pointToChange: {fileID: 728365096}
 --- !u!1 &1998092115
