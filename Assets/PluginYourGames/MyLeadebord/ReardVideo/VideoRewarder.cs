@@ -1,5 +1,4 @@
 ﻿using Modules.Grih.Sity;
-using System;
 using UnityEngine;
 
 namespace YG
@@ -8,8 +7,6 @@ namespace YG
     {
         [SerializeField] private string _adID;
         [SerializeField] private Hostel _hostel;
-
-        public event Action<string> RewardDead;
 
         private void OnEnable()
         {

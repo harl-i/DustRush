@@ -208,7 +208,7 @@ Animator:
   m_GameObject: {fileID: 38058329}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3c094b8722c75742969bd5c64f3cf5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 490525fe048071547bd75654ac178d93, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 84487d73ca4b791498332d8f6858417f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -678,7 +678,7 @@ Animator:
   m_GameObject: {fileID: 187871273}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3c094b8722c75742969bd5c64f3cf5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 490525fe048071547bd75654ac178d93, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -709,7 +709,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 84487d73ca4b791498332d8f6858417f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _downPositionY: -20.4
-  _startPositionY: 20
+  _startPositionY: 20.1
   _startSpeed: -0.003
   _fullSpeed: -0.006
   _eachSecondAcceleration: 1
@@ -1091,7 +1091,7 @@ Animator:
   m_GameObject: {fileID: 348525222}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3c094b8722c75742969bd5c64f3cf5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 490525fe048071547bd75654ac178d93, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 84487d73ca4b791498332d8f6858417f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1843,7 +1843,7 @@ MonoBehaviour:
   _namePoint: Lesson
   _start: {fileID: 267343221}
   _isSity: 0
-  _longTimerRound: 30
+  _longTimerRound: 40
   _viewYouOnHere: {fileID: 891654008}
   _pointToChange: {fileID: 187871273}
 --- !u!1 &513737426
@@ -2741,7 +2741,7 @@ MonoBehaviour:
   _namePoint: SecondPathOnFirstSity
   _start: {fileID: 1615602081}
   _isSity: 0
-  _longTimerRound: 30
+  _longTimerRound: 40
   _viewYouOnHere: {fileID: 2102485789}
   _pointToChange: {fileID: 1640667077}
 --- !u!1 &686267649
@@ -2792,7 +2792,7 @@ Animator:
   m_GameObject: {fileID: 686267649}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3c094b8722c75742969bd5c64f3cf5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 490525fe048071547bd75654ac178d93, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2823,7 +2823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 84487d73ca4b791498332d8f6858417f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2989,7 +2989,7 @@ Animator:
   m_GameObject: {fileID: 728365096}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3c094b8722c75742969bd5c64f3cf5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 490525fe048071547bd75654ac178d93, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3020,7 +3020,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 84487d73ca4b791498332d8f6858417f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4256,7 +4256,7 @@ MonoBehaviour:
   _namePoint: SecondSityPath2
   _start: {fileID: 1912128102}
   _isSity: 0
-  _longTimerRound: 10
+  _longTimerRound: 40
   _viewYouOnHere: {fileID: 114593545}
   _pointToChange: {fileID: 348525222}
 --- !u!1 &930468115
@@ -5641,7 +5641,7 @@ MonoBehaviour:
   _namePoint: SecondSityPath1
   _start: {fileID: 249426702}
   _isSity: 0
-  _longTimerRound: 10
+  _longTimerRound: 40
   _viewYouOnHere: {fileID: 478590088}
   _pointToChange: {fileID: 1663043402}
 --- !u!1 &1269512151
@@ -6556,7 +6556,7 @@ Animator:
   m_GameObject: {fileID: 1549305788}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3c094b8722c75742969bd5c64f3cf5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 490525fe048071547bd75654ac178d93, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6587,7 +6587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 84487d73ca4b791498332d8f6858417f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6905,7 +6905,7 @@ Animator:
   m_GameObject: {fileID: 1640667077}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3c094b8722c75742969bd5c64f3cf5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 490525fe048071547bd75654ac178d93, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6936,7 +6936,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 84487d73ca4b791498332d8f6858417f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7002,7 +7002,7 @@ Animator:
   m_GameObject: {fileID: 1663043402}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3c094b8722c75742969bd5c64f3cf5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 490525fe048071547bd75654ac178d93, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7033,7 +7033,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 84487d73ca4b791498332d8f6858417f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7497,7 +7497,7 @@ MonoBehaviour:
   _namePoint: SecondSity
   _start: {fileID: 795675372}
   _isSity: 1
-  _longTimerRound: 30
+  _longTimerRound: 40
   _viewYouOnHere: {fileID: 81992862}
   _pointToChange: {fileID: 38058329}
 --- !u!1 &1912128100
@@ -7884,7 +7884,7 @@ MonoBehaviour:
   _namePoint: ThirdSity
   _start: {fileID: 499559031}
   _isSity: 1
-  _longTimerRound: 10
+  _longTimerRound: 40
   _viewYouOnHere: {fileID: 182121417}
   _pointToChange: {fileID: 728365096}
 --- !u!1 &1998092115

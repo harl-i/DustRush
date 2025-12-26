@@ -15,10 +15,12 @@ namespace Game
             GarageInventoryPlayer invetoryPlayer,
            List<int> savedDataPlayerItems,
             BlueprintObserver blueprintObserver,
-            List<int> savedBlueprint)
+            List<int> savedBlueprint,
+            CooldownDumpTimer cooldownDumb,
+            int cooldownigValue)
         {
             _source = source;
-            _source.Init(invetoryPlayer, savedDataPlayerItems, blueprintObserver, savedBlueprint);
+            _source.Init(invetoryPlayer, savedDataPlayerItems, blueprintObserver, savedBlueprint, cooldownDumb, cooldownigValue);
 
         }
 
@@ -32,6 +34,13 @@ namespace Game
         public void OnSavePlayerItem(List<int> saveData)
         {
             YG2.saves.SavedCell = saveData;
+
+            YG2.SaveProgress();
+        }
+
+        public void OnSaveCooldown(int value)
+        {
+            YG2.saves.CooldownDump = value;
 
             YG2.SaveProgress();
         }
