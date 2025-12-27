@@ -953,6 +953,7 @@ MonoBehaviour:
   _buttonActivate: {fileID: 7535279055084493712}
   _buttonSale: {fileID: 8237447477004278786}
   _effector: {fileID: 2220145429904845624}
+  _coustOnBlueprint: 15
   _coustMoneyView: {fileID: 4344610083701558684}
   _coustMetalView: {fileID: 7867748755071159371}
 --- !u!222 &7662343295344388484

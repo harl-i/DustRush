@@ -9,6 +9,7 @@ namespace Game
 
         [SerializeField] private Modules.Grih.InventoryGroup.InventoryItem _money;
         [SerializeField] private Modules.Grih.InventoryGroup.InventoryItem _metal;
+        [SerializeField] private Modules.Grih.InventoryGroup.InventoryItem _dollars;
         [SerializeField] private Modules.Grih.SceneChanger.SceneChangerScript _sceneChangerScript;
         
         [SerializeField] private Modules.Grih.LootLocation.LootBoxFabric _lootBoxFabric;
@@ -24,7 +25,7 @@ namespace Game
             changerSource.Init(changerSource, _sceneChangerScript, YG2.saves.CurrentScene);
 
             CounerItemsSource counerItemsSource = new CounerItemsSource();
-            counerItemsSource.Init(counerItemsSource, _money, _metal, YG2.saves.Money, YG2.saves.Metal);
+            counerItemsSource.Init(counerItemsSource, _money, _metal, _dollars, YG2.saves.Money, YG2.saves.Metal, YG2.saves.Dollars);
 
             Debug.Log("Менять для прода");
            // _deviceIsMobile = YG2.envir.isMobile;

@@ -87,8 +87,11 @@ namespace Modules.Grih.Sity
             }
 
             if (_clickedEnd != null)
-                if (_clickedEnd.gameObject.activeSelf == false)
-                    _clickedEnd.gameObject.SetActive(active);
+                _clickedEnd.gameObject.SetActive(active);
+
+            if (_clickedTrusk != null)
+                _clickedTrusk.gameObject.SetActive(active);
+
 
             if (active == false)
             {

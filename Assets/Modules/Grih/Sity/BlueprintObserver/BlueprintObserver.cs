@@ -103,6 +103,11 @@ namespace Modules.Grih.Sity
             return false;
         }
 
+        public void OpenBlueprint(int id)
+        {
+            _openBluePrints.Add(id);
+        }
+
         public bool TryOpenRandomBlueprintOnLevel(int level)
         {
             int randomId;

@@ -856,6 +856,7 @@ MonoBehaviour:
   _buttonActivate: {fileID: 7535279055084493712}
   _buttonSale: {fileID: 2077170882302129915}
   _effector: {fileID: 9075583640621375455}
+  _coustOnBlueprint: 10
   _coustMoneyView: {fileID: 4344610083701558684}
   _coustMetalView: {fileID: 7867748755071159371}
 --- !u!222 &7662343295344388484
@@ -1141,8 +1142,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9150d7e95bbb6664f9003b200188f544, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: acc73d9fcd4c1f1418c2e41248a0bc6b, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

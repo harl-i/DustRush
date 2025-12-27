@@ -13,11 +13,19 @@ namespace Game
             ICounterSource source,
             InventoryItem money,
             InventoryItem metal,
+            InventoryItem dollars,
             int savedScoreMoney,
-            int savedScoreMetal)
+            int savedScoreMetal,
+            int savedScoreDollars)
         {
             _source = source;
-            _source.Init(money, metal, savedScoreMoney, savedScoreMetal);
+            _source.Init(money, metal, dollars, savedScoreMoney, savedScoreMetal, savedScoreDollars);
+        }
+
+        public void OnDollarsSave(int value)
+        {
+            YG2.saves.Dollars = value;
+            YG2.SaveProgress();
         }
 
         public void OnMetalSave(int value)

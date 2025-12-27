@@ -9,9 +9,10 @@ namespace Modules.Grih.Sity
         [SerializeField] private InventoryHashTable _inventoryHashTable;
         [SerializeField] private Inventory.Money _money;
         [SerializeField] private Inventory.Metal _metal; 
+        [SerializeField] private Inventory.Dollars _dollars;
         [SerializeField] private GarageInventoryPlayer _garageInventoryPlayer;
         [SerializeField] private BlueprintObserver _blueprintObserver;
-        [SerializeField] private GameObject _boxNeedBlueprint;
+        [SerializeField] private ShopCellNeedBlueprint _boxNeedBlueprint;
 
         private List<ShopCell> _createdCell = new List<ShopCell>();
 
@@ -45,13 +46,14 @@ namespace Modules.Grih.Sity
                 cell.transform.localPosition = _placesForCell[_createdCell.Count].position;
                 cell.transform.SetParent(_placesForCell[_createdCell.Count]);
                 cell.SetID(item.Key);
+                cell.InitOnShop(_dollars, _blueprintObserver);
                 cell.SetBox(_boxNeedBlueprint);
                 cell.Byed += TryBye;
                 _createdCell.Add(cell);
 
                 if (CheckOnOpenblueprint(item.Key) == false)
                 {
-                    cell.SetNonactiveState();
+                    cell.SetActiveState(false);
                 }
             }
         }
