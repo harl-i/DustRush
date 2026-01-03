@@ -28,7 +28,7 @@ namespace Game
             counerItemsSource.Init(counerItemsSource, _money, _metal, _dollars, YG2.saves.Money, YG2.saves.Metal, YG2.saves.Dollars);
 
             Debug.Log("Менять для прода");
-           // _deviceIsMobile = YG2.envir.isMobile;
+            _deviceIsMobile = YG2.envir.isMobile;
             LootLocationSource lootLocationSource = new LootLocationSource();
             lootLocationSource.Init(lootLocationSource, _lootBoxFabric, YG2.saves.SavedDeport, _input, _deviceIsMobile, _observer, YG2.saves.OpenBlueprint);
         }

@@ -1,7 +1,6 @@
 ﻿using Inventory;
 using System;
 using TMPro;
-using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -308,8 +308,8 @@ MonoBehaviour:
     testBuyFail: 0
     purshases:
     - id: Dollar5
-      title: Dollar5
-      description: Inventory - Dollar1
+      title: "5 \u0434\u043E\u043B\u043B\u0430\u0440\u043E\u0432"
+      description: "\u041A\u0443\u043F\u0438\u0442\u044C 5 \u0434\u043E\u043B\u043B\u0430\u0440\u043E\u0432"
       imageURI: https://img.freepik.com/premium-vector/vector-art-dollar-white-background_1266257-21739.jpg
       price: 5 YAN
       priceValue: 5
@@ -317,8 +317,8 @@ MonoBehaviour:
       currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
       consumed: 1
     - id: Dollar50
-      title: Dollar50
-      description: Inventory - Dollar50
+      title: "50 \u0434\u043E\u043B\u043B\u0430\u0440\u043E\u0432"
+      description: "\u041A\u0443\u043F\u0438\u0442\u044C 50 \u0434\u043E\u043B\u043B\u0430\u0440\u043E\u0432"
       imageURI: https://img.freepik.com/premium-vector/vector-art-dollar-white-background_1266257-21739.jpg
       price: 40 YAN
       priceValue: 40
@@ -326,8 +326,8 @@ MonoBehaviour:
       currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
       consumed: 1
     - id: Dollar100
-      title: Dollar100
-      description: Inventory - Dollar100
+      title: "100 \u0434\u043E\u043B\u043B\u0430\u0440\u043E\u0432"
+      description: "\u041A\u0443\u043F\u0438\u0442\u044C 100 \u0434\u043E\u043B\u043B\u0430\u0440\u043E\u0432"
       imageURI: https://img.freepik.com/premium-vector/vector-art-dollar-white-background_1266257-21739.jpg
       price: 70 YAN
       priceValue: 70

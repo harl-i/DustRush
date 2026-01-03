@@ -16,5 +16,10 @@ namespace Modules.Grih.Sity
         {
             ClickedEnd?.Invoke();
         }
+
+        public void Click()
+        {
+            ClickedEnd?.Invoke();
+        }
     }
 }

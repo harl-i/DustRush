@@ -1,10 +1,11 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Modules.Grih.Sity
 {
     [RequireComponent(typeof(Collider2D))]
-    public class UiForConstuctorTrane : MonoBehaviour
+    public class UiForConstuctorTrane : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private ConstuctorTrane _constructor;
 
@@ -20,6 +21,11 @@ namespace Modules.Grih.Sity
         public void Init(int idContent)
         {
             _id = idContent;
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            Clicked?.Invoke(_id);
         }
     }
 }
