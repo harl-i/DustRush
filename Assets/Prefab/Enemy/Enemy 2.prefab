@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2653793587515760833}
   - component: {fileID: 3852395491120934414}
   - component: {fileID: 5448363149162334448}
-  - component: {fileID: 7457034782001939295}
+  - component: {fileID: 4172946171605752271}
   - component: {fileID: 2452839203130081595}
   - component: {fileID: 8353028427898724736}
   - component: {fileID: 2359727437345690607}
@@ -119,11 +119,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions:
-  - {fileID: 7457034782001939295}
+  - {fileID: 4172946171605752271}
   _barrel: {fileID: 7064328063613299949}
   _rotationSpeed: 2
   _turretType: 1
---- !u!114 &7457034782001939295
+--- !u!114 &4172946171605752271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,15 +132,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2253620705728467612}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f21a1cf11f5f52741a6670a1451e1be1, type: 3}
+  m_Script: {fileID: 11500000, guid: c2e687a38b75da340a95e464b680602e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TargetState: {fileID: 2452839203130081595}
-  _detectionRadius: 7.95
-  _viewAngle: 360
-  _targetLayer:
-    serializedVersion: 2
-    m_Bits: 128
+  _triggerDistance: 8
+  _takingPositionForAttackState: {fileID: 8836776297960074522}
 --- !u!114 &2452839203130081595
 MonoBehaviour:
   m_ObjectHideFlags: 0

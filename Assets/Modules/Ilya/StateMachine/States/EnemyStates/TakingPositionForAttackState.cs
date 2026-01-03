@@ -16,6 +16,8 @@ namespace StateMachine
         private Tower _targetTower;
         private Vector3 _targetPosition;
 
+        public Tower TargetTower => _targetTower;
+
         private void Awake()
         {
             _enemy = GetComponent<Enemy>();
