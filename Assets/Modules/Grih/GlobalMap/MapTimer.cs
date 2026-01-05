@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.IO;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,7 +23,6 @@ namespace Modules.Grih.GlobalMap
             {
                 if (isUnfinishedPath == false)
                 {
-
                     SetNewTimer(_mapView.GetCurrentMapCellTime());
                 }
                 else

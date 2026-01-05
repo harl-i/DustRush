@@ -1,12 +1,13 @@
-﻿using Modules.Grih.RoadTrane;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Modules.Grih.RoadTrane;
 using UnityEngine;
 
 namespace Modules.Grih.Sity
 {
     public class ConstuctorTrane : MonoBehaviour
     {
+        private const int ValueTen = 10;
+
         [SerializeField] private FabricTrane _fabricTrane;
         [SerializeField] private GarageInventoryPlayer _garageInventoryPlayer;
         [SerializeField] private UiForConstuctorTrane _placeUi;
@@ -91,7 +92,6 @@ namespace Modules.Grih.Sity
 
             if (_clickedTrusk != null)
                 _clickedTrusk.gameObject.SetActive(active);
-
 
             if (active == false)
             {
@@ -251,7 +251,7 @@ namespace Modules.Grih.Sity
                         button = Instantiate(_placeUi);
                         button.transform.position = _fabricTrane.CreatedWagons[i].PointsTower[j].transform.position;
                         button.transform.SetParent(_fabricTrane.CreatedWagons[i].transform);
-                        button.Init(i * 10 + j);
+                        button.Init(i * ValueTen + j);
                         _createdUiTower.Add(button);
 
                         button.Clicked += OnTowerClicked;

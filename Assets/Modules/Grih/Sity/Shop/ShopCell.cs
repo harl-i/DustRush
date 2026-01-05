@@ -1,5 +1,5 @@
-﻿using Inventory;
-using System;
+﻿using System;
+using Inventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,12 +22,15 @@ namespace Modules.Grih.Sity
         private Dollars _dollars;
         private BlueprintObserver _blueprintObserver;
 
-        public int IdContent { get; private set; }
-        public bool IsByed { get; private set; } = false;
-
         public event Action<int, int, int> Byed;
+
         public event Action<int> OnUsed;
+
         public event Action<int, int, int> Saled;
+
+        public int IdContent { get; private set; }
+
+        public bool IsByed { get; private set; } = false;
 
         private void OnEnable()
         {

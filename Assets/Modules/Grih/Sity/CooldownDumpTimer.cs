@@ -15,13 +15,13 @@ namespace Modules.Grih.Sity
         [SerializeField] private Button _dumbEnter;
         [SerializeField] private GlobalMap.GlobalMap _globalMap;
 
-        public event Action<int> CooldownSave;
-
         private int _curentTime;
         private WaitForSeconds _wait;
         private Coroutine _waitngCooldown = null;
 
-        void OnDisable()
+        public event Action<int> CooldownSave;
+
+        private void OnDisable()
         {
             _dumbEnter.onClick.RemoveListener(OnTryEnter);
             _globalMap.Finished -= OnFinished;

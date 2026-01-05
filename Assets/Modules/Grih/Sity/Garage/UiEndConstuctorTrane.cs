@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Modules.Grih.Sity
 {
 
-    [RequireComponent(typeof(Collider2D))]  
+    [RequireComponent(typeof(Collider2D))]
 
     public class UiEndConstuctorTrane : MonoBehaviour
     {

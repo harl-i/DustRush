@@ -6,8 +6,8 @@ namespace Modules.Grih.LootLocation
     public class BackLootLocation : MonoBehaviour
     {
         public const string Town = "FirstSity";
-        public const string Town2 = "SecondSity"; 
-        public const int OffsetRandomCount = 1; 
+        public const string Town2 = "SecondSity";
+        public const int OffsetRandomCount = 1;
 
         [SerializeField] private Sprite _scrapyard1;
         [SerializeField] private Sprite _scrapyard2;

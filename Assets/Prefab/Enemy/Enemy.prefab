@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions:
-  - {fileID: 554966932667619956}
+  - {fileID: 0}
   _barrel: {fileID: 3689767013121547445}
   _rotationSpeed: 2
   _turretType: 1

@@ -1,10 +1,9 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Modules.Grih.LootLocation
 {
-    public class LootLocationExit: MonoBehaviour
+    public class LootLocationExit : MonoBehaviour
     {
         [SerializeField] private Button _exit;
         [SerializeField] private SceneChanger.SceneChangerScript _sceneChanger;

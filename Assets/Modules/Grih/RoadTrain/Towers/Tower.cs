@@ -11,23 +11,27 @@ namespace Modules.Grih.RoadTrane
         [SerializeField] private int _maxHealth;
         [SerializeField] private Common.Health _health;
 
-        public event Action<int> TowerDead;
-
         private int _positionOnTrane;
-        private int _idTower; 
-        private int _wagonNumber; 
+        private int _idTower;
+        private int _wagonNumber;
         private int _fullId;
         private bool _isLeft;
 
+        public event Action<int> TowerDead;
+
         public int FullId => _fullId;
+
         public int PositionOnTrane => _positionOnTrane;
+
         public bool IsLeft => _isLeft;
+
         public int TypeId => _idTower;
+
         public int WagonNumber => _wagonNumber;
 
         public bool IsRefrigeratorNearby { get; private set; }
-        public bool IsStorageNearby { get; private set; }
 
+        public bool IsStorageNearby { get; private set; }
 
         public void OnEnable()
         {
@@ -39,12 +43,6 @@ namespace Modules.Grih.RoadTrane
         public void OnDisable()
         {
             _health.HealthChanged -= OnHealChange;
-        }
-
-        private void OnHealChange(int value)
-        {
-            if (value == 0)
-                TowerDead?.Invoke(_fullId + _idTower);
         }
 
         public void SetID(int key)
@@ -71,6 +69,12 @@ namespace Modules.Grih.RoadTrane
         public void SetStorageNearby(bool isNearby)
         {
             IsStorageNearby = isNearby;
+        }
+
+        private void OnHealChange(int value)
+        {
+            if (value == 0)
+                TowerDead?.Invoke(_fullId + _idTower);
         }
 
         private void DefineSide()

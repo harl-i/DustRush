@@ -305,8 +305,8 @@ MonoBehaviour:
   - {fileID: 901272074692347188}
   "_front\u0421ouplingPosition": {fileID: 1342337975982042051}
   _backCouplingPosition: {fileID: 8250481215725311564}
-  Name: Empty2
-  TypeWagon: 0
+  _name: Wagon2
+  _typeWagon: 0
 --- !u!212 &5437186555335732244
 SpriteRenderer:
   m_ObjectHideFlags: 0

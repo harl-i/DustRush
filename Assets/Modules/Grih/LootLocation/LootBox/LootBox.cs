@@ -1,6 +1,6 @@
-using UnityEngine;
 using Inventory;
 using Modules.Grih.Sity;
+using UnityEngine;
 
 namespace Modules.Grih.LootLocation
 {
@@ -26,7 +26,6 @@ namespace Modules.Grih.LootLocation
         private int _level;
 
         private Collider2D _collider2D;
-    
 
         private bool _isOpen = false;
 
@@ -37,19 +36,25 @@ namespace Modules.Grih.LootLocation
 
         public void ChoisedOnMobile()
         {
-            if (Vector2.Distance(_player.transform.position, transform.position) < RangeForOpen
+            if (Vector2.Distance(
+                _player.transform.position, transform.position) < RangeForOpen
                  || _player.transform.position == transform.position)
             {
                 if (_isOpen)
                     return;
 
                 _isOpen = true;
-                
+
                 Open();
             }
         }
 
-        public void Init(int level, Player player, BlueprintObserver blueprintObserver, Money moneyCounter, Metal metalCounter)
+        public void Init(
+            int level,
+            Player player,
+            BlueprintObserver blueprintObserver,
+            Money moneyCounter,
+            Metal metalCounter)
         {
             _level = level;
             _player = player;
@@ -85,10 +90,10 @@ namespace Modules.Grih.LootLocation
                 case MinRandomRange:
                     GetMoney();
                     break;
-                case (MinRandomRange + MinRandomRange):
+                case MinRandomRange + MinRandomRange:
                     GetMetal();
                     break;
-                case >= (MinRandomRange + MinRandomRange):
+                case >= MinRandomRange + MinRandomRange:
                     GetBlueprint();
                     break;
             }

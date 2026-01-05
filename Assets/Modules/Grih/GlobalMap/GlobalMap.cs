@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Accessibility;
 
 namespace Modules.Grih.GlobalMap
 {
@@ -12,15 +11,19 @@ namespace Modules.Grih.GlobalMap
         private List<string> _openLocals = new List<string>();
         private List<string> _savedTowns = new List<string>();
 
-        public bool IsGoingToPath { get; private set; }
-        public string SavedDeport { get; private set; }
-        public string SavedPointToRoad { get; private set; }
+        public event Action<bool, string, string, List<string>, List<string>> Saved;
+
+        public event Action Finished;
 
         public List<string> OpenLocals => _openLocals;
+
         public List<string> SavedTowns => _savedTowns;
 
-        public event Action<bool, string, string, List<string>, List<string>> Saved;
-        public event Action Finished;
+        public bool IsGoingToPath { get; private set; }
+
+        public string SavedDeport { get; private set; }
+
+        public string SavedPointToRoad { get; private set; }
 
         public void Init(bool isGoingToPath, string savedDeport, string savedPointToRoad, List<string> openLocals, List<string> savedTowns)
         {
@@ -28,7 +31,7 @@ namespace Modules.Grih.GlobalMap
             SavedDeport = savedDeport;
             SavedPointToRoad = savedPointToRoad;
             _openLocals = openLocals;
-            _savedTowns= savedTowns;
+            _savedTowns = savedTowns;
 
             if (_openLocals.Count == 0)
             {

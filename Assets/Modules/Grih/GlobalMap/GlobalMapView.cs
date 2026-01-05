@@ -1,21 +1,20 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using Modules.Grih.SceneChanger;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Modules.Grih.GlobalMap
 {
     public class GlobalMapView : MonoBehaviour
     {
-        [SerializeField] protected GlobalMap _global;
+        [SerializeField] private GlobalMap _global;
         [SerializeField] private Button _changeButton;
         [SerializeField] private SceneChangerScript _sceneChanger;
         [SerializeField] private MapTimer _timer;
         [SerializeField] private GameObject _imageBack;
         [SerializeField] private List<GlobalMapCell> _allCells = new List<GlobalMapCell>();
 
-        private List<string> _openLocalsNames = new List<string>();
         private List<GlobalMapCell> _openCell = new List<GlobalMapCell>();
         private Dictionary<string, GlobalMapCell> _cellsDictionary = new Dictionary<string, GlobalMapCell>();
         private Dictionary<string, bool> _cellsIsSity = new Dictionary<string, bool>();
@@ -41,7 +40,6 @@ namespace Modules.Grih.GlobalMap
 
             _changeButton.onClick.AddListener(OnClickNewLocal);
             _changeButton.gameObject.SetActive(false);
-            _openLocalsNames = _global.OpenLocals;
 
             foreach (GlobalMapCell cell in _allCells)
             {
@@ -49,19 +47,6 @@ namespace Modules.Grih.GlobalMap
                 _cellsIsSity.Add(cell.NamePoint, cell.IsSity);
                 cell.ChangeActivatedEffect(false);
             }
-
-            //for (int i = 0; i < _allCells.Count; i++)
-            //{
-            //    for (int j = 0; j < _openLocalsNames.Count; j++)
-            //    {
-            //        if (_allCells[i].NamePoint == _openLocalsNames[j])
-            //        {
-            //            _allCells[i].ChangeActivatedEffect(true);
-            //            _allCells[i].OnStartClick += CellClick;
-            //            _openCell.Add(_allCells[i]);
-            //        }
-            //    }
-            //}
 
             SetOpenCell();
 
@@ -72,12 +57,41 @@ namespace Modules.Grih.GlobalMap
             }
 
             _timer.Init(isFinishedPath);
-
         }
 
         public int GetCurrentMapCellTime()
         {
             return _cellsDictionary[_global.SavedPointToRoad].LongTimerRound;
+        }
+
+        public void OnFinishPont()
+        {
+            GlobalMapCell nextLocation = GetNextLocation(_global.SavedPointToRoad);
+
+            bool isLocalIsSity = _cellsIsSity[_global.SavedPointToRoad];
+            bool isDeportSity = _cellsIsSity[_global.SavedDeport];
+
+            if (nextLocation != null)
+            {
+                _global.OpenLocation(nextLocation.NamePoint);
+                nextLocation.ChangeActivatedEffect(true);
+                nextLocation.OnStartClick += CellClick;
+                _openCell.Add(nextLocation);
+            }
+
+            _global.OnFinish();
+            SetOpenCell();
+
+            if (isLocalIsSity)
+            {
+                _sceneChanger.ChangeLocation(isDeportSity);
+            }
+            else
+            {
+                _imageBack.gameObject.SetActive(true);
+                _cellsDictionary[_global.SavedPointToRoad].SetYouOnHere();
+                _cellsDictionary[_global.SavedPointToRoad].ChangeActivatedEffect(false);
+            }
         }
 
         private void SetOpenCell()
@@ -97,6 +111,7 @@ namespace Modules.Grih.GlobalMap
                         _allCells[i + 1].OnStartClick += CellClick;
                         _openCell.Add(_allCells[i]);
                     }
+
                     if (i - 1 >= 1)
                     {
                         _allCells[i - 1].ChangeActivatedEffect(true);
@@ -126,37 +141,6 @@ namespace Modules.Grih.GlobalMap
                 _sceneChanger.ChangeLocation(isDeportSity);
             else
                 _sceneChanger.ChangeLocation(false);
-        }
-
-        public void OnFinishPont()
-        {
-            GlobalMapCell nextLocation = GetNextLocation(_global.SavedPointToRoad);
-
-            bool isLocalIsSity = _cellsIsSity[_global.SavedPointToRoad];
-            bool isDeportSity = _cellsIsSity[_global.SavedDeport];
-
-            if (nextLocation != null)
-            {
-                _global.OpenLocation(nextLocation.NamePoint);
-                nextLocation.ChangeActivatedEffect(true);
-                nextLocation.OnStartClick += CellClick;
-                _openCell.Add(nextLocation);
-            }
-
-            _global.OnFinish();
-            SetOpenCell();
-
-            if (isLocalIsSity)
-            {
-                _sceneChanger.ChangeLocation(isDeportSity);
-
-            }
-            else
-            {
-                _imageBack.gameObject.SetActive(true);
-                _cellsDictionary[_global.SavedPointToRoad].SetYouOnHere();
-                _cellsDictionary[_global.SavedPointToRoad].ChangeActivatedEffect(false);
-            }
         }
 
         private void CellClick(string cellName)

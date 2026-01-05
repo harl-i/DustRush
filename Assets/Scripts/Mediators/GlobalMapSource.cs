@@ -1,6 +1,5 @@
 ﻿using Modules.Grih.GlobalMap;
 using Modules.Grih.GlobalMap.Public.Interfaces;
-using System;
 using System.Collections.Generic;
 using YG;
 
@@ -10,7 +9,8 @@ namespace Game
     {
         private Modules.Grih.GlobalMap.Public.Interfaces.IGlobalMapSource _source;
 
-        public void Init(Modules.Grih.GlobalMap.Public.Interfaces.IGlobalMapSource source,
+        public void Init(
+            Modules.Grih.GlobalMap.Public.Interfaces.IGlobalMapSource source,
             GlobalMap globalMap,
             bool isOnPath,
             string savedDeport,
@@ -29,7 +29,12 @@ namespace Game
 
         }
 
-        public void OnSaveGlobalMap(bool isGoingToPath, string savedDeport, string savedPointToRoad, List<string> openLocals, List<string> savedTowns)
+        public void OnSaveGlobalMap(
+            bool isGoingToPath,
+            string savedDeport, 
+            string savedPointToRoad, 
+            List<string> openLocals, 
+            List<string> savedTowns)
         {
             YG2.saves.IsGoingToPath = isGoingToPath;
             YG2.saves.SavedDeport = savedDeport;

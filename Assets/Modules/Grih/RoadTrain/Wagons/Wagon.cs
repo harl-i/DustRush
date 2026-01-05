@@ -10,23 +10,24 @@ namespace Modules.Grih.RoadTrane
         public enum Type
         {
             Regular,
-            Spesial
+            Spesial,
         }
 
         [SerializeField] private List<Transform> _pointsTower = new List<Transform>();
         [SerializeField] private Transform _frontÑouplingPosition;
         [SerializeField] private Transform _backCouplingPosition;
 
-        [SerializeField] private string Name;
+        [SerializeField] private string _name;
         [SerializeField] private Type _typeWagon;
 
         private Environment.GroundMover _groundMover;
 
-        private Vector3 SeparateFinalPosition = new Vector3(0, -30f, 0);
+        private Vector3 _separateFinalPosition = new Vector3(0, -30f, 0);
         private Coroutine _separating = null;
         private float _separateSpeed;
 
         public Type TypeWagon => _typeWagon;
+
         public List<Transform> PointsTower => _pointsTower;
 
         public Transform BackCouplingPosition => _backCouplingPosition;
@@ -96,13 +97,13 @@ namespace Modules.Grih.RoadTrane
 
         private IEnumerator Separating()
         {
-            if (transform.position.y <= SeparateFinalPosition.y)
+            if (transform.position.y <= _separateFinalPosition.y)
             {
                 _separating = null;
                 gameObject.SetActive(false);
             }
 
-            while (transform.position.y >= SeparateFinalPosition.y)
+            while (transform.position.y >= _separateFinalPosition.y)
             {
                 transform.Translate(0, _separateSpeed, 0);
                 yield return null;

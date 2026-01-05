@@ -26,7 +26,6 @@ namespace Modules.Grih.Sity
             _globalOpen.onClick.AddListener(OpenGlobalMap);
         }
 
-
         private void OnDisable()
         {
             _garageOpen.onClick.RemoveListener(OpenGarage);

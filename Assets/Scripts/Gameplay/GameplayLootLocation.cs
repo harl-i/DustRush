@@ -1,12 +1,10 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 using YG;
 
 namespace Game
 {
     public class GameplayLootLocation : MonoBehaviour
     {
-
         [SerializeField] private Modules.Grih.InventoryGroup.InventoryItem _money;
         [SerializeField] private Modules.Grih.InventoryGroup.InventoryItem _metal;
         [SerializeField] private Modules.Grih.InventoryGroup.InventoryItem _dollars;

@@ -8,6 +8,8 @@ namespace Environment
 {
     public class GroundMover : MonoBehaviour
     {
+        private const float BoostDelayValue = 5f;
+
         [Header("Position")]
         [SerializeField] private float _downPositionY;
         [SerializeField] private float _startPositionY;
@@ -23,12 +25,11 @@ namespace Environment
         private WaitForSeconds _waitFullSpeed;
 
         private WaitForSeconds _waitPlayBoost;
-        private float _boostDelayValue = 5f;
         private Coroutine _boostingSpeed = null;
 
-        public float CurrentSpeed { get; private set; }
-
         public event Action<float> SpeedChanged;
+
+        public float CurrentSpeed { get; private set; }
 
         private void OnEnable()
         {
@@ -36,7 +37,7 @@ namespace Environment
                 return;
 
             _waitFullSpeed = new WaitForSeconds(_eachSecondAcceleration);
-            _waitPlayBoost = new WaitForSeconds(_boostDelayValue);
+            _waitPlayBoost = new WaitForSeconds(BoostDelayValue);
             StartMoving();
         }
 

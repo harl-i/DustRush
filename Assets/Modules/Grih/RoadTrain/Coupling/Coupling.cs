@@ -28,11 +28,6 @@ namespace Modules.Grih.RoadTrane
             _separateStart.onClick.RemoveListener(SeparateStart);
         }
 
-        private void SeparateStart()
-        {
-            _health.Damaged(50);
-        }
-
         public void Init(int placeValue, FabricTrane fabric)
         {
             Place = placeValue;
@@ -46,6 +41,11 @@ namespace Modules.Grih.RoadTrane
                 Debug.Log(value);
                 _fabric.SeparateWagon(Place);
             }
+        }
+
+        private void SeparateStart()
+        {
+            _health.Damaged(50);
         }
     }
 }

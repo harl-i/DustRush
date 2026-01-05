@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Modules.Grih.SceneChanger.Public.Interfaces
+﻿namespace Modules.Grih.SceneChanger.Public.Interfaces
 {
     public interface ISceneChanger
     {

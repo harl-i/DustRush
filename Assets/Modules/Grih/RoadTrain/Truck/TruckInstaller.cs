@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Modules.Grih.RoadTrane
 {
-    [RequireComponent (typeof(Truck))]
+    [RequireComponent(typeof(Truck))]
     public class TruckInstaller : MonoBehaviour
     {
         public const string SpeedTrusk = "Speeder";
@@ -40,7 +40,7 @@ namespace Modules.Grih.RoadTrane
         {
             if (_type == SpeedTrusk)
             {
-                IncreaseSpeed(); 
+                IncreaseSpeed();
             }
             else if (_type == Attacker)
             {
@@ -51,6 +51,7 @@ namespace Modules.Grih.RoadTrane
                 IncreaseStealth();
             }
         }
+
         private void IncreaseSpeed()
         {
             _mover.BoostSpeed(SpeedBoost);

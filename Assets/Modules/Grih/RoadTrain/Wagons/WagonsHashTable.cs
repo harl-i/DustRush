@@ -112,76 +112,99 @@ namespace Modules.Grih.RoadTrane
 
         private void OnEnable()
         {
-            _wagonsTable.Add(IdWagonEmpty_1,
+            _wagonsTable.Add(
+                IdWagonEmpty_1,
                 _wagonEmpty_1);
 
-            _wagonsTable.Add(IdWagonEmpty_2,
+            _wagonsTable.Add(
+                IdWagonEmpty_2,
                 _wagonEmpty_2);
 
-            _wagonsTable.Add(IdWagonEmpty_3,
+            _wagonsTable.Add(
+                IdWagonEmpty_3,
                 _wagonEmpty_3);
 
-            _wagonsTable.Add(IdWagonBattery,
-               _batteryWagon); 
-            
+            _wagonsTable.Add(
+                IdWagonBattery,
+               _batteryWagon);
+
             _wagonsTable.Add(IdLivingWagon,
                _livingWagon);
 
-            _wagonsTable.Add(IdFuelWagon,
+            _wagonsTable.Add(
+                IdFuelWagon,
                _fuelWagon);
 
-            _wagonsTable.Add(IdEngineeringWagon,
+            _wagonsTable.Add(
+                IdEngineeringWagon,
                _engineeringWagon);
 
-            _wagonsTable.Add(IdMlitaryWagon,
+            _wagonsTable.Add(
+                IdMlitaryWagon,
                _mlitaryWagon);
 
-            _wagonsTable.Add(IdSolarBWagon,
+            _wagonsTable.Add(
+                IdSolarBWagon,
                _solarBWagon);
 
-            _wagonsTable.Add(IdFuelPowerGeneratorWagon,
+            _wagonsTable.Add(
+                IdFuelPowerGeneratorWagon,
                _fuelPowerGeneratorWagon);
 
-            _wagonsTable.Add(IdWagonBattery2,
+            _wagonsTable.Add(
+                IdWagonBattery2,
                _batteryWagon2);
 
-            _wagonsTable.Add(IdLivingWagon2,
+            _wagonsTable.Add(
+                IdLivingWagon2,
                _livingWagon2);
 
-            _wagonsTable.Add(IdFuelWagon2,
+            _wagonsTable.Add(
+                IdFuelWagon2,
                _fuelWagon2);
 
-            _wagonsTable.Add(IdEngineeringWagon2,
+            _wagonsTable.Add(
+                IdEngineeringWagon2,
                _engineeringWagon2);
 
-            _wagonsTable.Add(IdMlitaryWagon2,
+            _wagonsTable.Add(
+                IdMlitaryWagon2,
                _mlitaryWagon2);
 
-            _wagonsTable.Add(IdSolarBWagon2,
+            _wagonsTable.Add(
+                IdSolarBWagon2,
                _solarBWagon2);
 
-            _wagonsTable.Add(IdFuelPowerGeneratorWagon2,
+            _wagonsTable.Add(
+                IdFuelPowerGeneratorWagon2,
                _fuelPowerGeneratorWagon2);
 
-            _wagonsTable.Add(IdWagonBattery3,
+            _wagonsTable.Add(
+                IdWagonBattery3,
                _batteryWagon3);
 
-            _wagonsTable.Add(IdLivingWagon3,
+            _wagonsTable.Add(
+                IdLivingWagon3,
                _livingWagon3);
 
-            _wagonsTable.Add(IdFuelWagon3,
+            _wagonsTable.Add(
+                IdFuelWagon3,
                _fuelWagon3);
 
-            _wagonsTable.Add(IdEngineeringWagon3,
+            _wagonsTable.Add(
+                IdEngineeringWagon3,
                _engineeringWagon3);
 
-            _wagonsTable.Add(IdMlitaryWagon3,
+            _wagonsTable.Add(
+                IdMlitaryWagon3,
                _mlitaryWagon3);
 
-            _wagonsTable.Add(IdSolarBWagon3,
+            _wagonsTable.Add(
+                IdSolarBWagon3,
                _solarBWagon3);
 
-            _wagonsTable.Add(IdFuelPowerGeneratorWagon3,
+            _wagonsTable.Add(
+                IdFuelPowerGeneratorWagon3,
                _fuelPowerGeneratorWagon3);
         }
     }

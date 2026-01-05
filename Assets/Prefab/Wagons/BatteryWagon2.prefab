@@ -113,8 +113,8 @@ MonoBehaviour:
   _pointsTower: []
   "_front\u0421ouplingPosition": {fileID: 1342337975982042051}
   _backCouplingPosition: {fileID: 8250481215725311564}
-  Name: BatteryWagon2
-  TypeWagon: 1
+  _name: BatteryWagon2
+  _typeWagon: 1
 --- !u!212 &5437186555335732244
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -10,14 +10,13 @@ namespace Modules.Grih.Sity
         private const int DeafultOpenCount = 9;
 
         private List<int> _openBluePrints = new List<int>();
-
-        public List<int> OpenBluePrints => _openBluePrints;
-
-        public event Action<List<int>> Saved;
-
         private List<int> _blueprintsTier1 = new List<int>();
         private List<int> _blueprintsTier2 = new List<int>();
         private List<int> _blueprintsTier3 = new List<int>();
+
+        public event Action<List<int>> Saved;
+
+        public List<int> OpenBluePrints => _openBluePrints;
 
         public void Init(List<int> openBluePrints)
         {

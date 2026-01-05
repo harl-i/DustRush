@@ -19,7 +19,13 @@ namespace Game
             List<int> openBlueprints)
         {
             _source = source;
-            _source.Init(lootBoxFabric, nameGlobalLocation, input, isMobleСontrol, blueprintObserver, openBlueprints);
+            _source.Init(
+                lootBoxFabric,
+                nameGlobalLocation,
+                input,
+                isMobleСontrol,
+                blueprintObserver,
+                openBlueprints);
         }
     }
 }

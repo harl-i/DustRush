@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using YG.Utils.LB;
-using YG;
 
 namespace YG
 {
     public class LeaderbordCounter : MonoBehaviour
     {
-        private const string TechnoName = "***";
+        private const int _scoreForFinish = 30;
+        private const string TechnoName = "PathLength";
 
         [SerializeField] private YG.LeaderboardYG _board;
+        [SerializeField] private Modules.Grih.GlobalMap.GlobalMap _map;
 
         private int _scorePlayer;
 
@@ -20,27 +21,20 @@ namespace YG
         private void OnDisable()
         {
             YG2.onGetLeaderboard -= OnGetLeaderboards;
+            _map.Finished -= OnScoreChange;
         }
 
         private void Start()
         {
             YG2.GetLeaderboard(TechnoName);
+            _map.Finished += OnScoreChange;
         }
 
-        public void TrySetNewScore(int currentScore)
+        private void OnScoreChange()
         {
-            OnScoreChange(currentScore);
-        }
-
-        private void OnScoreChange(int currentScore)
-        {
-            
-            if (_scorePlayer < currentScore)
-            {
-                _scorePlayer = currentScore;
-                _board.SetLeaderboard(_scorePlayer);
-                _board.UpdateLB();
-            }
+            _scorePlayer += _scoreForFinish;
+            _board.SetLeaderboard(_scorePlayer);
+            _board.UpdateLB();
         }
 
         private void OnGetLeaderboards(LBData lb)
