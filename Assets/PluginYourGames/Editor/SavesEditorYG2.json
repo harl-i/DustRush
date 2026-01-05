@@ -7,10 +7,10 @@
         false,
         false
     ],
-    "idSave": 1187,
+    "idSave": 917,
     "CurrentScene": "SampleScene",
-    "Money": 110,
-    "Metal": 20,
+    "Money": 270,
+    "Metal": 285,
     "Dollars": 329,
     "IsFirstTraneBuld": true,
     "TruskType": "Speeder",
@@ -46,12 +46,7 @@
         3312
     ],
     "SavedCell": [
-        1,
-        1,
-        1,
-        2,
-        38,
-        41
+        40
     ],
     "OpenBlueprint": [
         1,
@@ -78,13 +73,10 @@
         56
     ],
     "IsGoingToPath": false,
-    "SavedDeport": "FirstPathOnFirstSity",
-    "SavedPointToRoad": "FirstPathOnFirstSity",
+    "SavedDeport": "FirstSity",
+    "SavedPointToRoad": "FirstSity",
     "OpenLocals": [
         "FirstSity",
-        "SecondSityPath1",
-        "SecondSity",
-        "SecondPathOnFirstSity",
         "FirstPathOnFirstSity"
     ],
     "SavedTowns": [],
