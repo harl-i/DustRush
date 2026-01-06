@@ -16,7 +16,7 @@ namespace EnemyGroup
 
         public List<EnemyPool> ReadyMadeEnemiesPools => _readyMadeEnemiesPools;
 
-        private void OnEnable()
+        private void Start()
         {
             CreateEnemyPools();
         }

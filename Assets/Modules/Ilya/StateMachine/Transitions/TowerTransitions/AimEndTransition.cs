@@ -9,7 +9,7 @@ namespace StateMachine
         [SerializeField] private Transform _turretBarrelTransform;
         [SerializeField] private float _minAngelToShoot;
 
-        private Vector2 _directionToTarget = new Vector2();
+        private Vector2 _directionToTarget;
 
         private void Update()
         {

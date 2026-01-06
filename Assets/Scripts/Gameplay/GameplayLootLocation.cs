@@ -20,15 +20,34 @@ namespace Game
         private void Start()
         {
             SceneChangerSource changerSource = new SceneChangerSource();
-            changerSource.Init(changerSource, _sceneChangerScript, YG2.saves.CurrentScene);
+            changerSource.Init(
+                changerSource, 
+                _sceneChangerScript, 
+                YG2.saves.CurrentScene);
 
             CounerItemsSource counerItemsSource = new CounerItemsSource();
-            counerItemsSource.Init(counerItemsSource, _money, _metal, _dollars, YG2.saves.Money, YG2.saves.Metal, YG2.saves.Dollars);
+            counerItemsSource.Init(
+                counerItemsSource, 
+                _money, 
+                _metal, 
+                _dollars, 
+                YG2.saves.Money, 
+                YG2.saves.Metal,
+                YG2.saves.Dollars);
 
-            Debug.Log("Менять для прода");
+#if !UNITY_EDITOR
             _deviceIsMobile = YG2.envir.isMobile;
+#endif
+
             LootLocationSource lootLocationSource = new LootLocationSource();
-            lootLocationSource.Init(lootLocationSource, _lootBoxFabric, YG2.saves.SavedDeport, _input, _deviceIsMobile, _observer, YG2.saves.OpenBlueprint);
+            lootLocationSource.Init(
+                lootLocationSource, 
+                _lootBoxFabric, 
+                YG2.saves.SavedDeport,
+                _input, 
+                _deviceIsMobile,
+                _observer,
+                YG2.saves.OpenBlueprint);
         }
 
         private void Update()

@@ -10,7 +10,7 @@ namespace EnemyGroup
         [SerializeField] private EnemyFactory _enemyFactory;
         [SerializeField] private float _delay;
 
-        private void OnEnable()
+        private void Start()
         {
             StartCoroutine(SpawnWithDelay());
         }

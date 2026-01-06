@@ -6,7 +6,7 @@ namespace StateMachine
     {
         [SerializeField] private State _firstState;
 
-        private State _currentState = null;
+        private State _currentState;
 
         private void Start()
         {
