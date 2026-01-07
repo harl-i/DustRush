@@ -16,8 +16,8 @@ namespace Modules.Grih.SceneChanger
 
         public void Init(string loadScene)
         {
-            _loadScene = loadScene; 
-            
+            _loadScene = loadScene;
+
             if (SceneManager.GetActiveScene().name != _loadScene)
             {
                 SceneManager.LoadScene(_loadScene);

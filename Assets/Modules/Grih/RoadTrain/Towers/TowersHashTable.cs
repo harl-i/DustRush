@@ -76,87 +76,114 @@ namespace Modules.Grih.RoadTrane
         [SerializeField] private GameObject _machineGunDepotPrefab;
 
         private Dictionary<int, GameObject> _towersTable = new Dictionary<int, GameObject>();
+
         public Dictionary<int, GameObject> TowersTable => _towersTable;
 
         private void OnEnable()
         {
-            _towersTable.Add(IdMashineGun_1,
+            _towersTable.Add(
+                IdMashineGun_1,
                 _mashineGunPrefab_1);
 
-            _towersTable.Add(IdMashineGun_2,
-                 _mashineGunPrefab_2);
+            _towersTable.Add(
+                IdMashineGun_2,
+                _mashineGunPrefab_2);
 
-            _towersTable.Add(IdMashineGun_3,
-                 _mashineGunPrefab_3);
+            _towersTable.Add(
+                IdMashineGun_3,
+                _mashineGunPrefab_3);
 
-            _towersTable.Add(IdShotgun_1,
-                 _shotgunPrefab_1);
+            _towersTable.Add(
+                IdShotgun_1,
+                _shotgunPrefab_1);
 
-            _towersTable.Add(IdShotgun_2,
-                 _shotgunPrefab_2);
+            _towersTable.Add(
+                IdShotgun_2,
+                _shotgunPrefab_2);
 
-            _towersTable.Add(IdShotgun_3,
-                 _shotgunPrefab_3);
+            _towersTable.Add(
+                IdShotgun_3,
+                _shotgunPrefab_3);
 
-            _towersTable.Add(IdHarpoon_1,
-                 _harpoonPrefab_1);
+            _towersTable.Add(
+                IdHarpoon_1,
+                _harpoonPrefab_1);
 
-            _towersTable.Add(IdHarpoon_2,
-                 _harpoonPrefab_2);
+            _towersTable.Add(
+                IdHarpoon_2,
+                _harpoonPrefab_2);
 
-            _towersTable.Add(IdHarpoon_3,
-                 _harpoonPrefab_3);
+            _towersTable.Add(
+                IdHarpoon_3,
+                _harpoonPrefab_3);
 
-            _towersTable.Add(IdMortar_1,
-                 _mortarPrefab_1);
+            _towersTable.Add(
+                IdMortar_1,
+                _mortarPrefab_1);
 
-            _towersTable.Add(IdMortar_2,
-                 _mortarPrefab_2);
+            _towersTable.Add(
+                IdMortar_2,
+                _mortarPrefab_2);
 
-            _towersTable.Add(IdMortar_3,
+            _towersTable.Add(
+                IdMortar_3,
                 _mortarPrefab_3);
 
-            _towersTable.Add(IdRocketLauncher_1,
+            _towersTable.Add(
+                IdRocketLauncher_1,
                 _rocketLauncherPrefab_1);
 
-            _towersTable.Add(IdRocketLauncher_2,
-                 _rocketLauncherPrefab_2);
+            _towersTable.Add(
+                IdRocketLauncher_2,
+                _rocketLauncherPrefab_2);
 
-            _towersTable.Add(IdRocketLauncher_3,
+            _towersTable.Add(
+                IdRocketLauncher_3,
                 _rocketLauncherPrefab_3);
 
-            _towersTable.Add(IdFlamethrower_1,
-               _flamethrowerPrefab_1);
+            _towersTable.Add(
+                IdFlamethrower_1,
+                _flamethrowerPrefab_1);
 
-            _towersTable.Add(IdFlamethrower_2,
-                 _flamethrowerPrefab_2);
+            _towersTable.Add(
+                IdFlamethrower_2,
+                _flamethrowerPrefab_2);
 
-            _towersTable.Add(IdFlamethrower_3,
+            _towersTable.Add(
+                IdFlamethrower_3,
                 _flamethrowerPrefab_3);
 
-            _towersTable.Add(IdGaussGun_1,
-                 _gaussGunPrefab_1);
+            _towersTable.Add(
+                IdGaussGun_1,
+                _gaussGunPrefab_1);
 
-            _towersTable.Add(IdGaussGun_2,
-                 _gaussGunPrefab_2);
+            _towersTable.Add(
+                IdGaussGun_2,
+                _gaussGunPrefab_2);
 
-            _towersTable.Add(IdGaussGun_3,
+            _towersTable.Add(
+                IdGaussGun_3,
                 _gaussGunPrefab_3);
 
-            _towersTable.Add(IdEMPCannon_1,
+            _towersTable.Add(
+                IdEMPCannon_1,
                 _EMPCannonPrefab_1);
 
-            _towersTable.Add(IdEMPCannon_2,
-                 _EMPCannonPrefab_2);
+            _towersTable.Add(
+                IdEMPCannon_2,
+                _EMPCannonPrefab_2);
 
-            _towersTable.Add(IdEMPCannon_3,
+            _towersTable.Add(
+                IdEMPCannon_3,
                 _EMPCannonPrefab_3);
 
-            _towersTable.Add(IdFridge,
+            _towersTable.Add(
+                IdFridge,
                 _fridgePrefab);
 
-            _towersTable.Add(IdMachineGunDepot,
-                 _machineGunDepotPrefab);
+            _towersTable.Add(
+                IdMachineGunDepot,
+                _machineGunDepotPrefab);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Modules.Grih.Sity
         [SerializeField] private List<Transform> _placesForCell = new List<Transform>();
         [SerializeField] private InventoryHashTable _inventoryHashTable;
         [SerializeField] private Inventory.Money _money;
-        [SerializeField] private Inventory.Metal _metal; 
+        [SerializeField] private Inventory.Metal _metal;
         [SerializeField] private Inventory.Dollars _dollars;
         [SerializeField] private GarageInventoryPlayer _garageInventoryPlayer;
         [SerializeField] private BlueprintObserver _blueprintObserver;

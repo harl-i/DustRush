@@ -11,7 +11,7 @@ namespace Modules.Grih.Sity
 
         private int _id;
 
-        public event Action <int> Clicked;
+        public event Action<int> Clicked;
 
         private void OnMouseDown()
         {

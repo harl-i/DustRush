@@ -1,5 +1,4 @@
 ﻿using Inventory;
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,8 +9,8 @@ namespace Modules.Grih.Sity
     {
         [SerializeField] private GlobalMap.GlobalMap _global;
         [SerializeField] private GlobalMap.GlobalMapView _mapView;
-        [SerializeField] private Button _saveButton; 
-        [SerializeField] private Button _saveButtonForRevard; 
+        [SerializeField] private Button _saveButton;
+        [SerializeField] private Button _saveButtonForRevard;
         [SerializeField] private Money _money;
         [SerializeField] private TextMeshProUGUI _coustView;
         [SerializeField] private GameObject _alreadyOpen;

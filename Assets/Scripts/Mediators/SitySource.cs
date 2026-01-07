@@ -1,5 +1,4 @@
 ﻿using Modules.Grih.Sity.Public.Interfaces;
-using System;
 using System.Collections.Generic;
 using Modules.Grih.Sity;
 using YG;
@@ -20,7 +19,13 @@ namespace Game
             int cooldownigValue)
         {
             _source = source;
-            _source.Init(invetoryPlayer, savedDataPlayerItems, blueprintObserver, savedBlueprint, cooldownDumb, cooldownigValue);
+            _source.Init(
+                invetoryPlayer, 
+                savedDataPlayerItems, 
+                blueprintObserver, 
+                savedBlueprint,
+                cooldownDumb, 
+                cooldownigValue);
 
         }
 

@@ -22,6 +22,7 @@ namespace Modules.Grih.Sity
         [SerializeField] private Inventory.Money _countMoney;
 
         public int MoneyRate => _moneyRate;
+
         public int MetalRate => _metalRate;
 
         private void OnEnable()
@@ -49,8 +50,7 @@ namespace Modules.Grih.Sity
                 }
 
                 _countMoney.ChangeValue(_moneySum.Value);
-                _countMetal.ChangeValue(- (_moneySum.Value * _moneyRate));
-                SaveChange();
+                _countMetal.ChangeValue(-(_moneySum.Value * _moneyRate));
             }
         }
 
@@ -66,14 +66,7 @@ namespace Modules.Grih.Sity
 
                 _countMetal.ChangeValue(_metalSum.Value);
                 _countMoney.ChangeValue(-(_metalSum.Value * _metalRate));
-                SaveChange();
             }
-        }
-
-        private void SaveChange()
-        {
-   //         _countMetal.Save();
-  //          _countMoney.Save();
         }
     }
 }

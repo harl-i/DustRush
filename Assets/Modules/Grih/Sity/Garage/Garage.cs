@@ -1,11 +1,10 @@
-using Modules.Grih.RoadTrane;
 using UnityEngine;
 
 namespace Modules.Grih.Sity
 {
     public class Garage : MonoBehaviour
     {
-        [SerializeField] private ConstuctorTrane _constuctorTrane; 
+        [SerializeField] private ConstuctorTrane _constuctorTrane;
 
         private void OnEnable()
         {

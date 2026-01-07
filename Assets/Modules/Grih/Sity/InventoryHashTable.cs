@@ -189,171 +189,223 @@ namespace Modules.Grih.Sity
         [SerializeField] private ShopCell _fuelPowerGeneratorWagon3;
 
         private Dictionary<int, ShopCell> _contentTable = new Dictionary<int, ShopCell>();
+
         public Dictionary<int, ShopCell> ContentTable => _contentTable;
 
         private void OnEnable()
         {
 
-            _contentTable.Add(IdSpeedster,
-               _speedster);
+            _contentTable.Add(
+                IdSpeedster,
+                _speedster);
 
-            _contentTable.Add(IdAtacker,
-               _atacker);
+            _contentTable.Add(
+                IdAtacker,
+                _atacker);
 
-            _contentTable.Add(IdStealther,
-               _stealther);
+            _contentTable.Add(
+                IdStealther,
+                _stealther);
 
-            _contentTable.Add(IdWagonEmpty_1,
+            _contentTable.Add(
+                IdWagonEmpty_1,
                 _wagonEmpty_1);
 
-            _contentTable.Add(IdWagonEmpty_2,
+            _contentTable.Add(
+                IdWagonEmpty_2,
                 _wagonEmpty_2);
 
-            _contentTable.Add(IdWagonEmpty_3,
+            _contentTable.Add(
+                IdWagonEmpty_3,
                 _wagonEmpty_3);
 
-            _contentTable.Add(IdWagonBattery,
-               _batteryWagon);
+            _contentTable.Add(
+                IdWagonBattery,
+                _batteryWagon);
 
-            _contentTable.Add(IdWagonBattery2,
-               _batteryWagon2);
+            _contentTable.Add(
+                IdWagonBattery2,
+                _batteryWagon2);
 
-            _contentTable.Add(IdWagonBattery3,
-               _batteryWagon3);
+            _contentTable.Add(
+                IdWagonBattery3,
+                _batteryWagon3);
 
-            _contentTable.Add(IdLivingWagon,
-               _livingWagon);
+            _contentTable.Add(
+                IdLivingWagon,
+                _livingWagon);
 
-            _contentTable.Add(IdLivingWagon2,
-               _livingWagon2);
+            _contentTable.Add(
+                IdLivingWagon2,
+                _livingWagon2);
 
-            _contentTable.Add(IdLivingWagon3,
-               _livingWagon3);
+            _contentTable.Add(
+                IdLivingWagon3,
+                _livingWagon3);
 
-            _contentTable.Add(IdFuelWagon,
-               _fuelWagon);
+            _contentTable.Add(
+                IdFuelWagon,
+                _fuelWagon);
 
-            _contentTable.Add(IdFuelWagon2,
-               _fuelWagon2);
+            _contentTable.Add(
+                IdFuelWagon2,
+                _fuelWagon2);
 
-            _contentTable.Add(IdFuelWagon3,
-               _fuelWagon3);
+            _contentTable.Add(
+                IdFuelWagon3,
+                _fuelWagon3);
 
-            _contentTable.Add(IdEngineeringWagon,
-               _engineeringWagon);
+            _contentTable.Add(
+                IdEngineeringWagon,
+                _engineeringWagon);
 
-            _contentTable.Add(IdEngineeringWagon2,
-               _engineeringWagon2);
+            _contentTable.Add(
+                IdEngineeringWagon2,
+                _engineeringWagon2);
 
+            _contentTable.Add(
+                IdEngineeringWagon3,
+                _engineeringWagon3);
 
-            _contentTable.Add(IdEngineeringWagon3,
-               _engineeringWagon3);
+            _contentTable.Add(
+                IdMlitaryWagon,
+                _mlitaryWagon);
 
-            _contentTable.Add(IdMlitaryWagon,
-               _mlitaryWagon);
+            _contentTable.Add(
+                 IdMlitaryWagon2,
+                 _mlitaryWagon2);
 
-            _contentTable.Add(IdMlitaryWagon2,
-               _mlitaryWagon2);
+            _contentTable.Add(
+                IdMlitaryWagon3,
+                _mlitaryWagon3);
 
-            _contentTable.Add(IdMlitaryWagon3,
-               _mlitaryWagon3);
+            _contentTable.Add(
+                IdSolarBWagon,
+                _solarBWagon);
 
-            _contentTable.Add(IdSolarBWagon,
-               _solarBWagon);
+            _contentTable.Add(
+                IdSolarBWagon2,
+                _solarBWagon2);
 
-            _contentTable.Add(IdSolarBWagon2,
-               _solarBWagon2);
+            _contentTable.Add(
+                IdSolarBWagon3,
+                _solarBWagon3);
 
-            _contentTable.Add(IdSolarBWagon3,
-               _solarBWagon3);
+            _contentTable.Add(
+                IdFuelPowerGeneratorWagon,
+                _fuelPowerGeneratorWagon);
 
+            _contentTable.Add(
+                IdFuelPowerGeneratorWagon2,
+                _fuelPowerGeneratorWagon2);
 
-            _contentTable.Add(IdFuelPowerGeneratorWagon,
-               _fuelPowerGeneratorWagon);
+            _contentTable.Add(
+                IdFuelPowerGeneratorWagon3,
+                _fuelPowerGeneratorWagon3);
 
-            _contentTable.Add(IdFuelPowerGeneratorWagon2,
-               _fuelPowerGeneratorWagon2);
+            _contentTable.Add(
+               IdMashineGun_1,
+               _mashineGunPrefab_1);
 
-            _contentTable.Add(IdFuelPowerGeneratorWagon3,
-               _fuelPowerGeneratorWagon3);
+            _contentTable.Add(
+                IdMashineGun_2,
+                _mashineGunPrefab_2);
 
-            _contentTable.Add(IdMashineGun_1,
-            _mashineGunPrefab_1);
+            _contentTable.Add(
+                IdMashineGun_3,
+                _mashineGunPrefab_3);
 
-            _contentTable.Add(IdMashineGun_2,
-                 _mashineGunPrefab_2);
+            _contentTable.Add(
+                IdShotgun_1,
+                _shotgunPrefab_1);
 
-            _contentTable.Add(IdMashineGun_3,
-                 _mashineGunPrefab_3);
+            _contentTable.Add(
+                IdShotgun_2,
+                _shotgunPrefab_2);
 
-            _contentTable.Add(IdShotgun_1,
-                 _shotgunPrefab_1);
+            _contentTable.Add(
+                IdShotgun_3,
+                _shotgunPrefab_3);
 
-            _contentTable.Add(IdShotgun_2,
-                 _shotgunPrefab_2);
+            _contentTable.Add(
+                IdHarpoon_1,
+                _harpoonPrefab_1);
 
-            _contentTable.Add(IdShotgun_3,
-                 _shotgunPrefab_3);
+            _contentTable.Add(
+                IdHarpoon_2,
+                _harpoonPrefab_2);
 
-            _contentTable.Add(IdHarpoon_1,
-                 _harpoonPrefab_1);
+            _contentTable.Add(
+                IdHarpoon_3,
+                _harpoonPrefab_3);
 
-            _contentTable.Add(IdHarpoon_2,
-                 _harpoonPrefab_2);
+            _contentTable.Add(
+                IdMortar_1,
+                _mortarPrefab_1);
 
-            _contentTable.Add(IdHarpoon_3,
-                 _harpoonPrefab_3);
+            _contentTable.Add(
+                IdMortar_2,
+                _mortarPrefab_2);
 
-            _contentTable.Add(IdMortar_1,
-                 _mortarPrefab_1);
-
-            _contentTable.Add(IdMortar_2,
-                 _mortarPrefab_2);
-
-            _contentTable.Add(IdMortar_3,
+            _contentTable.Add(
+                IdMortar_3,
                 _mortarPrefab_3);
 
-            _contentTable.Add(IdRocketLauncher_1,
+            _contentTable.Add(
+                IdRocketLauncher_1,
                 _rocketLauncherPrefab_1);
 
-            _contentTable.Add(IdRocketLauncher_2,
-                 _rocketLauncherPrefab_2);
+            _contentTable.Add(
+                IdRocketLauncher_2,
+                _rocketLauncherPrefab_2);
 
-            _contentTable.Add(IdRocketLauncher_3,
+            _contentTable.Add(
+                IdRocketLauncher_3,
                 _rocketLauncherPrefab_3);
 
-            _contentTable.Add(IdFlamethrower_1,
-               _flamethrowerPrefab_1);
+            _contentTable.Add(
+                IdFlamethrower_1,
+                _flamethrowerPrefab_1);
 
-            _contentTable.Add(IdFlamethrower_2,
-                 _flamethrowerPrefab_2);
+            _contentTable.Add(
+                IdFlamethrower_2,
+                _flamethrowerPrefab_2);
 
-            _contentTable.Add(IdFlamethrower_3,
+            _contentTable.Add(
+                IdFlamethrower_3,
                 _flamethrowerPrefab_3);
 
-            _contentTable.Add(IdGaussGun_1,
-                 _gaussGunPrefab_1);
+            _contentTable.Add(
+                IdGaussGun_1,
+                _gaussGunPrefab_1);
 
-            _contentTable.Add(IdGaussGun_2,
-                 _gaussGunPrefab_2);
+            _contentTable.Add(
+                IdGaussGun_2,
+                _gaussGunPrefab_2);
 
-            _contentTable.Add(IdGaussGun_3,
+            _contentTable.Add(
+                IdGaussGun_3,
                 _gaussGunPrefab_3);
 
-            _contentTable.Add(IdEMPCannon_1,
+            _contentTable.Add(
+                IdEMPCannon_1,
                 _EMPCannonPrefab_1);
 
-            _contentTable.Add(IdEMPCannon_2,
-                 _EMPCannonPrefab_2);
+            _contentTable.Add(
+                IdEMPCannon_2,
+                _EMPCannonPrefab_2);
 
-            _contentTable.Add(IdEMPCannon_3,
+            _contentTable.Add(
+                IdEMPCannon_3,
                 _EMPCannonPrefab_3);
 
-            _contentTable.Add(IdFridge,
+            _contentTable.Add(
+                IdFridge,
                 _fridgePrefab);
 
-            _contentTable.Add(IdMachineGunDepot,
-                 _machineGunDepotPrefab);
+            _contentTable.Add(
+                IdMachineGunDepot,
+                _machineGunDepotPrefab);
         }
 
         private void OnDisable()

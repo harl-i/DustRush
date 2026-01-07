@@ -1,6 +1,6 @@
-﻿using Environment;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Environment;
 using UnityEngine;
 
 namespace Modules.Grih.RoadTrane
@@ -9,6 +9,9 @@ namespace Modules.Grih.RoadTrane
     {
         private const int IdFridge = 35;
         private const int IdMachineGunDepot = 36;
+        private const int ValueTen = 10;
+        private const int ValueHandred = 100;
+        private const int ValueThousand = 1000;
 
         [SerializeField] private TowersHashTable _towersHash;
         [SerializeField] private WagonsHashTable _wagonsHash;
@@ -36,12 +39,15 @@ namespace Modules.Grih.RoadTrane
         private List<Wagon> _cashWagons = new List<Wagon>();
         private string _savedTrusk;
 
-        public List<Wagon> CreatedWagons => _createdWagons;
-        public List<Tower> CreatedTowers => _createdTowers;
-        public Truck CreatedTruck { get; private set; }
-
         public event Action<int> ContentRetern;
-        public event Action<List <int>, List <int>, string> Saved;
+
+        public event Action<List<int>, List<int>, string> Saved;
+
+        public List<Wagon> CreatedWagons => _createdWagons;
+
+        public List<Tower> CreatedTowers => _createdTowers;
+
+        public Truck CreatedTruck { get; private set; }
 
         private void OnDisable()
         {
@@ -163,15 +169,44 @@ namespace Modules.Grih.RoadTrane
             CreateCoupling();
         }
 
+        public void SeparateWagon(int place)
+        {
+            List<Wagon> cashWagon = new List<Wagon>();
+
+            for (int i = 0; i < _createdWagons.Count; i++)
+            {
+                if (place <= i)
+                {
+                    _createdWagons[i].GetComponent<Wagon>().Separate();
+                }
+                else
+                {
+                    cashWagon.Add(_createdWagons[i]);
+                }
+            }
+
+            _createdWagons = cashWagon;
+
+            List<int> cashTower = new List<int>();
+
+            foreach (int item in _loadedTowers)
+            {
+                if (item < place * ValueThousand)
+                    cashTower.Add(item);
+            }
+
+            _loadedTowers = cashTower;
+        }
+
         public void AddTower(int idContent, int placeTower)
         {
-            int numberWagon = placeTower / 10;
+            int numberWagon = placeTower / ValueTen;
 
-            if (placeTower < 10)
+            if (placeTower < ValueTen)
                 numberWagon = 0;
 
-            int place = placeTower % 10;
-            int fullId = (placeTower * 100 + idContent);
+            int place = placeTower % ValueTen;
+            int fullId = (placeTower * ValueHandred + idContent);
 
             Tower newTower = Instantiate(_hashTableTower[idContent].GetComponent<Tower>());
             newTower.SetID(idContent);
@@ -185,11 +220,11 @@ namespace Modules.Grih.RoadTrane
 
             foreach (int item in _loadedTowers)
             {
-                if (item < 100 && placeTower == 0)
+                if (item < ValueHandred && placeTower == 0)
                 {
                     oldTowers.Add(item);
                 }
-                else if (item > placeTower * 100 && item < (placeTower + 1) * 100)
+                else if (item > placeTower * ValueHandred && item < (placeTower + 1) * ValueHandred)
                 {
                     oldTowers.Add(item);
                 }
@@ -215,7 +250,6 @@ namespace Modules.Grih.RoadTrane
                 {
                     fridges.Add(item);
                 }
-
                 else if (item.TypeId == IdMachineGunDepot)
                 {
                     machineGunDepots.Add(item);
@@ -260,35 +294,6 @@ namespace Modules.Grih.RoadTrane
             }
         }
 
-        public void SeparateWagon(int place)
-        {
-            List<Wagon> cashWagon = new List<Wagon>();
-
-            for (int i = 0; i < _createdWagons.Count; i++)
-            {
-                if (place <= i)
-                {
-                    _createdWagons[i].GetComponent<Wagon>().Separate();
-                }
-                else
-                {
-                    cashWagon.Add(_createdWagons[i]);
-                }
-            }
-
-            _createdWagons = cashWagon;
-
-            List<int> cashTower = new List<int>();
-
-            foreach(int item in _loadedTowers)
-            {
-                if (item < place * 1000)
-                    cashTower.Add(item);
-            }
-
-            _loadedTowers = cashTower;
-        }
-
         private void Create()
         {
             CreateSavedWagons();
@@ -300,7 +305,8 @@ namespace Modules.Grih.RoadTrane
 
         private void CreateTruck()
         {
-            CreatedTruck = Instantiate(_truck,
+            CreatedTruck = Instantiate(
+                _truck,
                 transform.position = _createdWagons[0].GetComponent<Wagon>().FrontCouplingPosition.position,
                 Quaternion.identity);
 
@@ -353,7 +359,7 @@ namespace Modules.Grih.RoadTrane
                 tower = Instantiate(_towers[i].GetComponent<Tower>());
                 tower.transform.position = target.position;
                 tower.transform.parent = target.parent;
-                tower.SetPositionOnTrane((_loadedWagonTower[i] * 10) + _loadedPositionTower[i]);
+                tower.SetPositionOnTrane((_loadedWagonTower[i] * ValueTen) + _loadedPositionTower[i]);
                 tower.SetID(_towers[i].GetComponent<Tower>().TypeId);
                 tower.TowerDead += OnTowerDead;
                 _createdTowers.Add(tower);
@@ -369,7 +375,7 @@ namespace Modules.Grih.RoadTrane
         {
             foreach (int item in _loadedTowers)
             {
-                if (item < 100)
+                if (item < ValueHandred)
                 {
                     _loadedTowerId.Add(item);
                     _loadedWagonTower.Add(0);
@@ -377,9 +383,10 @@ namespace Modules.Grih.RoadTrane
                 }
                 else
                 {
-                    _loadedTowerId.Add(item % 100);
-                    _loadedWagonTower.Add(item / 1000);
-                    _loadedPositionTower.Add((item - (item / 1000 * 1000) - (item % 100)) / 100);
+                    _loadedTowerId.Add(item % ValueHandred);
+                    _loadedWagonTower.Add(item / ValueThousand);
+                    _loadedPositionTower.Add(
+                        (item - (item / ValueThousand * ValueThousand) - (item % ValueHandred)) / ValueHandred);
                 }
             }
 

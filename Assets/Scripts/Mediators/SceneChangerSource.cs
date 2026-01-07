@@ -1,5 +1,4 @@
-﻿using System;
-using Modules.Grih.SceneChanger.Public.Interfaces;
+﻿using Modules.Grih.SceneChanger.Public.Interfaces;
 using Modules.Grih.SceneChanger;
 using YG;
 

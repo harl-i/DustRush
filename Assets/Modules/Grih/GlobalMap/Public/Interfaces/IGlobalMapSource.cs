@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Modules.Grih.GlobalMap.Public.Interfaces
 {
@@ -24,6 +22,11 @@ namespace Modules.Grih.GlobalMap.Public.Interfaces
             globalMap.Saved += OnSaveGlobalMap;
         }
 
-        void OnSaveGlobalMap(bool arg1, string arg2, string arg3, List<string> list, List<string> list2);
+        public void OnSaveGlobalMap(
+            bool arg1,
+            string arg2,
+            string arg3,
+            List<string> list,
+            List<string> list2);
     }
 }

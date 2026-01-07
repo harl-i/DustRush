@@ -1,9 +1,3 @@
-/* ---------------------------------------------------------------- */
-/*                    Skip Unity Splash Screen                      */
-/*                      Create by psygames                          */
-/*            https://github.com/psygames/UnitySkipSplash           */
-/* ---------------------------------------------------------------- */
-
 #if !UNITY_EDITOR
 using UnityEngine;
 using UnityEngine.Rendering;

@@ -1,6 +1,5 @@
 ﻿using Modules.Grih.InventoryGroup;
 using Modules.Grih.InventoryGroup.Public.Interfaces;
-using System;
 using YG;
 
 namespace Game
@@ -19,7 +18,13 @@ namespace Game
             int savedScoreDollars)
         {
             _source = source;
-            _source.Init(money, metal, dollars, savedScoreMoney, savedScoreMetal, savedScoreDollars);
+            _source.Init(
+                money,
+                metal, 
+                dollars, 
+                savedScoreMoney, 
+                savedScoreMetal, 
+                savedScoreDollars);
         }
 
         public void OnDollarsSave(int value)

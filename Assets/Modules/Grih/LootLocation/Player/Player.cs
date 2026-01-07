@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -52,7 +51,6 @@ namespace Modules.Grih.LootLocation
 
             if (_shooting == null)
                 _shooting = StartCoroutine(Shooting());
-
         }
 
         private IEnumerator Shooting()

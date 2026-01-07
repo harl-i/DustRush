@@ -13,7 +13,7 @@ namespace Modules.Grih.Sity
         public enum TypeExchange
         {
             Money,
-            Metal
+            Metal,
         }
 
         [SerializeField] private TypeExchange _type;
