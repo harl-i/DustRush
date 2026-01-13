@@ -393,10 +393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465020fb107574246bd6f7f6902a0f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxXValue: 5
-  MinXValue: -5
-  MaxYValue: 6
-  MinYValue: -20
+  _maxXValue: 5
+  _minXValue: -5
+  _maxYValue: 6
+  _minYValue: -15
   _camera: {fileID: 930468117}
 --- !u!114 &62163009
 MonoBehaviour:
@@ -2961,13 +2961,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 603485458}
+  - component: {fileID: 603485463}
   - component: {fileID: 603485457}
-  - component: {fileID: 603485456}
   - component: {fileID: 603485455}
   - component: {fileID: 603485459}
   - component: {fileID: 603485460}
   - component: {fileID: 603485462}
-  - component: {fileID: 603485461}
   m_Layer: 0
   m_Name: Train
   m_TagString: Untagged
@@ -3013,24 +3012,6 @@ MonoBehaviour:
   _EMPCannonPrefab_3: {fileID: 5804457351511402349, guid: 13ebf47bd9d38104a87a05f299977410, type: 3}
   _fridgePrefab: {fileID: 5804457351511402349, guid: 2da995f206074cb41a46e277bc28fd49, type: 3}
   _machineGunDepotPrefab: {fileID: 5804457351511402349, guid: eb9b570177934a845af0fb6ba5fbe743, type: 3}
---- !u!114 &603485456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603485454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809ee5316bdce1489004d5b0a824370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _towersHash: {fileID: 603485455}
-  _wagonsHash: {fileID: 603485459}
-  _truck: {fileID: 1109725518541359637, guid: e45838697c77b194dbdeaa3c6c4252c0, type: 3}
-  _truckInstaller: {fileID: 603485460}
-  _couplingPrefab: {fileID: 8147595187268130676, guid: a884df04c8466a04caa180b0dc076fa0, type: 3}
-  _groundMover: {fileID: 202706489}
 --- !u!114 &603485457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3108,22 +3089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mover: {fileID: 202706489}
   _startBoost: {fileID: 753835672}
---- !u!114 &603485461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603485454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19dd953beb1244140a37dc7883cc40b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteRenderer: {fileID: 0}
-  _speedSprite: {fileID: 21300000, guid: 2f9cda057fcdcf846be07b5381de08ab, type: 3}
-  _attackerSprite: {fileID: 21300000, guid: dccf0ee4ce0b03a4b92070dcbc6f22ef, type: 3}
-  _stealtherSprite: {fileID: 21300000, guid: a5ad63f11ec0c6f4dae9e97b033af481, type: 3}
+  _truck: {fileID: 5179906140194343353, guid: 1929b8fb59da39a47bce74cf7b957812, type: 3}
 --- !u!212 &603485462
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3176,6 +3142,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &603485463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603485454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e007fb4c81e1504bbf9c3d1473d6826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towersHash: {fileID: 603485455}
+  _wagonsHash: {fileID: 603485459}
+  _truck: {fileID: 5179906140194343353, guid: 1929b8fb59da39a47bce74cf7b957812, type: 3}
+  _truckInstaller: {fileID: 603485460}
+  _couplingPrefab: {fileID: 8147595187268130676, guid: a884df04c8466a04caa180b0dc076fa0, type: 3}
+  _groundMover: {fileID: 202706489}
 --- !u!1 &665935142
 GameObject:
   m_ObjectHideFlags: 0
@@ -4970,10 +4954,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465020fb107574246bd6f7f6902a0f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxXValue: 5
-  MinXValue: -5
-  MaxYValue: 6
-  MinYValue: -20
+  _maxXValue: 5
+  _minXValue: -5
+  _maxYValue: 6
+  _minYValue: -20
   _camera: {fileID: 930468117}
 --- !u!114 &930468121
 MonoBehaviour:
@@ -5483,7 +5467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelConfig: {fileID: 11400000, guid: e3da418ff96054d4881ffcdb8458b39b, type: 2}
-  _fabricTrane: {fileID: 603485456}
+  _fabricTrane: {fileID: 0}
 --- !u!1 &1132933696
 GameObject:
   m_ObjectHideFlags: 0
@@ -6469,7 +6453,7 @@ MonoBehaviour:
   _money: {fileID: 565515214}
   _metal: {fileID: 2011831457}
   _dollars: {fileID: 224534087}
-  _fabricTrane: {fileID: 603485456}
+  _fabricTrain: {fileID: 603485463}
   _sceneChangerScript: {fileID: 534690888}
   _globalMap: {fileID: 1616429636}
 --- !u!4 &1318232899
@@ -8329,10 +8313,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465020fb107574246bd6f7f6902a0f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxXValue: 5
-  MinXValue: -5
-  MaxYValue: 6
-  MinYValue: -20
+  _maxXValue: 5
+  _minXValue: -5
+  _maxYValue: 6
+  _minYValue: -15
   _camera: {fileID: 930468117}
 --- !u!114 &1871708807
 MonoBehaviour:

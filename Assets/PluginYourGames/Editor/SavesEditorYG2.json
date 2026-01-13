@@ -7,13 +7,13 @@
         false,
         false
     ],
-    "idSave": 1013,
-    "CurrentScene": "Sity",
-    "Money": 102,
-    "Metal": 149,
+    "idSave": 1196,
+    "CurrentScene": "SampleScene",
+    "Money": 142,
+    "Metal": 210,
     "Dollars": 324,
     "IsFirstTraneBuld": true,
-    "TruskType": "Speeder",
+    "TruskType": "Attacker",
     "SavedWagons": [
         39,
         38,
@@ -45,13 +45,7 @@
         1111,
         3312
     ],
-    "SavedCell": [
-        1,
-        1,
-        1,
-        1,
-        41
-    ],
+    "SavedCell": [],
     "OpenBlueprint": [
         1,
         2,
@@ -81,9 +75,6 @@
     "IsGoingToPath": false,
     "SavedDeport": "FirstSity",
     "SavedPointToRoad": "FirstSity",
-    "OpenLocals": [
-        "FirstSity"
-    ],
     "SavedTowns": [],
     "CooldownDump": 0
 }

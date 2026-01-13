@@ -8,16 +8,16 @@ namespace Game
         [SerializeField] private Modules.Grih.InventoryGroup.InventoryItem _money;
         [SerializeField] private Modules.Grih.InventoryGroup.InventoryItem _metal;
         [SerializeField] private Modules.Grih.InventoryGroup.InventoryItem _dollars;
-        [SerializeField] private Modules.Grih.RoadTrane.FabricTrane _fabricTrane;
+        [SerializeField] private Modules.Grih.RoadTrain.FabricTrain _fabricTrain;
         [SerializeField] private Modules.Grih.SceneChanger.SceneChangerScript _sceneChangerScript;
         [SerializeField] private Modules.Grih.GlobalMap.GlobalMap _globalMap;
 
         private void Start()
         {
-            TraneSource traneSource = new TraneSource();
+            TrainSource traneSource = new TrainSource();
             traneSource.Init(
                 traneSource,
-                _fabricTrane,
+                _fabricTrain,
                 YG2.saves.SavedWagons,
                 YG2.saves.SavedTowers,
                 YG2.saves.TruskType);
@@ -44,7 +44,6 @@ namespace Game
                 YG2.saves.IsGoingToPath,
                 YG2.saves.SavedDeport,
                 YG2.saves.SavedPointToRoad,
-                YG2.saves.OpenLocals,
                 YG2.saves.SavedTowns);
         }
     }

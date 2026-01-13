@@ -12,7 +12,7 @@ namespace YG
         private const int Dollar50Value = 50;
         private const int Dollar100Value = 100;
 
-        [SerializeField] private Inventory.Dollars _dollarCounter;
+        [SerializeField] private Modules.Grih.InventoryGroup.Dollars _dollarCounter;
 
         private void OnEnable()
         {
