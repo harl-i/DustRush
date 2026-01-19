@@ -11,10 +11,6 @@ namespace Modules.Grih.RoadTrain
 
         public string TypeTrusk => _savedType;
 
-        public override void OnEnabled()
-        {
-        }
-
         public void Init(string type)
         {
             foreach (TruckStrategy strategy in _truckTypes)

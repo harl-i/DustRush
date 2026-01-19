@@ -19,7 +19,7 @@ namespace Modules.Grih.Sity
         private const int ValueHundred = 100;
 
         [SerializeField] private List<Transform> _placeInventory;
-        [SerializeField] private InventoryHashTable _inventoryHashTable;
+        [SerializeField] private ItemTable _inventoryHashTable;
         [SerializeField] private ConstuctorTrane _constuctor;
         [SerializeField] private FabricTrain _fabricTrane;
         [SerializeField] private Shop _shop;
@@ -55,7 +55,11 @@ namespace Modules.Grih.Sity
         {
             _savedData = savedData;
             _fabricTrane.ContentRetern += ReterndTower;
-            _idContent = _inventoryHashTable.ContentTable;
+
+            foreach (var item in _inventoryHashTable.CurrenTable)
+            {
+                _idContent.Add(item.Key, item.Value.GetComponent<ShopCell>());
+            }
 
             SetSavedItem();
         }
@@ -126,7 +130,7 @@ namespace Modules.Grih.Sity
             {
                 foreach (ShopCell cell in _haveCell)
                 {
-                    if (cell.IdContent > TruskMaxId 
+                    if (cell.IdContent > TruskMaxId
                         && cell.IdContent < TowerMinId + OffsetOne)
                     {
                         cell.ActivateShowing();

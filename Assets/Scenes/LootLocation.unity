@@ -2021,62 +2021,63 @@ MonoBehaviour:
   m_GameObject: {fileID: 1174196826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2b6975ca53aa04185ae7a4318f22e2, type: 3}
+  m_Script: {fileID: 11500000, guid: be1b171f4b52b264292c35ed7c9ffe46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedster: {fileID: 7218513257617342851, guid: 33c72331fb1aa3a4ba78d9c4093f43be, type: 3}
-  _atacker: {fileID: 7218513257617342851, guid: f5617f81e177bbb48b74f91118bc89cb, type: 3}
-  _stealther: {fileID: 7218513257617342851, guid: bd9e73206365c704ca8aac18c943bfe6, type: 3}
-  _mashineGunPrefab_1: {fileID: 7218513257617342851, guid: 96fa10479fcabfc48b9fcdca927e14cc, type: 3}
-  _mashineGunPrefab_2: {fileID: 7218513257617342851, guid: a8bd4997a010be142a2e036b40ea91c6, type: 3}
-  _mashineGunPrefab_3: {fileID: 7218513257617342851, guid: d9eee8277ecf9d14886bc51ab2b22547, type: 3}
-  _shotgunPrefab_1: {fileID: 7218513257617342851, guid: 5ef93cdd1d7b39644b235de1d72dab49, type: 3}
-  _shotgunPrefab_2: {fileID: 7218513257617342851, guid: ed10db109f68e1c43b6ef1ede53b90a3, type: 3}
-  _shotgunPrefab_3: {fileID: 7218513257617342851, guid: bbb5c486c9ad45745a113ddbb908cc12, type: 3}
-  _harpoonPrefab_1: {fileID: 7218513257617342851, guid: fe19f95fdf02b07498358e75bfcdd727, type: 3}
-  _harpoonPrefab_2: {fileID: 7218513257617342851, guid: 7f1e8528b753f124f92dc9f567e09b09, type: 3}
-  _harpoonPrefab_3: {fileID: 7218513257617342851, guid: 3852fcab697ab034d9785b82a06da410, type: 3}
-  _mortarPrefab_1: {fileID: 7218513257617342851, guid: 47245a8858b104a4d923969548ebeb01, type: 3}
-  _mortarPrefab_2: {fileID: 7218513257617342851, guid: 9a4f7ff9612da054abcc31d14397f7b9, type: 3}
-  _mortarPrefab_3: {fileID: 7218513257617342851, guid: d907293d34c29604e99a6093112895af, type: 3}
-  _rocketLauncherPrefab_1: {fileID: 7218513257617342851, guid: 39f7c92fc5a42c04ab553e1e2bfdb899, type: 3}
-  _rocketLauncherPrefab_2: {fileID: 7218513257617342851, guid: a5c095a391855a44393e0c762bd7141e, type: 3}
-  _rocketLauncherPrefab_3: {fileID: 7218513257617342851, guid: 130fbcacf0d54c948a4b68fa30c570d3, type: 3}
-  _flamethrowerPrefab_1: {fileID: 7218513257617342851, guid: 695cf5ad45133da418d46ff2692f725b, type: 3}
-  _flamethrowerPrefab_2: {fileID: 7218513257617342851, guid: 98cd35340ec7f744590d9bce4dbe9bcd, type: 3}
-  _flamethrowerPrefab_3: {fileID: 7218513257617342851, guid: 55a8d7330f8fabe4ea7a1abe5ce8367c, type: 3}
-  _gaussGunPrefab_1: {fileID: 7218513257617342851, guid: eb72e2a9517c871478826a0b00ef4ee5, type: 3}
-  _gaussGunPrefab_2: {fileID: 7218513257617342851, guid: 921418254bb97ab4f9f8e69fd3c38cc4, type: 3}
-  _gaussGunPrefab_3: {fileID: 7218513257617342851, guid: 212b7109a1c0c1a4a948e1aaa88d1ede, type: 3}
-  _EMPCannonPrefab_1: {fileID: 7218513257617342851, guid: f76ec9a6f4f44af4fae2b7c1740c8853, type: 3}
-  _EMPCannonPrefab_2: {fileID: 7218513257617342851, guid: 04c39b45245f0cd4ea9002d7b554c4a7, type: 3}
-  _EMPCannonPrefab_3: {fileID: 7218513257617342851, guid: d5f0e8d5dc2b0324caffb09dc9cbc393, type: 3}
-  _fridgePrefab: {fileID: 7218513257617342851, guid: e754e0e54b940d547abb92bff4f7a6b4, type: 3}
-  _machineGunDepotPrefab: {fileID: 7218513257617342851, guid: 18d30a261f150ed4a9d260436859d119, type: 3}
-  _wagonEmpty_1: {fileID: 7218513257617342851, guid: 6de6929a921fb63498b7d054832c2e78, type: 3}
-  _wagonEmpty_2: {fileID: 7218513257617342851, guid: 85ddb8670975a884983ee925b9786c98, type: 3}
-  _wagonEmpty_3: {fileID: 7218513257617342851, guid: a75697115584f39498300a9daefd7f3a, type: 3}
-  _batteryWagon: {fileID: 7218513257617342851, guid: ded31ccdc3a30884d91bac739128e7d7, type: 3}
-  _batteryWagon2: {fileID: 7218513257617342851, guid: 78f2153d0f803114d98ae4ea4d0bae12, type: 3}
-  _batteryWagon3: {fileID: 7218513257617342851, guid: b3a76f7e0c7994a4a8032801d0720ddc, type: 3}
-  _fuelWagon: {fileID: 7218513257617342851, guid: 8ff486efc95bacb43ab5f1137a969656, type: 3}
-  _fuelWagon2: {fileID: 7218513257617342851, guid: 8ced3cab92c3f0f499c714dcab558d34, type: 3}
-  _fuelWagon3: {fileID: 7218513257617342851, guid: 1c6d4725e4d97834d8ba088ed323ebf2, type: 3}
-  _engineeringWagon: {fileID: 7218513257617342851, guid: a98cf772b1827b048b83e2ea14c54ecb, type: 3}
-  _engineeringWagon2: {fileID: 7218513257617342851, guid: ff45d88f20d863549a1b3d46bde7c2b7, type: 3}
-  _engineeringWagon3: {fileID: 7218513257617342851, guid: 34882d6bc09ab8547b6e7460747c0600, type: 3}
-  _livingWagon: {fileID: 7218513257617342851, guid: 18483d16a58693841a5818c69a3c0ad4, type: 3}
-  _livingWagon2: {fileID: 7218513257617342851, guid: 009d060f821aab54c90ab614b8ad69fa, type: 3}
-  _livingWagon3: {fileID: 7218513257617342851, guid: d3f7a6dae3133b646833c299410c7176, type: 3}
-  _mlitaryWagon: {fileID: 7218513257617342851, guid: 99ab644813a974143a20915e22b77010, type: 3}
-  _mlitaryWagon2: {fileID: 7218513257617342851, guid: 362ab7858f89c774d90f9a0dc1ee423b, type: 3}
-  _mlitaryWagon3: {fileID: 7218513257617342851, guid: 2e2a9bd84e86009428047abe2fdaf203, type: 3}
-  _solarBWagon: {fileID: 7218513257617342851, guid: 0039b651d3ceee34fba34cc8576ca65b, type: 3}
-  _solarBWagon2: {fileID: 7218513257617342851, guid: 264fb88c5369eb84cb5e6eeda5fdc3ec, type: 3}
-  _solarBWagon3: {fileID: 7218513257617342851, guid: 32edc984f1154e248947ea097d9015b7, type: 3}
-  _fuelPowerGeneratorWagon: {fileID: 7218513257617342851, guid: a17f90a2e9b6baf49a0fed03b70d95f3, type: 3}
-  _fuelPowerGeneratorWagon2: {fileID: 7218513257617342851, guid: 7c5912e02dd426148a0f1b3f67695696, type: 3}
-  _fuelPowerGeneratorWagon3: {fileID: 7218513257617342851, guid: c7873b0977a644c4a8d1323962f3edc0, type: 3}
+  _prefabHaveIdItems:
+  - {fileID: 7218513257617342851, guid: f76ec9a6f4f44af4fae2b7c1740c8853, type: 3}
+  - {fileID: 7218513257617342851, guid: 04c39b45245f0cd4ea9002d7b554c4a7, type: 3}
+  - {fileID: 7218513257617342851, guid: d5f0e8d5dc2b0324caffb09dc9cbc393, type: 3}
+  - {fileID: 7218513257617342851, guid: a98cf772b1827b048b83e2ea14c54ecb, type: 3}
+  - {fileID: 7218513257617342851, guid: ff45d88f20d863549a1b3d46bde7c2b7, type: 3}
+  - {fileID: 7218513257617342851, guid: 34882d6bc09ab8547b6e7460747c0600, type: 3}
+  - {fileID: 7218513257617342851, guid: 695cf5ad45133da418d46ff2692f725b, type: 3}
+  - {fileID: 7218513257617342851, guid: 98cd35340ec7f744590d9bce4dbe9bcd, type: 3}
+  - {fileID: 7218513257617342851, guid: 55a8d7330f8fabe4ea7a1abe5ce8367c, type: 3}
+  - {fileID: 7218513257617342851, guid: e754e0e54b940d547abb92bff4f7a6b4, type: 3}
+  - {fileID: 7218513257617342851, guid: a17f90a2e9b6baf49a0fed03b70d95f3, type: 3}
+  - {fileID: 7218513257617342851, guid: 7c5912e02dd426148a0f1b3f67695696, type: 3}
+  - {fileID: 7218513257617342851, guid: c7873b0977a644c4a8d1323962f3edc0, type: 3}
+  - {fileID: 7218513257617342851, guid: 8ff486efc95bacb43ab5f1137a969656, type: 3}
+  - {fileID: 7218513257617342851, guid: 8ced3cab92c3f0f499c714dcab558d34, type: 3}
+  - {fileID: 7218513257617342851, guid: 1c6d4725e4d97834d8ba088ed323ebf2, type: 3}
+  - {fileID: 7218513257617342851, guid: eb72e2a9517c871478826a0b00ef4ee5, type: 3}
+  - {fileID: 7218513257617342851, guid: 921418254bb97ab4f9f8e69fd3c38cc4, type: 3}
+  - {fileID: 7218513257617342851, guid: 212b7109a1c0c1a4a948e1aaa88d1ede, type: 3}
+  - {fileID: 7218513257617342851, guid: fe19f95fdf02b07498358e75bfcdd727, type: 3}
+  - {fileID: 7218513257617342851, guid: 7f1e8528b753f124f92dc9f567e09b09, type: 3}
+  - {fileID: 7218513257617342851, guid: 3852fcab697ab034d9785b82a06da410, type: 3}
+  - {fileID: 7218513257617342851, guid: 18483d16a58693841a5818c69a3c0ad4, type: 3}
+  - {fileID: 7218513257617342851, guid: 009d060f821aab54c90ab614b8ad69fa, type: 3}
+  - {fileID: 7218513257617342851, guid: d3f7a6dae3133b646833c299410c7176, type: 3}
+  - {fileID: 7218513257617342851, guid: 18d30a261f150ed4a9d260436859d119, type: 3}
+  - {fileID: 7218513257617342851, guid: 96fa10479fcabfc48b9fcdca927e14cc, type: 3}
+  - {fileID: 7218513257617342851, guid: a8bd4997a010be142a2e036b40ea91c6, type: 3}
+  - {fileID: 7218513257617342851, guid: d9eee8277ecf9d14886bc51ab2b22547, type: 3}
+  - {fileID: 7218513257617342851, guid: 99ab644813a974143a20915e22b77010, type: 3}
+  - {fileID: 7218513257617342851, guid: 362ab7858f89c774d90f9a0dc1ee423b, type: 3}
+  - {fileID: 7218513257617342851, guid: 2e2a9bd84e86009428047abe2fdaf203, type: 3}
+  - {fileID: 7218513257617342851, guid: 47245a8858b104a4d923969548ebeb01, type: 3}
+  - {fileID: 7218513257617342851, guid: 9a4f7ff9612da054abcc31d14397f7b9, type: 3}
+  - {fileID: 7218513257617342851, guid: d907293d34c29604e99a6093112895af, type: 3}
+  - {fileID: 7218513257617342851, guid: 39f7c92fc5a42c04ab553e1e2bfdb899, type: 3}
+  - {fileID: 7218513257617342851, guid: a5c095a391855a44393e0c762bd7141e, type: 3}
+  - {fileID: 7218513257617342851, guid: 130fbcacf0d54c948a4b68fa30c570d3, type: 3}
+  - {fileID: 7218513257617342851, guid: 5ef93cdd1d7b39644b235de1d72dab49, type: 3}
+  - {fileID: 7218513257617342851, guid: ed10db109f68e1c43b6ef1ede53b90a3, type: 3}
+  - {fileID: 7218513257617342851, guid: bbb5c486c9ad45745a113ddbb908cc12, type: 3}
+  - {fileID: 7218513257617342851, guid: 0039b651d3ceee34fba34cc8576ca65b, type: 3}
+  - {fileID: 7218513257617342851, guid: 264fb88c5369eb84cb5e6eeda5fdc3ec, type: 3}
+  - {fileID: 7218513257617342851, guid: 32edc984f1154e248947ea097d9015b7, type: 3}
+  - {fileID: 7218513257617342851, guid: f5617f81e177bbb48b74f91118bc89cb, type: 3}
+  - {fileID: 7218513257617342851, guid: 33c72331fb1aa3a4ba78d9c4093f43be, type: 3}
+  - {fileID: 7218513257617342851, guid: bd9e73206365c704ca8aac18c943bfe6, type: 3}
+  - {fileID: 7218513257617342851, guid: ded31ccdc3a30884d91bac739128e7d7, type: 3}
+  - {fileID: 7218513257617342851, guid: 78f2153d0f803114d98ae4ea4d0bae12, type: 3}
+  - {fileID: 7218513257617342851, guid: b3a76f7e0c7994a4a8032801d0720ddc, type: 3}
+  - {fileID: 7218513257617342851, guid: 6de6929a921fb63498b7d054832c2e78, type: 3}
+  - {fileID: 7218513257617342851, guid: 85ddb8670975a884983ee925b9786c98, type: 3}
+  - {fileID: 7218513257617342851, guid: a75697115584f39498300a9daefd7f3a, type: 3}
 --- !u!1 &1199737985
 GameObject:
   m_ObjectHideFlags: 0
@@ -4125,6 +4126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f10e1e7f27c31c442b454e56ea781922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startBlueprints: 
+  _allItemsTable: {fileID: 1174196828}
 --- !u!4 &2073739903
 Transform:
   m_ObjectHideFlags: 0

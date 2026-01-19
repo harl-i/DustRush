@@ -49,6 +49,7 @@ namespace Common
         private void OnDisable()
         {
             _levelsForNames = new Dictionary<string, int>();
+            _locationIsSity = new Dictionary<string, bool>();
         }
     }
 }

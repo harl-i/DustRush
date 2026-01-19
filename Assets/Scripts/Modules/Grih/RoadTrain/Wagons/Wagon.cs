@@ -7,6 +7,7 @@ namespace Modules.Grih.RoadTrain
 {
     public class Wagon : TrainPart
     {
+        private const string Sity = "Sity";
 
         [SerializeField] private List<Transform> _pointsTower = new List<Transform>();
         [SerializeField] private Transform _front—ouplingPosition;
@@ -44,21 +45,17 @@ namespace Modules.Grih.RoadTrain
         {
             _separating = null;
 
-            if (SceneManager.GetActiveScene().name == "Sity")
+            if (SceneManager.GetActiveScene().name == Sity)
                 return;
 
             _groundMover.SpeedChanged -= OnSpeedShange;
-        }
-
-        public override void OnEnabled()
-        {
         }
 
         public void Init(Environment.GroundMover groundMover)
         {
             _groundMover = groundMover;
 
-            if (SceneManager.GetActiveScene().name == "Sity")
+            if (SceneManager.GetActiveScene().name == Sity)
                 return;
 
             _separateSpeed = _groundMover.CurrentSpeed;

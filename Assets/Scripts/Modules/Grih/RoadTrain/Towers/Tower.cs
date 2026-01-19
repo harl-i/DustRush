@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Modules.Grih.RoadTrain
 {
-    public class Tower : MonoBehaviour
+    public class Tower : HaveIdItem
     {
         [SerializeField] private string _name;
         [SerializeField] private int _damge;

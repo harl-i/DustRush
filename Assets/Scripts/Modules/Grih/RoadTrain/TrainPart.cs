@@ -4,8 +4,10 @@ using UnityEngine.SceneManagement;
 
 namespace Modules.Grih.RoadTrain
 {
-    public abstract class TrainPart : MonoBehaviour
+    public abstract class TrainPart : HaveIdItem
     {
+        private const string Sity = "Sity";
+
         private const float MaxDelay = 3f;
         private const float MinDelay = 1f;
         private const int RandomLimit = 2;
@@ -25,15 +27,12 @@ namespace Modules.Grih.RoadTrain
         private void OnEnable()
         {
             _waitReternVibration = new WaitForSeconds(_reternValue);
-            OnEnabled();
 
-            if (SceneManager.GetActiveScene().name == "Sity")
+            if (SceneManager.GetActiveScene().name == Sity)
                 return;
 
             Vibration();
         }
-
-        public abstract void OnEnabled();
 
         public void StopVibration()
         {

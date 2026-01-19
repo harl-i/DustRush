@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Modules.Grih.RoadTrain;
 using UnityEngine;
 
 namespace Modules.Grih.Sity
@@ -6,7 +7,7 @@ namespace Modules.Grih.Sity
     public class Shop : MonoBehaviour
     {
         [SerializeField] private List<Transform> _placesForCell = new List<Transform>();
-        [SerializeField] private InventoryHashTable _inventoryHashTable;
+        [SerializeField] private ItemTable _inventoryHashTable;
         [SerializeField] private Modules.Grih.InventoryGroup.Money _money;
         [SerializeField] private Modules.Grih.InventoryGroup.Metal _metal;
         [SerializeField] private Modules.Grih.InventoryGroup.Dollars _dollars;
@@ -40,7 +41,7 @@ namespace Modules.Grih.Sity
         {
             ShopCell cell = null;
 
-            foreach (var item in _inventoryHashTable.ContentTable)
+            foreach (var item in _inventoryHashTable.CurrenTable)
             {
                 cell = Instantiate(item.Value.GetComponent<ShopCell>());
                 cell.transform.localPosition = _placesForCell[_createdCell.Count].position;
@@ -74,7 +75,8 @@ namespace Modules.Grih.Sity
                         _money.ChangeValue(-moneyCoust);
                         _metal.ChangeValue(-metalCoust);
 
-                        _garageInventoryPlayer.AddCell(_inventoryHashTable.ContentTable[id], id);
+                        _garageInventoryPlayer.AddCell(
+                            _inventoryHashTable.CurrenTable[id].GetComponent<ShopCell>(), id);
                     }
                 }
             }

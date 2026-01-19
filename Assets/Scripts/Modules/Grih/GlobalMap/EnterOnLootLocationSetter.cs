@@ -1,5 +1,5 @@
-﻿using Common;
-using System.Collections;
+﻿using System.Collections;
+using Common;
 using UnityEngine;
 
 namespace Modules.Grih.GlobalMap
@@ -29,11 +29,11 @@ namespace Modules.Grih.GlobalMap
                 return;
 
             _isStarted = true;
-            
+
             Init();
         }
 
-        public void OnDestroy()
+        private void OnDestroy()
         {
             _enterOnLoot.Activated -= ActivatedEnter;
         }
@@ -44,13 +44,13 @@ namespace Modules.Grih.GlobalMap
             _waitLifeView = new WaitForSeconds(_lifeValue);
             _enterOnLoot.Activated += ActivatedEnter;
 
-            if (Random.Range (0, _randomValueProbabilityToOne) != RandomValue)
+            if (Random.Range(0, _randomValueProbabilityToOne) != RandomValue)
             {
                 _enterOnLoot.gameObject.SetActive(false);
                 return;
             }
 
-            if (_global.IsGoingToPath 
+            if (_global.IsGoingToPath
                 || _global.SavedDeport == LessonLevel
                 || _hashLocalName.LocationIsSity[_global.SavedDeport])
             {

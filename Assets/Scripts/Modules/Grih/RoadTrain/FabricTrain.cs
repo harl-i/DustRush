@@ -13,16 +13,16 @@ namespace Modules.Grih.RoadTrain
         private const int ValueHandred = 100;
         private const int ValueThousand = 1000;
 
-        [SerializeField] private TowersHashTable _towersHash;
-        [SerializeField] private WagonsHashTable _wagonsHash;
+        [SerializeField] private ItemTable _towersHash;
+        [SerializeField] private ItemTable _wagonsHash;
 
         [SerializeField] private Truck _truck;
         [SerializeField] private TruckInstaller _truckInstaller;
         [SerializeField] private Coupling _couplingPrefab;
         [SerializeField] private GroundMover _groundMover;
 
-        private Dictionary<int, GameObject> _hashTableTower = new Dictionary<int, GameObject>();
-        private Dictionary<int, GameObject> _hashTableWagon = new Dictionary<int, GameObject>();
+        private Dictionary<int, HaveIdItem> _hashTableTower = new Dictionary<int, HaveIdItem>();
+        private Dictionary<int, HaveIdItem> _hashTableWagon = new Dictionary<int, HaveIdItem>();
 
         private List<Wagon> _wagons = new List<Wagon>();
         private List<Wagon> _createdWagons = new List<Wagon>();
@@ -70,8 +70,8 @@ namespace Modules.Grih.RoadTrain
             _loadedTowers = savedTower;
             _savedTrusk = savedTrusk;
 
-            _hashTableTower = _towersHash.TowersTable;
-            _hashTableWagon = _wagonsHash.WagonsTable;
+            _hashTableTower = _towersHash.CurrenTable;
+            _hashTableWagon = _wagonsHash.CurrenTable;
             Load();
         }
 
@@ -123,7 +123,7 @@ namespace Modules.Grih.RoadTrain
             {
                 foreach (int item in _loadedTowers)
                 {
-                    if (item > changedWagon * 1000 && item < (changedWagon + 1) * 1000)
+                    if (item > changedWagon * 1000 && item < (changedWagon + 1) * ValueThousand)
                     {
                         ContentRetern?.Invoke(item);
                         cashTower.Add(item);
@@ -390,9 +390,11 @@ namespace Modules.Grih.RoadTrain
 
             foreach (var item in _loadedTowerId)
             {
-                _hashTableTower.TryGetValue(item, out GameObject tower);
-                _towers.Add(tower.GetComponent<Tower>());
-                tower.GetComponent<Tower>().SetID(item);
+                if (_hashTableTower.TryGetValue(item, out HaveIdItem tower))
+                {
+                    _towers.Add(tower.GetComponent<Tower>());
+                    tower.GetComponent<Tower>().SetID(item);
+                }
             }
 
             foreach (var item in _loadedWagons)

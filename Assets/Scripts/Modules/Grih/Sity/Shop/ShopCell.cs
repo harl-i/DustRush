@@ -1,11 +1,12 @@
 ﻿using System;
+using Modules.Grih.RoadTrain;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Modules.Grih.Sity
 {
-    public class ShopCell : MonoBehaviour
+    public class ShopCell : HaveIdItem
     {
         [SerializeField] private int _coustMoney;
         [SerializeField] private int _coustMetal;
@@ -17,9 +18,12 @@ namespace Modules.Grih.Sity
         [SerializeField] private TextMeshProUGUI _coustMoneyView;
         [SerializeField] private TextMeshProUGUI _coustMetalView;
 
+        [SerializeField] private int _tier;
+        [SerializeField] private bool _isStartPackage = false;
+
         private ShopCellNeedBlueprint _boxNeedBlueprint;
-        private Modules.Grih.InventoryGroup.Dollars _dollars;
         private BlueprintObserver _blueprintObserver;
+        private Modules.Grih.InventoryGroup.Dollars _dollars;
 
         public event Action<int, int, int> Byed;
 
@@ -31,8 +35,15 @@ namespace Modules.Grih.Sity
 
         public bool IsByed { get; private set; } = false;
 
+        public int Tier => _tier;
+
+        public bool IsStartPackage => _isStartPackage;
+
         private void OnEnable()
         {
+            if (IdContent == 0)
+                IdContent = Id;
+
             _buttonActivate.onClick.AddListener(OnClick);
             _buttonSale.onClick.AddListener(OnClickSale);
             _coustMoneyView.text = _coustMoney.ToString();
@@ -47,7 +58,6 @@ namespace Modules.Grih.Sity
         {
             _buttonActivate.onClick.RemoveListener(OnClick);
             _buttonSale.onClick.RemoveListener(OnClickSale);
-
         }
 
         private void Start()

@@ -7,6 +7,7 @@ namespace Modules.Grih.GlobalMap
 {
     public class MapTimer : MonoBehaviour
     {
+        private const string Sity = "Sity";
         private const int DividerUnFinishMap = 2;
 
         [SerializeField] private GlobalMapView _mapView;
@@ -19,7 +20,7 @@ namespace Modules.Grih.GlobalMap
         {
             _wait = new WaitForSeconds(1);
 
-            if (SceneManager.GetActiveScene().name != "Sity")
+            if (SceneManager.GetActiveScene().name != Sity)
             {
                 if (isUnfinishedPath == false)
                 {

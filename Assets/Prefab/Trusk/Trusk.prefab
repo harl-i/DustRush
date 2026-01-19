@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19dd953beb1244140a37dc7883cc40b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 1
   _truckTypes:
   - {fileID: 5185559114019930242}
   - {fileID: 2208054497502473181}

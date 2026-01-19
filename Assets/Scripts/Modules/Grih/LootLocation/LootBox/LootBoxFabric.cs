@@ -1,6 +1,6 @@
-﻿using Modules.Grih.InventoryGroup;
+﻿using System.Collections.Generic;
+using Modules.Grih.InventoryGroup;
 using Modules.Grih.Sity;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Modules.Grih.LootLocation
@@ -18,8 +18,8 @@ namespace Modules.Grih.LootLocation
         [SerializeField] private Metal _metalCounter;
         [SerializeField] private BlueprintObserver _blueprintObserver;
         [SerializeField] private Player _player;
-        [SerializeField] private Common.HashTableLocation _hashTableLocation;
         [SerializeField] private LootLocationExit _exit;
+        [SerializeField] private Common.HashTableLocation _hashTableLocation;
 
         [SerializeField] private BackLootLocation _backLootLocation;
 

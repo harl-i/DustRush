@@ -43,7 +43,7 @@ namespace Modules.Grih.Sity
             _saveButton.onClick.RemoveListener(OnSaveClick);
         }
 
-        public void OnReward(string _)
+        public void OnReward(string value)
         {
             _global.SaveOpenTown(_global.SavedDeport);
             TrySetAlredyOpen();

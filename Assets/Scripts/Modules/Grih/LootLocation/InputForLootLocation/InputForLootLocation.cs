@@ -8,10 +8,11 @@ namespace Modules.Grih.LootLocation
     {
         public const int LeftMouse = 0;
 
-        public event Action<Vector2> Moved;
-        public event Action<Vector2> Shoot;
-
         private bool _isMoble = false;
+
+        public event Action<Vector2> Moved;
+
+        public event Action<Vector2> Shoot;
 
         private void Update()
         {
@@ -41,7 +42,6 @@ namespace Modules.Grih.LootLocation
                     Shoot?.Invoke(tochPos);
                 }
             }
-
             else
             {
                 if (Input.GetKey(KeyCode.W))

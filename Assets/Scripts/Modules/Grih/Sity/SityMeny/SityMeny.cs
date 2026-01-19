@@ -37,7 +37,6 @@ namespace Modules.Grih.Sity
                 foreach (SityWindowOpener window in _menus)
                 {
                     window.ChangeView(false);
-
                 }
             }
         }

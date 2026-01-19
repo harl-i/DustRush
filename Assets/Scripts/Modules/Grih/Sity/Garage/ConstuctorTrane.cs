@@ -261,7 +261,7 @@ namespace Modules.Grih.Sity
                         button = Instantiate(_placeUi);
                         button.transform.position = _fabricTrane.CreatedWagons[i].PointsTower[j].transform.position;
                         button.transform.SetParent(_fabricTrane.CreatedWagons[i].transform);
-                        button.Init(i * ValueTen + j);
+                        button.Init((i * ValueTen) + j);
                         _createdUiTower.Add(button);
 
                         button.Clicked += OnTowerClicked;

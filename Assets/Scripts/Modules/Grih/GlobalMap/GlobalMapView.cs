@@ -8,6 +8,9 @@ namespace Modules.Grih.GlobalMap
 {
     public class GlobalMapView : MonoBehaviour
     {
+        private const string Sity = "Sity";
+        private const string SampleScene = "SampleScene";
+
         [SerializeField] private GlobalMap _global;
         [SerializeField] private Button _changeButton;
         [SerializeField] private SceneChangerScript _sceneChanger;
@@ -50,7 +53,7 @@ namespace Modules.Grih.GlobalMap
 
             SetOpenCell();
 
-            if (SceneManager.GetActiveScene().name == "Sity")
+            if (SceneManager.GetActiveScene().name == Sity)
             {
                 _cellsDictionary[_global.SavedDeport].SetYouOnHere();
                 _imageBack.SetActive(true);
@@ -135,7 +138,7 @@ namespace Modules.Grih.GlobalMap
             OnFinishPont();
             _global.Save();
 
-            if (SceneManager.GetActiveScene().name == "SampleScene")
+            if (SceneManager.GetActiveScene().name == SampleScene)
                 _sceneChanger.ChangeLocation(isDeportSity);
             else
                 _sceneChanger.ChangeLocation(false);
