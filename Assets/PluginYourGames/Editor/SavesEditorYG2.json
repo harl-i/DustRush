@@ -7,10 +7,10 @@
         false,
         false
     ],
-    "idSave": 1196,
-    "CurrentScene": "SampleScene",
-    "Money": 142,
-    "Metal": 210,
+    "idSave": 1227,
+    "CurrentScene": "Sity",
+    "Money": 102,
+    "Metal": 150,
     "Dollars": 324,
     "IsFirstTraneBuld": true,
     "TruskType": "Attacker",
@@ -45,7 +45,10 @@
         1111,
         3312
     ],
-    "SavedCell": [],
+    "SavedCell": [
+        1,
+        1
+    ],
     "OpenBlueprint": [
         1,
         2,

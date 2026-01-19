@@ -9,10 +9,12 @@ namespace Modules.Grih.Sity
     {
         private const int DeafultOpenCount = 9;
 
+        [SerializeField] private List<int> _startBlueprints;
+        [SerializeField] private List<int> _blueprintsTier1;
+        [SerializeField] private List<int> _blueprintsTier2;
+        [SerializeField] private List<int> _blueprintsTier3;
+
         private List<int> _openBluePrints = new List<int>();
-        private List<int> _blueprintsTier1 = new List<int>();
-        private List<int> _blueprintsTier2 = new List<int>();
-        private List<int> _blueprintsTier3 = new List<int>();
 
         public event Action<List<int>> Saved;
 
@@ -22,17 +24,21 @@ namespace Modules.Grih.Sity
 
             if (_openBluePrints.Count < DeafultOpenCount)
             {
-                _openBluePrints.Add(1);
-                _openBluePrints.Add(2);
-                _openBluePrints.Add(11);
-                _openBluePrints.Add(12);
-                _openBluePrints.Add(14);
+                foreach (int blueprint in _startBlueprints)
+                {
+                    _openBluePrints.Add(blueprint);
+                }
+                //_openBluePrints.Add(1);
+                //_openBluePrints.Add(2);
+                //_openBluePrints.Add(11);
+                //_openBluePrints.Add(12);
+                //_openBluePrints.Add(14);
 
-                _openBluePrints.Add(17);
-                _openBluePrints.Add(20);
-                _openBluePrints.Add(37);
-                _openBluePrints.Add(38);
-                _openBluePrints.Add(43);
+                //_openBluePrints.Add(17);
+                //_openBluePrints.Add(20);
+                //_openBluePrints.Add(37);
+                //_openBluePrints.Add(38);
+                //_openBluePrints.Add(43);
             }
 
             if (SceneManager.GetActiveScene().name == "LootLocation")
