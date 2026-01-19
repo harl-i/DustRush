@@ -16868,7 +16868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneyRate: 5
-  _metalRate: 2
+  _metalRate: 10
   _moneySum: {fileID: 1406988684}
   _metalSum: {fileID: 2324156}
   _acceptMoney: {fileID: 907070839}
@@ -20533,7 +20533,7 @@ MonoBehaviour:
   pinchTwistKey: 101
   movePivotKey: 308
   multiDragKey: 308
-  fingerTexture: {fileID: 2800000, guid: 25c48be3a87ea0f489a6d41c9c9a2194, type: 3}
+  fingerTexture: {fileID: 0}
 --- !u!1 &1694180857
 GameObject:
   m_ObjectHideFlags: 0

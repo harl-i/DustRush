@@ -7,7 +7,7 @@ namespace Modules.Grih.Sity
     public class SumExchange : MonoBehaviour
     {
         private const int ValueForOne = 1;
-        private const int ValueForTen = 10;
+        private const int ValueTen = 10;
 
         public enum Type
         {
@@ -25,6 +25,10 @@ namespace Modules.Grih.Sity
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private TextMeshProUGUI _textNeedForChange;
         [SerializeField] private Bank _bank;
+
+        private int _textNeedForChangeValue = 0;
+
+        public int NeedForChange => _textNeedForChangeValue;
 
         public int Value { get; private set; }
 
@@ -61,13 +65,13 @@ namespace Modules.Grih.Sity
 
         private void OnClickAddTen()
         {
-            ChangeCounter(ValueForTen);
+            ChangeCounter(ValueTen);
         }
 
         private void OnClickReduceTen()
         {
-            if (Value - ValueForTen > 0)
-                ChangeCounter(-ValueForTen);
+            if (Value - ValueTen > 0)
+                ChangeCounter(-ValueTen);
         }
 
         private void ChangeCounter(int import)
@@ -76,9 +80,15 @@ namespace Modules.Grih.Sity
             _text.text = Value.ToString();
 
             if (_type == Type.Metal)
-                _textNeedForChange.text = (Value * _bank.MetalRate).ToString();
+            {
+                _textNeedForChangeValue = Value * _bank.MoneyRate;
+                _textNeedForChange.text = _textNeedForChangeValue.ToString();
+            }
             else
-                _textNeedForChange.text = (Value * _bank.MoneyRate).ToString();
+            {
+                _textNeedForChangeValue = Value * _bank.MetalRate;
+                _textNeedForChange.text = _textNeedForChangeValue.ToString();
+            }
         }
     }
 }

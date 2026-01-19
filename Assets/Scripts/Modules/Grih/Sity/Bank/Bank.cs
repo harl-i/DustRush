@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Modules.Grih.InventoryGroup;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,31 +42,29 @@ namespace Modules.Grih.Sity
 
         private void OnAcceptClickMoney()
         {
-            if (_moneySum.Value > 0)
-            {
-                if (_countMetal.Value < _moneySum.Value * _moneyRate)
-                {
-                    _countMetal.ShowEffectGive();
-                    return;
-                }
-
-                _countMoney.ChangeValue(_moneySum.Value);
-                _countMetal.ChangeValue(-(_moneySum.Value * _moneyRate));
-            }
+            TryChangeValue(_moneySum, _countMoney, _countMetal);
         }
 
         private void OnAcceptClickMetal()
         {
-            if (_metalSum.Value > 0)
+            TryChangeValue(_metalSum, _countMetal, _countMoney);
+        }
+
+        private void TryChangeValue(
+            SumExchange sum,
+            InventoryItem counter,
+            InventoryItem counterPayments)
+        {
+            if (sum.Value > 0)
             {
-                if (_countMoney.Value < _metalSum.Value * _metalRate)
+                if (counterPayments.Value < sum.NeedForChange)
                 {
-                    _countMoney.ShowEffectGive();
+                    counterPayments.ShowEffectGive();
                     return;
                 }
 
-                _countMetal.ChangeValue(_metalSum.Value);
-                _countMoney.ChangeValue(-(_metalSum.Value * _metalRate));
+                counter.ChangeValue(sum.Value);
+                counterPayments.ChangeValue(-sum.NeedForChange);
             }
         }
     }
