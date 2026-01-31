@@ -15,7 +15,6 @@ namespace Game
             bool isOnPath,
             string savedDeport,
             string savedPointToRoad,
-            List<string> openLoads,
             List<string> savedTowns)
         {
             _source = source;
@@ -24,7 +23,6 @@ namespace Game
                 isOnPath,
                 savedDeport,
                 savedPointToRoad,
-                openLoads,
                 savedTowns);
 
         }
@@ -33,13 +31,11 @@ namespace Game
             bool isGoingToPath,
             string savedDeport, 
             string savedPointToRoad, 
-            List<string> openLocals, 
             List<string> savedTowns)
         {
             YG2.saves.IsGoingToPath = isGoingToPath;
             YG2.saves.SavedDeport = savedDeport;
             YG2.saves.SavedPointToRoad = savedPointToRoad;
-            YG2.saves.OpenLocals = openLocals;
             YG2.saves.SavedTowns = savedTowns;
 
             YG2.SaveProgress();

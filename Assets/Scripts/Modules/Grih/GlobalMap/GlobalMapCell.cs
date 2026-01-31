@@ -1,0 +1,56 @@
+﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace Modules.Grih.GlobalMap
+{
+    public class GlobalMapCell : MonoBehaviour
+    {
+        [SerializeField] private Button _start;
+        [SerializeField] private string _namePoint;
+        [SerializeField] private bool _isSity;
+        [SerializeField] private int _longTimerRound;
+
+        [SerializeField] private GameObject _viewYouOnHere;
+        [SerializeField] private GameObject _pointToChange;
+
+        public event Action<string> OnStartClick;
+
+        public string NamePoint => _namePoint;
+
+        public bool IsSity => _isSity;
+
+        public int LongTimerRound => _longTimerRound;
+
+        private void OnEnable()
+        {
+            _start.onClick.AddListener(OnClick);
+        }
+
+        private void OnDisable()
+        {
+            _start.onClick.RemoveListener(OnClick);
+        }
+
+        public void SetYouOnHere()
+        {
+            _viewYouOnHere.SetActive(true);
+        }
+
+        public void ChangeSetViewEffect(bool isActive)
+        {
+            _pointToChange.SetActive(isActive);
+        }
+
+        public void ChangeActivatedEffect(bool isActive)
+        {
+            _start.enabled = isActive;
+        }
+
+        private void OnClick()
+        {
+            _pointToChange.SetActive(true);
+            OnStartClick?.Invoke(_namePoint);
+        }
+    }
+}

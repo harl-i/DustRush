@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0b0c345f7965b47964c980c1a1bb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 36
   _name: MachineGunDepot
   _damge: 1
   _range: 1

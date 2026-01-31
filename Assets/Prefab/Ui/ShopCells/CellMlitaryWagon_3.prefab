@@ -739,6 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5673dfc0b299444b29f7715d644e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 54
   _coustMoney: 280
   _coustMetal: 300
   _buttonActivate: {fileID: 7535279055084493712}
@@ -747,6 +748,8 @@ MonoBehaviour:
   _coustOnBlueprint: 15
   _coustMoneyView: {fileID: 4344610083701558684}
   _coustMetalView: {fileID: 7867748755071159371}
+  _tier: 3
+  _isStartPackage: 0
 --- !u!222 &7662343295344388484
 CanvasRenderer:
   m_ObjectHideFlags: 0

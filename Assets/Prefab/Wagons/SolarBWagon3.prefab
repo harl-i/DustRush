@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af070dc706bbc74daea5089be75ad3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 57
   _pointsTower: []
   "_front\u0421ouplingPosition": {fileID: 1342337975982042051}
   _backCouplingPosition: {fileID: 8250481215725311564}
